@@ -61,7 +61,7 @@ The script SHALL compare the new output with the existing file and write the cou
 - **THEN** neither `pti.json` nor `manifest.json` is modified
 
 ### Requirement: Scheduled workflow
-The repository SHALL contain a GitHub Actions workflow that runs the refresh script monthly and on manual dispatch, and opens or updates a pull request with the summary as its body when files changed; it SHALL NOT build, deploy or push to `main` or `gh-pages`.
+The repository SHALL contain a GitHub Actions workflow that runs the refresh script monthly and on manual dispatch, and, when files changed, commits only `public/data` to `main` with the summary in the commit message; it SHALL NOT build, deploy, create branches or touch `docs/`.
 
 #### Scenario: data-refresh.workflow.triggers
 - **WHEN** the workflow file is parsed
@@ -69,4 +69,4 @@ The repository SHALL contain a GitHub Actions workflow that runs the refresh scr
 
 #### Scenario: data-refresh.workflow.no-deploy
 - **WHEN** the workflow file is parsed
-- **THEN** no step runs `npm run build`, `npm run deploy` or pushes to `main` or `gh-pages`, and the only write is a pull request branch
+- **THEN** no step runs `npm run build` or `npm run deploy`, no branch or pull request is created, and the only path staged is `public/data`

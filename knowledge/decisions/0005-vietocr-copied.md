@@ -14,7 +14,7 @@ verified:
   `lib/imagePreprocess.ts` và test tương ứng từ `~/Work/fee-calculator/app/src/`, cùng
   `public/ocr/vietocr/` (det.onnx, encoder, decoder, ort WASM, LICENSE). Giữ file LICENSE của mô hình.
 - Mô hình (~110 MB) không precache; tải khi người dùng bật OCR lần đầu, lưu cache runtime (CacheFirst).
-- GitHub Pages không phục vụ file LFS, nên file mô hình phải được commit thường vào nhánh `gh-pages`
+- GitHub Pages không phục vụ file LFS, nên file mô hình phải được commit thường (ở `public/` và bản chép trong `docs/`)
   (encoder 84 MB, dưới giới hạn 100 MB/file của GitHub).
 - Làm ngay ở giai đoạn 1 (`add-document-library`): đọc tổng tiền hóa đơn để tự điền giấy yêu cầu.
   (Chủ dự án yêu cầu ngày 2026-11-26; trước đó xếp ở giai đoạn 2.)

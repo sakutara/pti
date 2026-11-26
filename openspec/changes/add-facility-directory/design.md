@@ -49,7 +49,8 @@ scripts/lib/facilities.mjs         normalizeRecord(raw, province), facilityId(na
 on:
   schedule: [{ cron: '0 2 1 * *' }]
   workflow_dispatch: {}
-permissions: { contents: write, pull-requests: write }
+permissions: { contents: write }
+concurrency: { group: refresh-pti-data }
 jobs:
   refresh:
     runs-on: ubuntu-latest
@@ -58,8 +59,15 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
       - run: node scripts/refresh-facilities.mjs --out public/data/facilities/pti.json --manifest public/data/manifest.json > summary.md
-      - uses: peter-evans/create-pull-request@v7
-        with: { branch: data/refresh-facilities, title: 'data: làm mới danh sách CSYT PTI', body-path: summary.md, add-paths: 'public/data/**', delete-branch: true }
+      - name: Commit vào main
+        run: |
+          git add public/data
+          git diff --cached --quiet && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          { echo "data: làm mới danh sách CSYT PTI"; echo; cat summary.md; } > message.txt
+          git commit -F message.txt
+          git push origin HEAD:main
 ```
 Không có `npm ci`, không build. Script chỉ dùng thư viện chuẩn của Node 22 (`fetch`, `crypto`).
 

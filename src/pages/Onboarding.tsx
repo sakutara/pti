@@ -8,6 +8,7 @@ import { navigate } from '../router'
 import { t } from '../i18n'
 import type { PersonInput } from '../domain/types'
 import { IconButton } from '../ui/IconButton'
+import { LegalLinks } from '../ui/LegalLinks'
 import { PersonForm } from '../ui/PersonForm'
 
 const STANDALONE_QUERY = '(display-mode: standalone)'
@@ -130,6 +131,8 @@ export function Onboarding({ today = todayIso() }: { today?: string }) {
           class="w-full justify-center"
         />
       </form>
+
+      <LegalLinks class="justify-center" />
 
       {showHint && (
         <div class="fixed inset-0 z-40 flex items-end justify-center bg-ink/50 p-4 sm:items-center">

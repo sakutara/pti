@@ -10,7 +10,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
-    "deploy": "npm run test && npm run build && gh-pages -d dist --dotfiles",
+    "deploy": "npm run test && npm run build && node scripts/publish-docs.mjs",
     "icons:sheet": "node .claude/skills/pwa-miniapp-sdd/scripts/icon-sheet.mjs src/icons > icon-sheet.html",
     "autobuild": "bash scripts/autobuild.sh --force",
     "check:okf": "node .claude/skills/pwa-miniapp-sdd/scripts/check-okf.mjs knowledge"
@@ -31,7 +31,6 @@
     "@types/node": "^24.19.2",
     "@vite-pwa/assets-generator": "^2.0.0",
     "fake-indexeddb": "^6.2.8",
-    "gh-pages": "^6.3.0",
     "jsdom": "^31.0.1",
     "tailwindcss": "^4.3.5",
     "typescript": "~7.0.2",

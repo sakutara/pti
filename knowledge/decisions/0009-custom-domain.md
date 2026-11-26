@@ -15,7 +15,7 @@ Chủ dự án chọn địa chỉ pti.fiddle.vn, giống cách dự án ebook d
 # Decision
 
 - Base path là `/` (không còn `/pti/`): `vite.config.ts` đặt mặc định `base = '/'`.
-- File `public/CNAME` chứa `pti.fiddle.vn`, được chép vào `dist/` và đẩy lên nhánh `gh-pages`.
+- File `public/CNAME` chứa `pti.fiddle.vn`, được chép vào `dist/` rồi vào `docs/` trên `main` ([0013](/decisions/0013-main-only.md)).
 - DNS: bản ghi CNAME `pti` → `<owner>.github.io`; bật "Enforce HTTPS" trong cài đặt Pages.
 - Origin của OAuth Client ID cho Google Drive ([0008](/decisions/0008-gdrive-sync.md)) là `https://pti.fiddle.vn`.
 - Service worker và dữ liệu IndexedDB gắn với origin này; đổi tên miền sau này làm người dùng mất dữ liệu trên máy

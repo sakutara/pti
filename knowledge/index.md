@@ -11,7 +11,7 @@ okf_version: "0.2"
 
 * [0001 No backend, local-first](decisions/0001-no-backend-local-first.md) - Dữ liệu chỉ nằm trong IndexedDB
 * [0002 Tài khoản cục bộ](decisions/0002-local-account.md) - Tài khoản trên thiết bị, không OAuth
-* [0003 Dữ liệu PTI trong repo](decisions/0003-pti-datasets-in-repo.md) - JSON trong public/data, GitHub Action mở PR hàng tháng
+* [0003 Dữ liệu PTI trong repo](decisions/0003-pti-datasets-in-repo.md) - JSON trong public/data, GitHub Action commit hàng tháng
 * [0004 Gửi bằng mailto](decisions/0004-mailto-submission.md) - Đã bị thay bởi 0010, còn làm cách dự phòng
 * [0005 VietOCR chép từ chia-tien](decisions/0005-vietocr-copied.md) - Không phụ thuộc repo khác
 * [0006 Marsh trước](decisions/0006-marsh-first.md) - FHVI/INSMART sau; các điểm chưa xác minh
@@ -20,7 +20,7 @@ okf_version: "0.2"
 * [0009 Tên miền pti.fiddle.vn](decisions/0009-custom-domain.md) - Base path /, CNAME, origin OAuth
 * [0010 Gửi bằng Gmail API](decisions/0010-gmail-api-submission.md) - gmail.send từ trình duyệt, xác minh với Google, mailto dự phòng
 * [0011 Ưu tiên bảng tóm tắt hợp đồng](decisions/0011-policy-summary-precedence.md) - Hạn 365 ngày, tiêu đề, 15 MB, nộp bản gốc
-* [0013 Chỉ dùng main](decisions/0013-main-only.md) - Không branch, không worktree
+* [0013 Chỉ dùng main](decisions/0013-main-only.md) - Không branch, không worktree, deploy từ docs/
 * [0012 Phạm vi và các điểm đã chốt](decisions/0012-scope-answers.md) - Không làm tai nạn/tử vong, con đến 25 tuổi, dữ liệu công khai
 
 # Domain
@@ -53,7 +53,7 @@ okf_version: "0.2"
 
 # Playbooks
 
-* [Deploy to GitHub Pages](playbooks/deploy.md) - Local build and gh-pages push
+* [Deploy to GitHub Pages](playbooks/deploy.md) - Local build, publish docs/ on main
 * [Xác minh OAuth với Google](playbooks/google-oauth-verification.md) - Màn hình đồng ý, Search Console, video demo
 * [Làm mới dữ liệu PTI](playbooks/refresh-pti-data.md) - Workflow CSYT, duyệt PR, deploy
 * [Cập nhật gói quyền lợi](playbooks/update-benefits.md) - File benefits theo năm hợp đồng

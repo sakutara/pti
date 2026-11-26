@@ -9,7 +9,7 @@ GitHub Action và đóng gói vào app ([0003](/knowledge/decisions/0003-pti-dat
 ## What changes
 - Script `scripts/refresh-facilities.mjs`: lấy toàn bộ cơ sở PTI bảo lãnh và cơ sở loại trừ từ API PTI, gắn tỉnh/thành,
   chuẩn hóa, tạo id ổn định, kiểm tra an toàn, ghi `public/data/facilities/pti.json` và tóm tắt thay đổi.
-- Workflow `.github/workflows/refresh-pti-data.yml`: chạy ngày 1 hàng tháng và chạy tay; mở PR khi dữ liệu đổi; không build, không deploy.
+- Workflow `.github/workflows/refresh-pti-data.yml`: chạy ngày 1 hàng tháng và chạy tay; commit thẳng vào `main` khi dữ liệu đổi; không build, không deploy.
 - Tab Cơ sở y tế: tìm theo tên/địa chỉ không dấu, lọc tỉnh/thành và loại bảo lãnh (nội trú, ngoại trú, nha khoa),
   xem cơ sở bị loại trừ, xem chi tiết (giờ nhận bảo lãnh, chuyên khoa, gọi điện, mở bản đồ, giấy tờ cần mang).
 - Ngày cập nhật dữ liệu luôn hiển thị; thông báo một lần khi app có danh sách mới (số cơ sở thêm, bỏ, đổi).

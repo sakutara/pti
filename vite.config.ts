@@ -32,6 +32,8 @@ export default defineConfig({
       },
       workbox: {
         navigateFallback: 'index.html',
+        // Static pages and data files are served from precache, never replaced by the app shell.
+        navigateFallbackDenylist: [/^\/about\//, /^\/privacy\//, /^\/data\//],
         globPatterns: ['**/*.{js,css,html,svg,png,webp,woff2,json}'],
         // Add runtimeCaching entries only for remote resources named in design.md.
         runtimeCaching: [],

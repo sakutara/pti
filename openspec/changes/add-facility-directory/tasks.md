@@ -22,7 +22,7 @@
   - Scenarios: data-refresh.workflow.triggers, data-refresh.workflow.no-deploy
   - Files: .github/workflows/refresh-pti-data.yml, tests/unit/workflow.test.ts
   - Test: npx vitest run tests/unit/workflow.test.ts
-  - Done when: có `schedule` cron ngày 1 và `workflow_dispatch`; không có `npm run build`, `npm run deploy`, `gh-pages` hay push lên `main`
+  - Done when: có `schedule` cron ngày 1 và `workflow_dispatch`; chỉ `git add public/data` và push `HEAD:main`; không có `npm run build`, `npm run deploy`, tạo branch hay PR
 
 - [ ] 1.5 Dữ liệu ban đầu
   - Scenarios: data-refresh.normalize.deterministic

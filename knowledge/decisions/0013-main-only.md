@@ -11,9 +11,12 @@ verified:
 # Decision
 
 - Commit trực tiếp vào `main`. Không tạo branch, không dùng git worktree, kể cả khi quy trình của skill gợi ý.
-- Hook sau merge không còn chạy trong quy trình này, nên chạy `npm run autobuild` sau khi commit.
+- **Không ngoại lệ** (chủ dự án, 2026-11-26):
+  - Không có nhánh `gh-pages`: bản deploy là thư mục `docs/` trên `main`; GitHub Pages phát hành từ `main` /`docs`.
+  - Workflow làm mới dữ liệu PTI không mở PR: commit thẳng vào `main` sau khi qua kiểm tra an toàn.
+- Hook sau merge không chạy trong quy trình này, nên chạy `npm run autobuild` sau khi commit.
 
-# Chưa chốt
+# Consequences
 
-- Nhánh `gh-pages` dùng để deploy ([0009](/decisions/0009-custom-domain.md)).
-- Workflow làm mới dữ liệu PTI mở PR bằng một branch ([0003](/decisions/0003-pti-datasets-in-repo.md)).
+- Dữ liệu do workflow cập nhật không có bước duyệt trước khi vào `main`; trang chỉ đổi khi chủ dự án pull và deploy.
+- File build nằm trong lịch sử của `main`.

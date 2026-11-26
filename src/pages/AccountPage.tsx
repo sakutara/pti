@@ -8,6 +8,7 @@ import { navigate } from '../router'
 import { BackupSection } from '../ui/BackupSection'
 import { ClaimSettingsForm } from '../ui/ClaimSettingsForm'
 import { IconButton } from '../ui/IconButton'
+import { LegalLinks } from '../ui/LegalLinks'
 
 const ROW =
   'flex min-h-11 flex-col justify-center gap-0.5 rounded-xl bg-surface-2 px-gutter py-3 text-ink transition-colors hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent'
@@ -64,12 +65,16 @@ export function AccountPage() {
   }
 
   return (
-    <div class="grid gap-6 py-4 lg:grid-cols-[20rem_1fr] lg:items-start">
-      <PersonList accountId={state.account.id} />
-      <div class="flex flex-col gap-6">
-        <ClaimSettingsForm account={state.account} />
-        <BackupSection />
+    <>
+      <div class="grid gap-6 py-4 lg:grid-cols-[20rem_1fr] lg:items-start">
+        <PersonList accountId={state.account.id} />
+        <div class="flex flex-col gap-6">
+          <ClaimSettingsForm account={state.account} />
+          <BackupSection />
+        </div>
       </div>
-    </div>
+      {/* Hidden at lg: the side nav already carries these links on desktop. */}
+      <LegalLinks class="justify-center pb-4 lg:hidden" />
+    </>
   )
 }

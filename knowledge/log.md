@@ -2,6 +2,10 @@
 
 ## 2026-11-26
 
+- build: change add-public-pages implemented (trang /about/, /privacy/, email liên hệ do chủ dự án cung cấp); chưa archive, chưa deploy
+
+- decisions: 0013 không ngoại lệ: deploy từ docs/ trên main, workflow dữ liệu commit thẳng vào main
+
 - decisions: 0013 chỉ làm việc trên main, không branch hay worktree
 
 - build: change add-account-and-people implemented (218 unit, 12 e2e pass); 13 icons added; commit trên main, chưa archive

@@ -11,6 +11,10 @@ export const vi = {
   'common.loading': 'Đang tải',
   'onboarding.title': 'Bắt đầu',
 
+  'legal.nav': 'Thông tin pháp lý',
+  'legal.about': 'Giới thiệu',
+  'legal.privacy': 'Chính sách quyền riêng tư',
+
   'sync.label': 'Trạng thái đồng bộ',
   'sync.offline': 'Ngoại tuyến',
   'sync.offlinePending': 'Ngoại tuyến, {count} đang chờ',

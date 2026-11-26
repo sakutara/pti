@@ -41,7 +41,7 @@ context: |
   - Writes go through the outbox; the sync engine resyncs on reconnect (default adapter: local-only).
   - Mobile-first fluid UI with Tailwind v4; PC layout from `lg` (side nav, two panes).
   - Work directly on `main`: no feature branches, no git worktrees (Decision 0013). Run `npm run autobuild` after committing.
-  - Static build on the local machine, deployed to GitHub Pages (`gh-pages` branch), custom domain https://pti.fiddle.vn, base path `/` (Decision 0009), hash routing.
+  - Static build on the local machine, published to GitHub Pages from the `docs/` folder on `main`, custom domain https://pti.fiddle.vn, base path `/` (Decision 0009), hash routing.
   - Merging into `main` auto-runs a local build (git hooks in .githooks/); deploy only from a passing main.
   - Every app ships JSON export/import and requests persistent storage.
   - Controls are icon-first: icons are drawn per action as SVG by the architect (src/icons/), with accessible labels; see /knowledge/ui/iconography.md.

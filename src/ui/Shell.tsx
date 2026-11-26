@@ -3,6 +3,7 @@ import { syncStatus } from '../sync/sync-engine'
 import { route } from '../router'
 import { t, type MessageKey } from '../i18n'
 import { Icon } from './Icon'
+import { LegalLinks } from './LegalLinks'
 
 // One list drives both the side nav (lg+) and the bottom tabs (below lg).
 const NAV: { href: string; path: string; key: MessageKey; icon: string }[] = [
@@ -38,18 +39,21 @@ export function Shell({ children }: { children?: ComponentChildren }) {
   const path = route.value.path
   return (
     <div class="min-h-dvh lg:grid lg:grid-cols-[16rem_1fr]">
-      <nav aria-label={t('nav.primary')} class="hidden lg:flex lg:flex-col lg:gap-1 lg:border-r lg:border-surface-2 lg:p-gutter">
-        {NAV.map((n) => (
-          <a
-            href={n.href}
-            aria-current={isActive(n.path, path) ? 'page' : undefined}
-            class="flex min-h-11 items-center gap-3 rounded-lg px-3 text-fluid-base hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-accent aria-[current=page]:font-semibold aria-[current=page]:text-accent"
-          >
-            <Icon name={n.icon} />
-            {t(n.key)}
-          </a>
-        ))}
-      </nav>
+      <div class="hidden lg:flex lg:flex-col lg:gap-1 lg:border-r lg:border-surface-2 lg:p-gutter">
+        <nav aria-label={t('nav.primary')} class="flex flex-col gap-1">
+          {NAV.map((n) => (
+            <a
+              href={n.href}
+              aria-current={isActive(n.path, path) ? 'page' : undefined}
+              class="flex min-h-11 items-center gap-3 rounded-lg px-3 text-fluid-base hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-accent aria-[current=page]:font-semibold aria-[current=page]:text-accent"
+            >
+              <Icon name={n.icon} />
+              {t(n.key)}
+            </a>
+          ))}
+        </nav>
+        <LegalLinks class="mt-auto border-t border-surface-2 pt-2" />
+      </div>
 
       <div class="flex min-h-dvh flex-col">
         <header class="sticky top-0 z-10 flex items-center justify-between bg-surface/90 px-gutter pt-[env(safe-area-inset-top)] backdrop-blur">
