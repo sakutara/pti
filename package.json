@@ -1,0 +1,43 @@
+{
+  "name": "pti",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build && node scripts/postbuild.mjs",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "deploy": "npm run test && npm run build && gh-pages -d dist --dotfiles",
+    "icons:sheet": "node .claude/skills/pwa-miniapp-sdd/scripts/icon-sheet.mjs src/icons > icon-sheet.html",
+    "autobuild": "bash scripts/autobuild.sh --force",
+    "check:okf": "node .claude/skills/pwa-miniapp-sdd/scripts/check-okf.mjs knowledge"
+  },
+  "dependencies": {
+    "@preact/signals": "^2.11.4",
+    "dexie": "^4.4.7",
+    "fflate": "^0.8.3",
+    "preact": "^11.1.1"
+  },
+  "devDependencies": {
+    "@fission-ai/openspec": "^2.2.0",
+    "@playwright/test": "^1.65.1",
+    "@preact/preset-vite": "^2.10.6",
+    "@tailwindcss/vite": "^4.3.5",
+    "@testing-library/jest-dom": "^8.0.0",
+    "@testing-library/preact": "^3.2.6",
+    "@types/node": "^24.19.2",
+    "@vite-pwa/assets-generator": "^2.0.0",
+    "fake-indexeddb": "^6.2.8",
+    "gh-pages": "^6.3.0",
+    "jsdom": "^31.0.1",
+    "tailwindcss": "^4.3.5",
+    "typescript": "~7.0.2",
+    "vite": "^8.3.6",
+    "vite-plugin-pwa": "^2.0.0",
+    "vitest": "^5.1.2",
+    "workbox-window": "^7.4.1"
+  }
+}

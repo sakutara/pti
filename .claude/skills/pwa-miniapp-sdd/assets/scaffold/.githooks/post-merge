@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Runs after `git merge` / `git pull` (incl. fast-forward) in any worktree; builds only on main.
+# $1 = 1 for a squash merge: nothing is committed yet, so skip (run `npm run autobuild` after committing).
+[ "${1:-0}" = 1 ] && { echo "autobuild: squash merge — run 'npm run autobuild' after you commit"; exit 0; }
+exec bash "$(git rev-parse --show-toplevel)/scripts/autobuild.sh"

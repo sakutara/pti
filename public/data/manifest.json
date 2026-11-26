@@ -1,0 +1,12 @@
+{
+ "schema": 1,
+ "datasets": {
+  "benefits": {
+   "files": [
+    "benefits/2026.json"
+   ],
+   "updatedAt": "2026-11-26",
+   "version": "2026.1"
+  }
+ }
+}

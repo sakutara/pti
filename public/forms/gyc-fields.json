@@ -1,0 +1,447 @@
+{
+ "pageSize": [
+  596,
+  842
+ ],
+ "fields": {
+  "policyholderName": {
+   "page": 1,
+   "x": 150.97,
+   "y": 749.01,
+   "size": 8.0,
+   "bold": false,
+   "color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lineYs": [
+    749.01,
+    739.81
+   ],
+   "maxWidth": 150
+  },
+  "contractCode": {
+   "page": 1,
+   "x": 310.35,
+   "y": 735.21,
+   "size": 8.0,
+   "bold": false,
+   "color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lineYs": [
+    735.21
+   ],
+   "maxWidth": 200
+  },
+  "patientName": {
+   "page": 1,
+   "x": 44.85,
+   "y": 677.51,
+   "size": 8.0,
+   "bold": true,
+   "color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lineYs": [
+    677.51
+   ],
+   "maxWidth": 230
+  },
+  "patientDob": {
+   "page": 1,
+   "x": 154.12,
+   "y": 662.31,
+   "size": 8.0,
+   "bold": false,
+   "color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lineYs": [
+    662.31
+   ],
+   "maxWidth": 100
+  },
+  "patientTier": {
+   "page": 1,
+   "x": 124.82,
+   "y": 647.11,
+   "size": 8.0,
+   "bold": false,
+   "color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lineYs": [
+    647.11
+   ],
+   "maxWidth": 60
+  },
+  "patientPhone": {
+   "page": 1,
+   "x": 119.92,
+   "y": 631.91,
+   "size": 8.0,
+   "bold": false,
+   "color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lineYs": [
+    631.91
+   ],
+   "maxWidth": 130
+  },
+  "employeeName": {
+   "page": 1,
+   "x": 450.41,
+   "y": 692.71,
+   "size": 8.0,
+   "bold": false,
+   "color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lineYs": [
+    692.71
+   ],
+   "maxWidth": 95
+  },
+  "employeeCode": {
+   "page": 1,
+   "x": 437.96,
+   "y": 659.51,
+   "size": 8.0,
+   "bold": false,
+   "color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lineYs": [
+    659.51
+   ],
+   "maxWidth": 95
+  },
+  "jobTitle": {
+   "page": 1,
+   "x": 400.81,
+   "y": 644.31,
+   "size": 8.0,
+   "bold": false,
+   "color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lineYs": [
+    644.31
+   ],
+   "maxWidth": 135
+  },
+  "email": {
+   "page": 1,
+   "x": 343.78,
+   "y": 629.11,
+   "size": 8.0,
+   "bold": false,
+   "color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lineYs": [
+    629.11
+   ],
+   "maxWidth": 195
+  },
+  "totalAmount": {
+   "page": 1,
+   "x": 49.29,
+   "y": 569.06,
+   "size": 12.0,
+   "bold": false,
+   "color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lineYs": [
+    569.06
+   ],
+   "maxWidth": 180
+  },
+  "accountNumber": {
+   "page": 1,
+   "x": 338.36,
+   "y": 576.26,
+   "size": 12.0,
+   "bold": false,
+   "color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lineYs": [
+    576.26
+   ],
+   "maxWidth": 190
+  },
+  "bankName": {
+   "page": 1,
+   "x": 348.14,
+   "y": 553.27,
+   "size": 12.0,
+   "bold": false,
+   "color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lineYs": [
+    553.27
+   ],
+   "maxWidth": 185
+  },
+  "daysOff": {
+   "page": 1,
+   "x": 137.53,
+   "y": 534.52,
+   "size": 8.0,
+   "bold": false,
+   "color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lineYs": [
+    534.52
+   ],
+   "maxWidth": 60
+  },
+  "beneficiary": {
+   "page": 1,
+   "x": 354.21,
+   "y": 504.37,
+   "size": 12.0,
+   "bold": false,
+   "color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lineYs": [
+    504.37
+   ],
+   "maxWidth": 185
+  },
+  "visitDate": {
+   "page": 1,
+   "x": 319.84,
+   "y": 463.62,
+   "size": 8.0,
+   "bold": false,
+   "color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lineYs": [
+    463.62
+   ],
+   "maxWidth": 200
+  },
+  "diagnosis": {
+   "page": 1,
+   "x": 383.84,
+   "y": 448.42,
+   "size": 8.0,
+   "bold": false,
+   "color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lineYs": [
+    448.42
+   ],
+   "maxWidth": 165
+  },
+  "facilityName": {
+   "page": 1,
+   "x": 257.19,
+   "y": 422.02,
+   "size": 8.0,
+   "bold": false,
+   "color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lineYs": [
+    422.02
+   ],
+   "maxWidth": 285
+  },
+  "claimantName": {
+   "page": 2,
+   "x": 179.11,
+   "y": 753.43,
+   "size": 10.0,
+   "bold": false,
+   "color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lineYs": [
+    753.43
+   ],
+   "maxWidth": 300
+  },
+  "rowNo": {
+   "page": 2,
+   "x": 111.39,
+   "y": 687.42,
+   "size": 9.0,
+   "bold": false,
+   "color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lineYs": [
+    687.42
+   ],
+   "maxWidth": 40
+  },
+  "rowDate": {
+   "page": 2,
+   "x": 152.85,
+   "y": 687.42,
+   "size": 9.0,
+   "bold": false,
+   "color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lineYs": [
+    687.42
+   ],
+   "maxWidth": 100
+  },
+  "rowAmount": {
+   "page": 2,
+   "x": 393.65,
+   "y": 687.42,
+   "size": 9.0,
+   "bold": false,
+   "color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lineYs": [
+    687.42
+   ],
+   "maxWidth": 140
+  },
+  "totalNumber": {
+   "page": 2,
+   "x": 342.72,
+   "y": 444.01,
+   "size": 9.0,
+   "bold": true,
+   "color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lineYs": [
+    444.01
+   ],
+   "maxWidth": 170
+  },
+  "totalWords": {
+   "page": 2,
+   "x": 329.63,
+   "y": 417.72,
+   "size": 9.0,
+   "bold": true,
+   "color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "lineYs": [
+    417.72,
+    401.42
+   ],
+   "maxWidth": 185
+  },
+  "bankAddress": {
+   "page": 1,
+   "x": 368.8,
+   "y": 534.52,
+   "size": 8.0,
+   "bold": false,
+   "color": [
+    0,
+    0,
+    0
+   ],
+   "lineYs": [
+    534.52
+   ],
+   "maxWidth": 190
+  },
+  "admissionDate": {
+   "page": 1,
+   "x": 177.9,
+   "y": 406.82,
+   "size": 8.0,
+   "bold": false,
+   "color": [
+    0,
+    0,
+    0
+   ],
+   "lineYs": [
+    406.82
+   ],
+   "maxWidth": 130
+  },
+  "dischargeDate": {
+   "page": 1,
+   "x": 465.65,
+   "y": 406.82,
+   "size": 8.0,
+   "bold": false,
+   "color": [
+    0,
+    0,
+    0
+   ],
+   "lineYs": [
+    406.82
+   ],
+   "maxWidth": 80
+  }
+ },
+ "table": {
+  "page": 2,
+  "rowsPerPage": 9,
+  "rowPitch": 27.3
+ }
+}

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# `git pull --rebase` on main doesn't fire post-merge; this covers it. Skip amends.
+[ "${1:-}" = rebase ] || exit 0
+exec bash "$(git rev-parse --show-toplevel)/scripts/autobuild.sh"

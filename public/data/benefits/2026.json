@@ -1,0 +1,1183 @@
+{
+ "policyYear": 2026,
+ "effectiveFrom": "2026-06-01",
+ "effectiveTo": "2027-05-31",
+ "product": "PTICare — bảo hiểm sức khỏe và tai nạn nhóm",
+ "insurer": "Tổng Công ty Cổ phần Bảo hiểm Bưu điện (PTI)",
+ "verified": true,
+ "source": "Bảng tóm tắt hợp đồng 2026–2027 do chủ dự án cung cấp (2026-11-26)",
+ "claimDeadlineDays": 365,
+ "hotline": "1900 5454 75",
+ "memberTypes": {
+  "employee": "Nhân viên",
+  "sponsored": "Người thân được tài trợ",
+  "voluntary": "Người thân tự nguyện"
+ },
+ "tiers": [
+  {
+   "tier": 1,
+   "name": "Hạng 1"
+  },
+  {
+   "tier": 2,
+   "name": "Hạng 2"
+  },
+  {
+   "tier": 3,
+   "name": "Hạng 3"
+  },
+  {
+   "tier": 4,
+   "name": "Hạng 4"
+  }
+ ],
+ "copayPercent": {
+  "inpatient": {
+   "voluntary": 30
+  },
+  "maternity": {
+   "voluntary": 30
+  },
+  "outpatient": {
+   "voluntary": 30
+  },
+  "dental": {
+   "voluntary": 30
+  }
+ },
+ "benefits": [
+  {
+   "id": "accident.death",
+   "category": "accident",
+   "title": "Tử vong hoặc thương tật toàn bộ vĩnh viễn do tai nạn",
+   "unit": "sumInsured",
+   "values": {
+    "employee": [
+     "30 tháng lương",
+     "30 tháng lương",
+     "30 tháng lương",
+     "30 tháng lương"
+    ],
+    "sponsored": [
+     200000000,
+     200000000,
+     200000000,
+     200000000
+    ],
+    "voluntary": [
+     200000000,
+     200000000,
+     200000000,
+     200000000
+    ]
+   },
+   "notes": "Thương tật bộ phận vĩnh viễn chi trả theo tỷ lệ phần trăm số tiền bảo hiểm. Phạm vi toàn cầu, 24/24."
+  },
+  {
+   "id": "accident.medical",
+   "category": "accident",
+   "title": "Chi phí y tế do tai nạn",
+   "unit": "year",
+   "values": {
+    "employee": [
+     80000000,
+     170000000,
+     250000000,
+     300000000
+    ],
+    "sponsored": [
+     80000000,
+     110000000,
+     165000000,
+     220000000
+    ],
+    "voluntary": [
+     80000000,
+     110000000,
+     165000000,
+     220000000
+    ]
+   },
+   "notes": "Gồm vật lý trị liệu, phục hồi chức năng sau tai nạn, vận chuyển cấp cứu (trừ đường hàng không). Đĩa đệm: PTI trả 70%."
+  },
+  {
+   "id": "life.death",
+   "category": "life",
+   "title": "Tử vong hoặc thương tật toàn bộ vĩnh viễn không do tai nạn",
+   "unit": "sumInsured",
+   "values": {
+    "employee": [
+     300000000,
+     300000000,
+     300000000,
+     300000000
+    ],
+    "sponsored": null,
+    "voluntary": null
+   },
+   "notes": "Tử vong không rõ nguyên nhân: 50% số tiền bảo hiểm."
+  },
+  {
+   "id": "inpatient.annual",
+   "category": "inpatient",
+   "title": "Giới hạn nội trú, điều trị trong ngày, phẫu thuật",
+   "unit": "year",
+   "values": {
+    "employee": [
+     80000000,
+     170000000,
+     250000000,
+     300000000
+    ],
+    "sponsored": [
+     80000000,
+     110000000,
+     165000000,
+     220000000
+    ],
+    "voluntary": [
+     80000000,
+     110000000,
+     165000000,
+     220000000
+    ]
+   },
+   "notes": "Việt Nam; riêng nhân viên hạng 4 được toàn cầu (cấp cứu vận chuyển và thai sản chỉ tại Việt Nam; phẫu thuật ngoài Việt Nam đồng bảo hiểm 30%)."
+  },
+  {
+   "id": "inpatient.hospital",
+   "category": "inpatient",
+   "title": "Viện phí",
+   "unit": "day",
+   "values": {
+    "employee": [
+     4000000,
+     9000000,
+     12500000,
+     16000000
+    ],
+    "sponsored": [
+     4000000,
+     6000000,
+     8500000,
+     12000000
+    ],
+    "voluntary": [
+     4000000,
+     6000000,
+     8500000,
+     12000000
+    ]
+   },
+   "maxDaysPerYear": 60
+  },
+  {
+   "id": "inpatient.room",
+   "category": "inpatient",
+   "title": "Tiền giường, phòng (kèm suất ăn)",
+   "unit": "day",
+   "values": {
+    "employee": [
+     2000000,
+     3000000,
+     3500000,
+     4500000
+    ],
+    "sponsored": [
+     2000000,
+     2000000,
+     2500000,
+     3500000
+    ],
+    "voluntary": [
+     2000000,
+     2000000,
+     2500000,
+     3500000
+    ]
+   },
+   "notes": "Nằm trong viện phí. Không chi trả phòng bao."
+  },
+  {
+   "id": "inpatient.icu",
+   "category": "inpatient",
+   "title": "Chăm sóc đặc biệt",
+   "unit": "actual",
+   "values": {
+    "employee": [
+     "actual",
+     "actual",
+     "actual",
+     "actual"
+    ],
+    "sponsored": [
+     "actual",
+     "actual",
+     "actual",
+     "actual"
+    ],
+    "voluntary": [
+     "actual",
+     "actual",
+     "actual",
+     "actual"
+    ]
+   },
+   "maxDaysPerYear": 30
+  },
+  {
+   "id": "inpatient.surgery",
+   "category": "inpatient",
+   "title": "Phẫu thuật, thủ thuật, tiểu phẫu",
+   "unit": "actual",
+   "values": {
+    "employee": [
+     "actual",
+     "actual",
+     "actual",
+     "actual"
+    ],
+    "sponsored": [
+     "actual",
+     "actual",
+     "actual",
+     "actual"
+    ],
+    "voluntary": [
+     "actual",
+     "actual",
+     "actual",
+     "actual"
+    ]
+   },
+   "notes": "Đến hạn mức tối đa của nội trú. Phẫu thuật robot: trả tương đương mổ thường."
+  },
+  {
+   "id": "inpatient.emergency",
+   "category": "inpatient",
+   "title": "Điều trị cấp cứu",
+   "unit": "actual",
+   "values": {
+    "employee": [
+     "actual",
+     "actual",
+     "actual",
+     "actual"
+    ],
+    "sponsored": [
+     "actual",
+     "actual",
+     "actual",
+     "actual"
+    ],
+    "voluntary": [
+     "actual",
+     "actual",
+     "actual",
+     "actual"
+    ]
+   }
+  },
+  {
+   "id": "inpatient.transport",
+   "category": "inpatient",
+   "title": "Vận chuyển cấp cứu",
+   "unit": "actual",
+   "values": {
+    "employee": [
+     "actual",
+     "actual",
+     "actual",
+     "actual"
+    ],
+    "sponsored": [
+     "actual",
+     "actual",
+     "actual",
+     "actual"
+    ],
+    "voluntary": [
+     "actual",
+     "actual",
+     "actual",
+     "actual"
+    ]
+   },
+   "notes": "Không gồm đường hàng không và dịch vụ SOS/IPA. Taxi, xe công nghệ tối đa 500.000 đ/vụ."
+  },
+  {
+   "id": "inpatient.pre",
+   "category": "inpatient",
+   "title": "Chi phí trước nhập viện (30 ngày)",
+   "unit": "year",
+   "values": {
+    "employee": [
+     4000000,
+     9350000,
+     13000000,
+     16000000
+    ],
+    "sponsored": [
+     4000000,
+     6050000,
+     8800000,
+     12000000
+    ],
+    "voluntary": [
+     4000000,
+     6050000,
+     8800000,
+     12000000
+    ]
+   }
+  },
+  {
+   "id": "inpatient.post",
+   "category": "inpatient",
+   "title": "Chi phí sau xuất viện (30 ngày)",
+   "unit": "year",
+   "values": {
+    "employee": [
+     4000000,
+     9350000,
+     13000000,
+     16000000
+    ],
+    "sponsored": [
+     4000000,
+     6050000,
+     8800000,
+     12000000
+    ],
+    "voluntary": [
+     4000000,
+     6050000,
+     8800000,
+     12000000
+    ]
+   }
+  },
+  {
+   "id": "inpatient.home-nurse",
+   "category": "inpatient",
+   "title": "Y tá chăm sóc tại nhà (30 ngày sau xuất viện)",
+   "unit": "year",
+   "values": {
+    "employee": [
+     4000000,
+     9350000,
+     13000000,
+     16000000
+    ],
+    "sponsored": [
+     4000000,
+     6050000,
+     8800000,
+     12000000
+    ],
+    "voluntary": [
+     4000000,
+     6050000,
+     8800000,
+     12000000
+    ]
+   }
+  },
+  {
+   "id": "inpatient.newborn",
+   "category": "inpatient",
+   "title": "Chăm sóc em bé sơ sinh (7 ngày đầu)",
+   "unit": "year",
+   "values": {
+    "employee": [
+     800000,
+     3000000,
+     3500000,
+     4000000
+    ],
+    "sponsored": [
+     800000,
+     2000000,
+     2500000,
+     3000000
+    ],
+    "voluntary": [
+     800000,
+     2000000,
+     2500000,
+     3000000
+    ]
+   }
+  },
+  {
+   "id": "inpatient.funeral",
+   "category": "inpatient",
+   "title": "Trợ cấp mai táng",
+   "unit": "case",
+   "values": {
+    "employee": [
+     2000000,
+     3000000,
+     3000000,
+     3000000
+    ],
+    "sponsored": [
+     2000000,
+     3000000,
+     3000000,
+     3000000
+    ],
+    "voluntary": [
+     2000000,
+     3000000,
+     3000000,
+     3000000
+    ]
+   }
+  },
+  {
+   "id": "income.accident",
+   "category": "income",
+   "title": "Trợ cấp ngày nghỉ điều trị tai nạn",
+   "unit": "day",
+   "values": {
+    "employee": [
+     "Lương tháng / 30, tối đa 60 ngày",
+     "Lương tháng / 30, tối đa 60 ngày",
+     "Lương tháng / 30, tối đa 60 ngày",
+     "Lương tháng / 30, tối đa 60 ngày"
+    ],
+    "sponsored": null,
+    "voluntary": null
+   },
+   "notes": "Theo chỉ định nghỉ của bác sĩ."
+  },
+  {
+   "id": "income.hospital",
+   "category": "income",
+   "title": "Trợ cấp nằm viện",
+   "unit": "day",
+   "values": {
+    "employee": [
+     120000,
+     200000,
+     300000,
+     400000
+    ],
+    "sponsored": [
+     120000,
+     150000,
+     200000,
+     300000
+    ],
+    "voluntary": [
+     120000,
+     150000,
+     200000,
+     300000
+    ]
+   },
+   "maxDaysPerYear": 60
+  },
+  {
+   "id": "income.hospital-public",
+   "category": "income",
+   "title": "Trợ cấp nằm viện tại bệnh viện công hoặc dùng bảo hiểm y tế",
+   "unit": "day",
+   "values": {
+    "employee": [
+     240000,
+     400000,
+     600000,
+     800000
+    ],
+    "sponsored": [
+     240000,
+     300000,
+     400000,
+     600000
+    ],
+    "voluntary": [
+     240000,
+     300000,
+     400000,
+     600000
+    ]
+   },
+   "maxDaysPerYear": 60
+  },
+  {
+   "id": "maternity.annual",
+   "category": "maternity",
+   "title": "Thai sản và sinh con",
+   "unit": "year",
+   "values": {
+    "employee": [
+     30000000,
+     70000000,
+     70000000,
+     70000000
+    ],
+    "sponsored": [
+     30000000,
+     50000000,
+     50000000,
+     50000000
+    ],
+    "voluntary": [
+     20000000,
+     30000000,
+     30000000,
+     50000000
+    ]
+   },
+   "notes": "Sinh thường, sinh mổ, biến chứng. Không áp dụng cho con. Các khoản khác theo giới hạn phụ nội trú."
+  },
+  {
+   "id": "maternity.hospital",
+   "category": "maternity",
+   "title": "Viện phí thai sản",
+   "unit": "day",
+   "values": {
+    "employee": [
+     null,
+     14000000,
+     14000000,
+     14000000
+    ],
+    "sponsored": [
+     null,
+     10000000,
+     10000000,
+     10000000
+    ],
+    "voluntary": null
+   },
+   "notes": "Hạng 1 và người thân tự nguyện theo giới hạn phụ nội trú."
+  },
+  {
+   "id": "maternity.room",
+   "category": "maternity",
+   "title": "Tiền giường, phòng thai sản",
+   "unit": "day",
+   "values": {
+    "employee": [
+     null,
+     2450000,
+     2450000,
+     2450000
+    ],
+    "sponsored": [
+     null,
+     1800000,
+     1800000,
+     1800000
+    ],
+    "voluntary": null
+   },
+   "notes": "Nằm trong viện phí thai sản."
+  },
+  {
+   "id": "maternity.prenatal",
+   "category": "maternity",
+   "title": "Khám thai định kỳ",
+   "unit": "year",
+   "values": {
+    "employee": [
+     1000000,
+     2000000,
+     2500000,
+     3000000
+    ],
+    "sponsored": [
+     1000000,
+     2000000,
+     2500000,
+     3000000
+    ],
+    "voluntary": [
+     1000000,
+     2000000,
+     2500000,
+     3000000
+    ]
+   },
+   "notes": "Chi trả trong quyền lợi ngoại trú."
+  },
+  {
+   "id": "outpatient.annual",
+   "category": "outpatient",
+   "title": "Giới hạn ngoại trú và răng (giới hạn chung)",
+   "unit": "year",
+   "values": {
+    "employee": [
+     13000000,
+     16000000,
+     24000000,
+     32000000
+    ],
+    "sponsored": [
+     13000000,
+     16000000,
+     24000000,
+     32000000
+    ],
+    "voluntary": [
+     10000000,
+     11000000,
+     16500000,
+     22000000
+    ]
+   }
+  },
+  {
+   "id": "outpatient.visit",
+   "category": "outpatient",
+   "title": "Mỗi lần khám và điều trị ngoại trú",
+   "unit": "visit",
+   "values": {
+    "employee": [
+     3250000,
+     4000000,
+     6000000,
+     8000000
+    ],
+    "sponsored": [
+     3250000,
+     4000000,
+     6000000,
+     8000000
+    ],
+    "voluntary": [
+     2000000,
+     2200000,
+     3300000,
+     4400000
+    ]
+   }
+  },
+  {
+   "id": "outpatient.rehab",
+   "category": "outpatient",
+   "title": "Vật lý trị liệu, phục hồi chức năng",
+   "unit": "day",
+   "values": {
+    "employee": [
+     200000,
+     240000,
+     360000,
+     480000
+    ],
+    "sponsored": [
+     200000,
+     240000,
+     360000,
+     480000
+    ],
+    "voluntary": [
+     200000,
+     240000,
+     360000,
+     480000
+    ]
+   },
+   "maxDaysPerYear": 60,
+   "notes": "Theo chỉ định bác sĩ. Không áp dụng tại ACC, Prochiro, Maple Healthcare."
+  },
+  {
+   "id": "dental.annual",
+   "category": "dental",
+   "title": "Chăm sóc răng cơ bản",
+   "unit": "year",
+   "values": {
+    "employee": [
+     3250000,
+     4000000,
+     6000000,
+     8000000
+    ],
+    "sponsored": [
+     3250000,
+     4000000,
+     6000000,
+     8000000
+    ],
+    "voluntary": [
+     2000000,
+     2200000,
+     3300000,
+     4400000
+    ]
+   },
+   "notes": "Nằm trong giới hạn chung ngoại trú. Cạo vôi răng tối đa 2 lần/năm."
+  },
+  {
+   "id": "optical.annual",
+   "category": "optical",
+   "title": "Khám mắt, mắt kính, kính áp tròng, Ortho-K",
+   "unit": "year",
+   "values": {
+    "employee": [
+     1000000,
+     2000000,
+     3000000,
+     4000000
+    ],
+    "sponsored": null,
+    "voluntary": null
+   },
+   "notes": "Cần khám và đơn kính tại cơ sở y tế; mỗi đơn một kính; đơn có hiệu lực 30 ngày. Chỉ đo kính tại cửa hàng thì không được trả."
+  }
+ ],
+ "extensions": [
+  {
+   "id": "ligament",
+   "title": "Chẩn đoán, điều trị, phẫu thuật gân, dây chằng, sụn chêm từ năm đầu"
+  },
+  {
+   "id": "alcohol",
+   "title": "Tai nạn có nồng độ cồn không quá 10 mg/100 ml máu hoặc 0,05 mg/lít khí thở",
+   "notes": "Từ chối xét nghiệm theo chỉ định thì không được trả."
+  },
+  {
+   "id": "nasal",
+   "title": "Dung dịch rửa mũi họng",
+   "notes": "100.000 đ/đơn, tối đa 5 đơn/năm."
+  },
+  {
+   "id": "vitamin",
+   "title": "Vitamin, thuốc bổ được kê đơn hỗ trợ điều trị",
+   "limitPerYear": 500000,
+   "notes": "Không cao hơn tiền thuốc điều trị."
+  },
+  {
+   "id": "normal-result",
+   "title": "Cận lâm sàng tìm bệnh cho kết quả bình thường",
+   "limitPerYear": 1000000,
+   "notes": "Lần khám phải có kết luận bệnh thuộc phạm vi."
+  },
+  {
+   "id": "routine-tests",
+   "title": "Xét nghiệm thường quy khi phát hiện và điều trị bệnh"
+  },
+  {
+   "id": "surgery-on-demand",
+   "title": "Phẫu thuật theo yêu cầu tại bệnh viện công",
+   "limitPerYear": 7000000,
+   "notes": "Không áp dụng cho thai sản."
+  },
+  {
+   "id": "exam-on-demand",
+   "title": "Phí khám theo yêu cầu, hẹn giờ, chọn bác sĩ tại bệnh viện công",
+   "limitPerYear": 500000
+  },
+  {
+   "id": "diagnostics-only",
+   "title": "Khám, xét nghiệm tìm ra bệnh nhưng không có hướng điều trị",
+   "limitPerYear": 1500000,
+   "notes": "Không áp dụng cho người thân tự nguyện."
+  },
+  {
+   "id": "dermoid",
+   "title": "Bệnh u bì (u quái)",
+   "limitPerYear": 20000000
+  },
+  {
+   "id": "mental",
+   "title": "Rối loạn tâm thần, thần kinh cấp và mãn tính",
+   "notes": "Tối đa 10% số tiền bảo hiểm nội trú và ngoại trú."
+  },
+  {
+   "id": "implants",
+   "title": "Stent, van tim duy trì sự sống",
+   "notes": "Đồng chi trả 30%."
+  },
+  {
+   "id": "public-birth",
+   "title": "Chi phí yêu cầu khi sinh tại bệnh viện công",
+   "notes": "Có bảng kê: tối đa 10.000.000 đ/ca. Không bảng kê: tối đa 20.000.000 đ hoặc giới hạn thai sản, lấy mức thấp hơn."
+  },
+  {
+   "id": "public-surgery-package",
+   "title": "Phẫu thuật trọn gói không bảng kê tại bệnh viện công",
+   "notes": "Tối đa 10.000.000 đ/ca; không áp dụng cho thai sản."
+  },
+  {
+   "id": "ivf",
+   "title": "Mang thai bằng hỗ trợ sinh sản",
+   "notes": "Trả chi phí sinh và khám thai; không trả chi phí thụ tinh và biến chứng."
+  },
+  {
+   "id": "skin",
+   "title": "Mụn, rụng tóc, nám khi liên quan điều trị bệnh lý theo chỉ định"
+  },
+  {
+   "id": "epidemic",
+   "title": "Dịch bệnh, đại dịch được công bố"
+  },
+  {
+   "id": "vaccine",
+   "title": "Biến chứng sau tiêm chủng trong thời hạn bảo hiểm"
+  },
+  {
+   "id": "long-prescription",
+   "title": "Đơn thuốc dài ngày cho bệnh cần điều trị dài ngày",
+   "notes": "Tối đa 90 ngày."
+  },
+  {
+   "id": "tuberculosis",
+   "title": "Bệnh lao"
+  }
+ ],
+ "waitingPeriods": {
+  "employee": [
+   "Sảy thai, biến chứng thai sản: 60 ngày (trả theo tỷ lệ)",
+   "Sinh con: 270 ngày (trả theo tỷ lệ)",
+   "Tử vong, thương tật vĩnh viễn do bệnh có sẵn, bệnh đặc biệt, thai sản, không rõ nguyên nhân: 12 tháng",
+   "Các thời gian chờ khác được miễn"
+  ],
+  "sponsored": [
+   "Sảy thai, biến chứng thai sản: 60 ngày (trả theo tỷ lệ)",
+   "Sinh con: 270 ngày (trả theo tỷ lệ)",
+   "Các thời gian chờ khác được miễn"
+  ],
+  "voluntary": [
+   "Bệnh đặc biệt và bệnh có sẵn: 6 tháng",
+   "Sảy thai, biến chứng thai sản: 60 ngày",
+   "Sinh con: 270 ngày",
+   "Các thời gian chờ khác được miễn"
+  ]
+ },
+ "exclusions": [
+  {
+   "id": "x01",
+   "text": "Người không đủ điều kiện tham gia",
+   "keywords": [],
+   "extensionIds": []
+  },
+  {
+   "id": "x02",
+   "text": "Vi phạm pháp luật, nội quy",
+   "keywords": [],
+   "extensionIds": []
+  },
+  {
+   "id": "x03",
+   "text": "Tử vong không rõ nguyên nhân, đột tử",
+   "keywords": [
+    "đột tử"
+   ],
+   "extensionIds": []
+  },
+  {
+   "id": "x04",
+   "text": "Bệnh, dị tật bẩm sinh và di truyền",
+   "keywords": [
+    "bẩm sinh",
+    "di truyền"
+   ],
+   "extensionIds": []
+  },
+  {
+   "id": "x05",
+   "text": "Cố ý tự gây thương tích, tự tử",
+   "keywords": [
+    "tự tử"
+   ],
+   "extensionIds": []
+  },
+  {
+   "id": "x06",
+   "text": "Đánh nhau, ẩu đả (trừ cứu người, tự vệ)",
+   "keywords": [
+    "đánh nhau"
+   ],
+   "extensionIds": []
+  },
+  {
+   "id": "x07",
+   "text": "Ảnh hưởng của rượu bia vượt ngưỡng cho phép",
+   "keywords": [
+    "rượu",
+    "nồng độ cồn"
+   ],
+   "extensionIds": []
+  },
+  {
+   "id": "x08",
+   "text": "Ma túy, chất kích thích, chất cấm",
+   "keywords": [
+    "ma túy"
+   ],
+   "extensionIds": []
+  },
+  {
+   "id": "x09",
+   "text": "Điều trị thử nghiệm, chưa được khoa học công nhận",
+   "keywords": [
+    "thử nghiệm"
+   ],
+   "extensionIds": []
+  },
+  {
+   "id": "x10",
+   "text": "Tiêm chủng, vắc-xin",
+   "keywords": [
+    "vắc xin",
+    "tiêm chủng"
+   ],
+   "extensionIds": [
+    "vaccine"
+   ]
+  },
+  {
+   "id": "x11",
+   "text": "Chi phí theo yêu cầu, không cần thiết về y tế hoặc không có chỉ định",
+   "keywords": [
+    "theo yêu cầu"
+   ],
+   "extensionIds": [
+    "surgery-on-demand",
+    "exam-on-demand",
+    "public-birth"
+   ]
+  },
+  {
+   "id": "x12",
+   "text": "Thẩm mỹ, tạo hình, chăm sóc da không vì bệnh lý",
+   "keywords": [
+    "thẩm mỹ"
+   ],
+   "extensionIds": []
+  },
+  {
+   "id": "x13",
+   "text": "Ngoài phạm vi lãnh thổ được bảo hiểm",
+   "keywords": [],
+   "extensionIds": []
+  },
+  {
+   "id": "x14",
+   "text": "Ngoài thời hạn bảo hiểm",
+   "keywords": [],
+   "extensionIds": []
+  },
+  {
+   "id": "x15",
+   "text": "Trong thời gian chờ",
+   "keywords": [],
+   "extensionIds": []
+  },
+  {
+   "id": "x16",
+   "text": "Thực phẩm chức năng, chế phẩm không phải thuốc",
+   "keywords": [
+    "thực phẩm chức năng"
+   ],
+   "extensionIds": []
+  },
+  {
+   "id": "x17",
+   "text": "Vitamin, thuốc bổ, nước muối biển khi điều trị ngoại trú; dược mỹ phẩm",
+   "keywords": [
+    "vitamin",
+    "mỹ phẩm"
+   ],
+   "extensionIds": [
+    "vitamin",
+    "nasal"
+   ]
+  },
+  {
+   "id": "x18",
+   "text": "Chiến tranh, khủng bố, bạo loạn",
+   "keywords": [],
+   "extensionIds": []
+  },
+  {
+   "id": "x19",
+   "text": "Khám chữa tại nhà hoặc nơi không phải cơ sở y tế",
+   "keywords": [
+    "tại nhà"
+   ],
+   "extensionIds": []
+  },
+  {
+   "id": "x20",
+   "text": "Cung cấp thông tin không trung thực",
+   "keywords": [],
+   "extensionIds": []
+  },
+  {
+   "id": "x21",
+   "text": "Chi phí tìm nguồn và của người hiến tạng",
+   "keywords": [
+    "hiến tạng"
+   ],
+   "extensionIds": []
+  },
+  {
+   "id": "x22",
+   "text": "Rối loạn tâm thần, hành vi, giấc ngủ, suy nhược, căng thẳng",
+   "keywords": [
+    "mất ngủ",
+    "stress",
+    "tự kỷ"
+   ],
+   "extensionIds": [
+    "mental"
+   ]
+  },
+  {
+   "id": "x23",
+   "text": "Hoạt động hàng không (trừ hành khách)",
+   "keywords": [],
+   "extensionIds": []
+  },
+  {
+   "id": "x24",
+   "text": "Công việc rủi ro, độc hại cao",
+   "keywords": [],
+   "extensionIds": []
+  },
+  {
+   "id": "x25",
+   "text": "Dụng cụ chỉnh hình, trợ thính, thị lực, nạng, xe lăn, máy hỗ trợ cá nhân",
+   "keywords": [
+    "xe lăn",
+    "máy trợ thính",
+    "khí dung"
+   ],
+   "extensionIds": []
+  },
+  {
+   "id": "x26",
+   "text": "Bộ phận giả, vật tư thay thế không nhằm duy trì sự sống",
+   "keywords": [
+    "bộ phận giả"
+   ],
+   "extensionIds": []
+  },
+  {
+   "id": "x27",
+   "text": "Động đất, núi lửa, sóng thần, phóng xạ",
+   "keywords": [],
+   "extensionIds": []
+  },
+  {
+   "id": "x28",
+   "text": "Thể thao chuyên nghiệp hoặc nguy hiểm",
+   "keywords": [],
+   "extensionIds": []
+  },
+  {
+   "id": "x29",
+   "text": "Diễn tập, chiến đấu, lực lượng vũ trang",
+   "keywords": [],
+   "extensionIds": []
+  },
+  {
+   "id": "x30",
+   "text": "Khám, xét nghiệm không có kết luận bệnh hoặc kết luận bình thường",
+   "keywords": [],
+   "extensionIds": [
+    "normal-result"
+   ]
+  },
+  {
+   "id": "x31",
+   "text": "Khám sức khỏe tổng quát, tầm soát",
+   "keywords": [
+    "tổng quát",
+    "tầm soát"
+   ],
+   "extensionIds": [
+    "diagnostics-only"
+   ]
+  },
+  {
+   "id": "x32",
+   "text": "Bệnh nghề nghiệp (trừ quyền lợi tai nạn)",
+   "keywords": [
+    "bệnh nghề nghiệp"
+   ],
+   "extensionIds": []
+  },
+  {
+   "id": "x33",
+   "text": "Kiểm soát cân nặng, suy dinh dưỡng, béo phì",
+   "keywords": [
+    "béo phì",
+    "giảm cân"
+   ],
+   "extensionIds": []
+  },
+  {
+   "id": "x34",
+   "text": "Kế hoạch hóa gia đình, vô sinh, rối loạn chức năng sinh dục, mãn kinh, đổi giới tính",
+   "keywords": [
+    "vô sinh",
+    "hiếm muộn",
+    "mãn kinh"
+   ],
+   "extensionIds": []
+  },
+  {
+   "id": "x35",
+   "text": "Đại dịch được công bố",
+   "keywords": [],
+   "extensionIds": [
+    "epidemic"
+   ]
+  },
+  {
+   "id": "x36",
+   "text": "Bệnh lây qua đường tình dục, HIV/AIDS",
+   "keywords": [
+    "HIV",
+    "lậu",
+    "giang mai"
+   ],
+   "extensionIds": []
+  },
+  {
+   "id": "x37",
+   "text": "Kiểm tra mắt, tật khúc xạ, lác, đục thủy tinh thể không do bệnh lý",
+   "keywords": [
+    "cận thị",
+    "loạn thị",
+    "viễn thị",
+    "lác"
+   ],
+   "extensionIds": [
+    "optical.annual"
+   ]
+  },
+  {
+   "id": "x38",
+   "text": "Kiểm tra thính lực, thoái hóa thính giác",
+   "keywords": [
+    "thính lực"
+   ],
+   "extensionIds": []
+  },
+  {
+   "id": "x39",
+   "text": "Thụ tinh nhân tạo, ống nghiệm và biến chứng",
+   "keywords": [
+    "thụ tinh"
+   ],
+   "extensionIds": [
+    "ivf"
+   ]
+  },
+  {
+   "id": "x40",
+   "text": "Bệnh phong",
+   "keywords": [
+    "bệnh phong"
+   ],
+   "extensionIds": []
+  }
+ ]
+}

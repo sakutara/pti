@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #ffffff;
+  --color-surface-2: #f1f5f9;
+  --color-ink: #0f172a;
+  --color-ink-muted: #475569;
+  --color-accent: #2563eb;
+
+  /* Fluid scale: 360px → 1280px viewport */
+  --text-fluid-sm: clamp(0.875rem, 0.84rem + 0.15vw, 0.95rem);
+  --text-fluid-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-fluid-lg: clamp(1.125rem, 1.03rem + 0.45vw, 1.375rem);
+  --text-fluid-xl: clamp(1.375rem, 1.2rem + 0.9vw, 2rem);
+  --spacing-gutter: clamp(1rem, 0.7rem + 1.3vw, 2rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-surface: #0b1120;
+    --color-surface-2: #1e293b;
+    --color-ink: #e2e8f0;
+    --color-ink-muted: #94a3b8;
+    --color-accent: #60a5fa;
+  }
+}
+:root[data-theme="dark"] {
+  --color-surface: #0b1120;
+  --color-surface-2: #1e293b;
+  --color-ink: #e2e8f0;
+  --color-ink-muted: #94a3b8;
+  --color-accent: #60a5fa;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+input, select, textarea { font-size: max(16px, 1em); }
