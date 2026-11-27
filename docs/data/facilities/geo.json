@@ -1,0 +1,1620 @@
+{
+  "source": "OpenStreetMap Nominatim (© OpenStreetMap contributors, ODbL)",
+  "updatedAt": "2026-11-27T05:25:59.435Z",
+  "points": {
+    "f-dedeb517e21c": {
+      "lat": 21.031271,
+      "lng": 105.835166,
+      "by": "name",
+      "key": "BỆNH VIỆN ĐA KHOA XANH PÔN|12 Chu Văn An, Phường Ba Đình, Thành phố Hà Nội"
+    },
+    "f-772c72067939": {
+      "lat": 20.962481,
+      "lng": 105.743952,
+      "by": "name",
+      "key": "BệNH VIệN NHI Hà NộI|Đường Nguyễn Trác, Phường Dương Nội, Thành phố Hà Nội"
+    },
+    "f-19c631832166": {
+      "lat": 21.007913,
+      "lng": 105.74717,
+      "by": "name",
+      "key": "BệNH VIệN ĐA KHOA QUốC Tế VINMEC SMART CITY|Lô đất ký hiệu F2-CCTP3, Khu đô thị mới Tây Mỗ - Đại Mỗ - Vinhomes Park, Đường Tây Mỗ, Thành phố Hà Nội"
+    },
+    "f-2f19e5030a94": {
+      "lat": 21.079656,
+      "lng": 105.816299,
+      "by": "address",
+      "key": "Bệnh Viện Tim Hà Nội - CS Lạc Long Quân|Số 695 Lạc Long Quân, Phường Tây Hồ, Thành phố Hà Nội"
+    },
+    "f-4d422ad3fc0a": {
+      "lat": 21.040572,
+      "lng": 105.876923,
+      "by": "name",
+      "key": "Bệnh viên Đa Khoa Tâm Anh|Số 108 Hoàng Như Tiếp, Phường Bồ Đề, Thành phố Hà Nội"
+    },
+    "f-35f47ecf085f": {
+      "lat": 20.990459,
+      "lng": 105.831365,
+      "by": "address",
+      "key": "Bệnh viện Bưu Điện Hà Nội - CS: Trần Điền|Số 49 phố Trần Điền, Phường Phương Liệt, Thành phố Hà Nội"
+    },
+    "f-76c24651ba2f": {
+      "lat": 21.001817,
+      "lng": 105.839672,
+      "by": "name",
+      "key": "Bệnh viện Bạch Mai|Số 78, đường Giải Phóng, Phường Kim Liên, Thành phố Hà Nội"
+    },
+    "f-0c03b409ae90": {
+      "lat": 21.008143,
+      "lng": 105.819301,
+      "by": "name",
+      "key": "Bệnh viện Châm cứu Trung Ương|49 phố Thái Thịnh, Phường Đống Đa, Thành phố Hà Nội"
+    },
+    "f-f46efed66806": {
+      "lat": 21.009636,
+      "lng": 105.769297,
+      "by": "address",
+      "key": "Bệnh viện Hồng Ngọc- Phúc Trường Minh|Số 8 Đường Châu Văn Liêm, Phường Từ Liêm, Thành phố Hà Nội"
+    },
+    "f-032fd71145eb": {
+      "lat": 21.028369,
+      "lng": 105.846997,
+      "by": "name",
+      "key": "Bệnh viện Hữu Nghị Việt Đức|40 Tràng Thi, Phường Hoàn Kiếm, Thành phố Hà Nội"
+    },
+    "f-5f591a37864d": {
+      "lat": 21.047649,
+      "lng": 105.847429,
+      "by": "address",
+      "key": "Bệnh viện Medlatec (Công ty TNHH công nghệ và xét nghiệm y học 42-44 Nghĩa D?ng)|Số 42-44 Phố Nghĩa Dũng, Phường Hồng Hà, Thành phố Hà Nội"
+    },
+    "f-fbc9508e0663": {
+      "lat": 21.012994,
+      "lng": 105.849668,
+      "by": "name",
+      "key": "Bệnh viện Mắt Quốc Tế DND|126 - 128 Bùi Thị Xuân, Phường Hai Bà Trưng, Thành phố Hà Nội"
+    },
+    "f-be389507e17a": {
+      "lat": 21.017844,
+      "lng": 105.811104,
+      "by": "address",
+      "key": "Bệnh viện Nhi trung ương - Khoa Quốc tế|Số 18 ngõ 879, đường La Thành, Phường Láng, Thành phố Hà Nội"
+    },
+    "f-605c0a884712": {
+      "lat": 21.002125,
+      "lng": 105.838842,
+      "by": "name",
+      "key": "Bệnh viện Nhiệt đới Trung ương - Khoa Theo yêu cầu|Thôn Bầu, Xã Thiên Lộc, Thành phố Hà Nội"
+    },
+    "f-7a46ac990e58": {
+      "lat": 21.012308,
+      "lng": 105.815076,
+      "by": "name",
+      "key": "Bệnh viện Nội tiết Trung ương (Ngọc Hồi)|Đường Nguyễn Bồ (Ngõ 215 Ngọc Hồi), Phường Yên Sở, Thành phố Hà Nội"
+    },
+    "f-242178c30c77": {
+      "lat": 21.012308,
+      "lng": 105.815076,
+      "by": "name",
+      "key": "Bệnh viện Nội tiết Trung ương (Thái Thịnh)|Số 80 Ngõ 82 Yên Lãng, Phường Đống Đa, Thành phố Hà Nội"
+    },
+    "f-46956208c9e7": {
+      "lat": 21.005897,
+      "lng": 105.849568,
+      "by": "address",
+      "key": "Bệnh viện Phụ sản An Thịnh|496 Bạch Mai, Phường Bạch Mai, Thành phố Hà Nội"
+    },
+    "f-45611194f9a4": {
+      "lat": 21.011111,
+      "lng": 105.860275,
+      "by": "name",
+      "key": "Bệnh viện Phụ sản Hà Nội|Số 929 La Thành, Phường Giảng Võ, Thành phố Hà Nội"
+    },
+    "f-c18d0eadf356": {
+      "lat": 21.011111,
+      "lng": 105.860275,
+      "by": "name",
+      "key": "Bệnh viện Phụ sản Hà Nội cơ sở 2 (Cảm Hội)|Số 38 Cảm Hội, Phường Hai Bà Trưng, Thành phố Hà Nội"
+    },
+    "f-fcff4eb7ee18": {
+      "lat": 20.972169,
+      "lng": 105.776564,
+      "by": "name",
+      "key": "Bệnh viện Phụ sản Hà Nội cơ sở 3 (Quang Trung)|Số 10 Quang Trung, Phường Hà Đông, Thành phố Hà Nội"
+    },
+    "f-63d8c8c774cf": {
+      "lat": 21.002879,
+      "lng": 105.859178,
+      "by": "name",
+      "key": "Bệnh viện Thanh Nhàn|Số 42 Thanh Nhàn, Phường Bạch Mai, Thành phố Hà Nội"
+    },
+    "f-3e4b17dccab1": {
+      "lat": 21.023823,
+      "lng": 105.843914,
+      "by": "name",
+      "key": "Bệnh viện Tim Hà Nội|Số 92 Trần Hưng Đạo, Phường Cửa Nam, Thành phố Hà Nội"
+    },
+    "f-e6406a3e8c57": {
+      "lat": 21.003433,
+      "lng": 105.840187,
+      "by": "name",
+      "key": "Bệnh viện Việt Pháp Hà Nội|Số 01 Phố Phương Mai, Phường Kim Liên, Thành phố Hà Nội"
+    },
+    "f-a7fb866a5fc7": {
+      "lat": 21.042474,
+      "lng": 105.844262,
+      "by": "name",
+      "key": "Bệnh viện Đa Khoa Hồng Ngọc|Số 55 Phố Yên Ninh, Phường Ba Đình, Thành phố Hà Nội"
+    },
+    "f-eda13545bad5": {
+      "lat": 20.995972,
+      "lng": 105.866753,
+      "by": "address",
+      "key": "Bệnh viện Đa Khoa quốc tế VINMEC|Số 458 Minh Khai, Phường Vĩnh Tuy, Thành phố Hà Nội"
+    },
+    "f-e94172cb3c5b": {
+      "lat": 21.026724,
+      "lng": 105.826033,
+      "by": "address",
+      "key": "Bệnh viện Đa Khoa tư nhân Hà Thành|Số 57-59-61-63 Vũ Thạnh, Phường Ô Chợ Dừa, Thành phố Hà Nội"
+    },
+    "f-e10ae9a695a5": {
+      "lat": 18.711149,
+      "lng": 105.67794,
+      "by": "name",
+      "key": "Bệnh viện Đa khoa An Việt|Số 1E Trường Chinh, Phường Tương Mai, Thành phố Hà Nội"
+    },
+    "f-92a17b254dc6": {
+      "lat": 21.04514,
+      "lng": 105.814401,
+      "by": "name",
+      "key": "Bệnh viện Đa khoa Quốc tế Thu Cúc|Số 286, 288, 290, 292, 294 Thụy Khuê, Phường Tây Hồ, Thành phố Hà Nội"
+    },
+    "f-7250177e1bfa": {
+      "lat": 21.002172,
+      "lng": 105.83015,
+      "by": "name",
+      "key": "Bệnh viện Đại học Y Hà Nội|Số 1 Tôn Thất Tùng, Phường Kim Liên, Thành phố Hà Nội"
+    },
+    "f-8ed599cd747b": {
+      "lat": 20.978588,
+      "lng": 105.869045,
+      "by": "name",
+      "key": "Bệnh viện Đại học Y Hà Nội - Cơ sở Hoàng Mai|Số 587 Tam Trinh, Phường Hoàng Mai, Thành phố Hà Nội"
+    },
+    "f-e9b32c5516ed": {
+      "lat": 21.018344,
+      "lng": 105.841601,
+      "by": "name",
+      "key": "Bệnh viện đa khoa Hồng Phát|Số 219, đường Lê Duẩn, Phường Hai Bà Trưng, Thành phố Hà Nội"
+    },
+    "f-67764f8656f4": {
+      "lat": 21.069922,
+      "lng": 105.774942,
+      "by": "name",
+      "key": "Bệnh viện đa khoa Phương Đông|Số 9 Phố Viên, Phường Đông Ngạc, Thành phố Hà Nội"
+    },
+    "f-551a52234f67": {
+      "lat": 21.042924,
+      "lng": 105.870996,
+      "by": "name",
+      "key": "Bệnh viện đa khoa Quốc tế Bắc Hà|Số 137 Phố Nguyễn Văn Cừ, Phường Bồ Đề, Thành phố Hà Nội"
+    },
+    "f-68dcb597cc19": {
+      "lat": 21.028333,
+      "lng": 105.854041,
+      "by": "province",
+      "key": "Bệnh viện đại học Phenikaa|Tổ 5 Hòe Thị, Phường Xuân Phương, Thành phố Hà Nội"
+    },
+    "f-f6686d76542b": {
+      "lat": 21.038408,
+      "lng": 105.792745,
+      "by": "address",
+      "key": "Nha Khoa Quốc tế Việt Pháp - CN Trần Đăng Ninh|Số 69 Trần Đăng Ninh, tổ 8, Phường Cầu Giấy, Thành phố Hà Nội"
+    },
+    "f-2783f7528d14": {
+      "lat": 21.017859,
+      "lng": 105.843055,
+      "by": "address",
+      "key": "Nha khoa Home|Số 30, Triệu Việt Vương, Phường Hai Bà Trưng, Thành phố Hà Nội"
+    },
+    "f-e79edebbfb05": {
+      "lat": 21.014162,
+      "lng": 105.83372,
+      "by": "address",
+      "key": "Nha khoa Medita (Công ty CP CSSK MEDITA)|Số 6 phố Nam Đồng, Phường Đống Đa, TP Hà Nội"
+    },
+    "f-1c7f2edb0bd5": {
+      "lat": 21.031455,
+      "lng": 105.844879,
+      "by": "address",
+      "key": "Nha khoa Navii CN Cửa Đông|Số 42 Cửa Đông, Phường Hoàn Kiếm, Thành phố Hà Nội"
+    },
+    "f-00ad88f51067": {
+      "lat": 21.02048,
+      "lng": 105.842045,
+      "by": "address",
+      "key": "Nha khoa Quốc tế Việt Pháp - CN Nguyễn Du|Số 29 phố Nguyễn Du, Phường Hai Bà Trưng, Thành phố Hà Nội"
+    },
+    "f-4d2661e2204a": {
+      "lat": 21.008485,
+      "lng": 105.802076,
+      "by": "address",
+      "key": "Nha khoa Quốc tế Việt Pháp - CN Trần Duy Hưng|Số 24 Trần Duy Hưng, Phường Yên Hòa, Thành phố Hà Nội"
+    },
+    "f-4e7537fc175c": {
+      "lat": 21.014358,
+      "lng": 105.795811,
+      "by": "address",
+      "key": "Nha khoa Quốc tế Việt Pháp - CN Vũ Phạm Hàm|Số 74 phố Vũ Phạm Hàm, Phường Yên Hòa, Thành phố Hà Nội"
+    },
+    "f-8be89d1322f4": {
+      "lat": 20.954362,
+      "lng": 105.775082,
+      "by": "address",
+      "key": "Nha khoa Quốc tế Việt Pháp- CN Văn Phú|Số 358, Block 36, Ô H – TT5, Khu nhà ở Hi Brand, Khu ĐTM Văn Phú, Phường Kiến Hưng, Thành phố Hà Nội"
+    },
+    "f-c2ac9d179e16": {
+      "lat": 21.007566,
+      "lng": 105.865651,
+      "by": "address",
+      "key": "Nha khoa công nghệ cao Sunshine Dental Clinic|146 Lạc Trung, Phường Vĩnh Tuy, Thành phố Hà Nội"
+    },
+    "f-38960981d948": {
+      "lat": 21.010017,
+      "lng": 105.82336,
+      "by": "address",
+      "key": "Nha khoa quốc tế Việt Pháp - CN Thái Hà|Số 6 Thái Hà, Phường Đống Đa, Thành phố Hà Nội"
+    },
+    "f-8548f7be8c1d": {
+      "lat": 21.020333,
+      "lng": 105.847185,
+      "by": "address",
+      "key": "Nha khoa thẩm mỹ Shinbi Dental|33 Trần Quốc Toản,Phường Trần Hưng Đạo, TPhườngHN"
+    },
+    "f-12f609b7c3ed": {
+      "lat": 21.016029,
+      "lng": 105.849495,
+      "by": "address",
+      "key": "Nha khoa úc Châu|Số 03 Nguyễn Du, Phường Hai Bà Trưng, Thành phố Hà Nội"
+    },
+    "f-42c321fb2bb7": {
+      "lat": 21.028333,
+      "lng": 105.854041,
+      "by": "province",
+      "key": "Phòng Khám Chuyên khoa Y Học Gia Đình Chân Trời Mới|Tầng 2- TTTM Mandarin Garden 2- Số 99 Tân Mai, Phường Hoàng Mai, Thành phố Hà Nội"
+    },
+    "f-456251a529bf": {
+      "lat": 21.081715,
+      "lng": 105.784569,
+      "by": "address",
+      "key": "Phòng Khám Đa Khoa Quốc Tế Vinmec Ocean Park|Tầng 1, Tòa nhà Hải Âu, Khu đô thị Vinhomes Ocean Park, Phường Xuân Phương, Thành phố Hà Nội"
+    },
+    "f-4de80d7bd8a6": {
+      "lat": 20.993819,
+      "lng": 105.867196,
+      "by": "name",
+      "key": "Phòng Khám Đa Khoa Quốc Tế Vinmec Times City|Số 458 Minh Khai, Phường Vĩnh Tuy, Thành phố Hà Nội"
+    },
+    "f-5a142fb4a591": {
+      "lat": 20.992866,
+      "lng": 105.801776,
+      "by": "name",
+      "key": "Phòng khám  đa khoa Medlatec- Thanh Xuân|Số 3 đường Khuất Duy Tiến, Phường Thanh Xuân, Thành phố Hà Nội"
+    },
+    "f-862e7e65d67f": {
+      "lat": 21.008014,
+      "lng": 105.820489,
+      "by": "address",
+      "key": "Phòng khám 125 Thái Thịnh|Số 125 - 127 Thái Thịnh, Phường Đống Đa, Thành phố Hà Nội"
+    },
+    "f-b1685cba8080": {
+      "lat": 21.028333,
+      "lng": 105.854041,
+      "by": "province",
+      "key": "Phòng khám Keangnam - BV Hồng Ngọc|Tầng 10 Tòa nhà 70 tầng, tòa nhà Keangnam Hanoi Landmark Tower, Phường Yên Hòa, Thành phố Hà Nội"
+    },
+    "f-6d61735384a4": {
+      "lat": 21.047261,
+      "lng": 105.814041,
+      "by": "name",
+      "key": "Phòng khám Medlatec|Số 99 đường Trích Sài, Phường Tây Hồ, Thành phố Hà Nội"
+    },
+    "f-309aabe7872c": {
+      "lat": 21.019166,
+      "lng": 105.825931,
+      "by": "address",
+      "key": "Phòng khám Nha khoa Lê Hưng và Cộng Sự|Số 3, Ngõ 45 Hào Nam, Phường Ô Chợ Dừa, Thành phố Hà Nội"
+    },
+    "f-02531ea09f34": {
+      "lat": 21.02048,
+      "lng": 105.842045,
+      "by": "address",
+      "key": "Phòng khám Nha khoa Nguyễn Du|Số 2 Nguyễn Du, Phường Cửa Nam, Thành phố Hà Nội"
+    },
+    "f-93ab40686663": {
+      "lat": 21.025727,
+      "lng": 105.791339,
+      "by": "address",
+      "key": "Phòng khám Răng hàm mặt Đại học Phenikaa|Tầng 4, Số 167 Hoàng Ngân, Phường Yên Hòa, Thành phố Hà Nội"
+    },
+    "f-c9035a66c76e": {
+      "lat": 21.028333,
+      "lng": 105.854041,
+      "by": "province",
+      "key": "Phòng khám Savico Long Biên - Bệnh viện Hồng Ngọc|Số 7 và số 9 đường Nguyễn Văn Linh, Phường Việt Hưng, Thành phố Hà Nội"
+    },
+    "f-c5ab5806ffe8": {
+      "lat": 20.981772,
+      "lng": 105.885896,
+      "by": "address",
+      "key": "Phòng khám Đa khoa Bệnh viện Đại học Y Hà Nội - cơ sở Vĩnh Hưng|Ngõ 471, đường Lĩnh Nam, Phường Vĩnh Hưng, Thành phố Hà Nội"
+    },
+    "f-45240891e815": {
+      "lat": 21.087042,
+      "lng": 105.605291,
+      "by": "name",
+      "key": "Phòng khám Đa khoa Hồng Ngọc - Tố Hữu|Tầng 1 HPC Landmark 105, Khu ĐTM Văn Khê, Phường Hà Đông, Thành phố Hà Nội"
+    },
+    "f-e927c5de541a": {
+      "lat": 21.018193,
+      "lng": 105.853597,
+      "by": "address",
+      "key": "Phòng khám Đa khoa Quốc tế TOMEC|Số 38 Lê Văn Hưu, Phường Cửa Nam, Thành phố Hà Nội"
+    },
+    "f-61d38fd8e5d3": {
+      "lat": 21.01701,
+      "lng": 105.855042,
+      "by": "address",
+      "key": "Phòng khám đa khoa Dr.Binh-Telecclinic-Chi nhanh công ty TNHH Giải Pháp E2E|11-13-15 Trần Xuân Soạn, Phường Hai Bà Trưng, Thành phố Hà Nội"
+    },
+    "f-250d1630c219": {
+      "lat": 21.028333,
+      "lng": 105.854041,
+      "by": "province",
+      "key": "Phòng khám đa khoa Hồng Ngọc- Nguyễn Tuân|Gian N02-L1-01-02 tầng 1 Khu dịch vụ, Tòa nhà Autumn -KĐT Gold Season, Số 47 Nguyễn Tuân, Phường Thanh Xuân, Thành phố Hà Nội"
+    },
+    "f-67d2dbf1ad54": {
+      "lat": 21.028333,
+      "lng": 105.854041,
+      "by": "province",
+      "key": "Phòng khám đa khoa Hồng Ngọc- Tây Hồ|Tầng 1&2 Tòa nhà NoVo chung cư Kosmo, 161 Xuân La, Phường Xuân Đỉnh, Thành phố Hà Nội"
+    },
+    "f-f8cb2a482cc6": {
+      "lat": 21.036058,
+      "lng": 105.789253,
+      "by": "address",
+      "key": "Phòng khám đa khoa Medlatec Duy Tân|Số 2, ngõ 82 phố Duy Tân, Phường Cầu Giấy, Thành phố Hà Nội"
+    },
+    "f-28f159455709": {
+      "lat": 21.008826,
+      "lng": 105.862963,
+      "by": "address",
+      "key": "Phòng khám đa khoa SBB|499 Trần Khát Chân, Phường Hai Bà Trưng, Thành phố Hà Nội"
+    },
+    "f-f0a276de8b46": {
+      "lat": 16.459299,
+      "lng": 107.625862,
+      "by": "name",
+      "key": "Phòng khám đa khoa Thanh Chân|Số 6 Nguyễn Thị Thập, KĐT Trung Hòa-Nhân Chính, Phường Yên Hòa, Thành phố Hà Nội"
+    },
+    "f-f96f5cd34e72": {
+      "lat": 21.03446,
+      "lng": 105.79471,
+      "by": "name",
+      "key": "Phòng khám đa khoa Tâm Anh Cầu Giấy|Tầng 1, 2, 3, 4, 5 Trung tâm thương mại - dịch vụ, Tòa nhà The West, số 265 Cầu Giấy, Thành phố Hà Nội"
+    },
+    "f-9663333cb181": {
+      "lat": 21.035095,
+      "lng": 105.791034,
+      "by": "name",
+      "key": "Phòng khám đa khoa bệnh viện Đại học Y Hà Nội cơ sở Cầu Giấy|Số 10 Trương Công Giai, Phường Cầu Giấy, Thành phố Hà Nội"
+    },
+    "f-acdefa52c119": {
+      "lat": 21.008336,
+      "lng": 105.795742,
+      "by": "name",
+      "key": "Phòng khám đa khoa quốc tế Thu Cúc|Tầng hầm và tầng 1, tòa nhà HH01, Eco Lakeview, 32 Đại Từ, Phường Định Công, Thành phố Hà Nội"
+    },
+    "f-bae80777af19": {
+      "lat": 21.008529,
+      "lng": 105.796192,
+      "by": "address",
+      "key": "Phòng khám đa khoa quốc tế Thu Cúc - CN Trần Duy Hưng|Số 216 Trần Duy Hưng, Phường Yên Hòa, Thành phố Hà Nội"
+    },
+    "f-eda5991d7c6b": {
+      "lat": 21.081715,
+      "lng": 105.784569,
+      "by": "address",
+      "key": "Phòng khám đa khoa trực thuộc công ty cổ phần Bệnh viện Đa khoa Sun Medical Việt Nam|Tầng 1, tòa nhà Times Tower, số 35 đường Lê Văn Lương, Phường Thanh Xuân, Thành phố Hà Nội"
+    },
+    "f-e61490bf3d86": {
+      "lat": 21.006208,
+      "lng": 105.834264,
+      "by": "name",
+      "key": "Phòng khám đa khoa Đông Phương|497 Quang Trung, P Kiến Hưng, TP. Hà Nội"
+    },
+    "f-58b08802d00e": {
+      "lat": 21.016886,
+      "lng": 105.858677,
+      "by": "address",
+      "key": "Phòng khám đa khoa đại học Phenikaa Hoàng Ngân|Tầng 1, 2, 3 - Số 167 Hoàng Ngân, Phường Yên Hòa, Thành phố Hà Nội"
+    },
+    "f-7fc047bf355f": {
+      "lat": 21.032242,
+      "lng": 105.829364,
+      "by": "address",
+      "key": "T-Matsuoka Medical Center|Toà nhà 154 Phố Nguyễn Thái Học, Phường Ba Đình, Thành phố Hà Nội"
+    },
+    "f-70950a029440": {
+      "lat": 21.961097,
+      "lng": 105.844079,
+      "by": "province",
+      "key": "BệNH VIệN TNH PHổ YêN|TDP Chùa, Phường Vạn Xuân, Tỉnh Thái Nguyên"
+    },
+    "f-7428eb929fb8": {
+      "lat": 21.5869,
+      "lng": 105.828974,
+      "by": "name",
+      "key": "Bệnh viện quốc tế Thái Nguyên|Số 328 Lương Ngọc Quyến, Phường Phan Đình Phùng, Tỉnh Thái Nguyên"
+    },
+    "f-e18c554db5ab": {
+      "lat": 20.997054,
+      "lng": 106.975398,
+      "by": "address",
+      "key": "Bệnh viện Đa Khoa khu vực Bãi Cháy|Phường Việt Hưng, tỉnh Quảng Ninh"
+    },
+    "f-452b8726ca66": {
+      "lat": 20.95376,
+      "lng": 107.08843,
+      "by": "name",
+      "key": "Bệnh viện Đa Khoa tỉnh Quảng Ninh|Phố Tuệ Tĩnh, Phường Hồng Gai, Tỉnh Quảng Ninh"
+    },
+    "f-edc30b4b6a80": {
+      "lat": 20.951616,
+      "lng": 107.084746,
+      "by": "address",
+      "key": "Bệnh viện đa khoa quốc tế  Vinmec Hạ Long|Số 10A đường Lê Thánh Tông, Phường Hồng Gai, Tỉnh Quảng Ninh"
+    },
+    "f-1568fb502eb9": {
+      "lat": 20.945444,
+      "lng": 107.107308,
+      "by": "address",
+      "key": "Nha khoa úc Châu (VP) - CN Nguyễn Văn Cừ, Quảng Ninh|Số 7, Đường Nguyễn Văn Cừ, Phường Hạ Long, Tỉnh Quảng Ninh"
+    },
+    "f-91638b938ffd": {
+      "lat": 21.030609,
+      "lng": 106.781494,
+      "by": "address",
+      "key": "Nha khoa úc Châu (VP) - CN Quang Trung, Quảng Ninh|Số 90 đường Quang Trung, Tổ 18A, Khu 6, Phường Uông Bí, Tỉnh Quảng Ninh"
+    },
+    "f-7a14c6ed3797": {
+      "lat": 20.956263,
+      "lng": 107.076321,
+      "by": "province",
+      "key": "Nha khoa úc Châu (VP) - CN Thanh Đông, Quảng Ninh|Tổ 23A, khu Phú Thanh Đông, Phường Uông Bí, Tỉnh Quảng Ninh"
+    },
+    "f-12573e9e4c60": {
+      "lat": 20.949063,
+      "lng": 107.089801,
+      "by": "address",
+      "key": "Nha khoa úc Châu (VP) - CN Trần Hưng Đạo, Quảng Ninh|Số 362 đường Trần Hưng Đạo, Tổ 1 Khu 5, Phường Hồng Gai, Tỉnh Quảng Ninh"
+    },
+    "f-6d1ee9f0e0ad": {
+      "lat": 21.275857,
+      "lng": 106.200724,
+      "by": "province",
+      "key": "Bệnh viện TNH Việt Yên - Chi nhánh Công ty Cổ phần Bệnh viện TNH|Lô đất y tế, đường Nguyễn Thế Nho, khu dân cư Nguyễn Thế Nho, Phường Việt Yên, Tỉnh Bắc Ninh"
+    },
+    "f-7c96e10071d6": {
+      "lat": 21.275857,
+      "lng": 106.200724,
+      "by": "province",
+      "key": "Nha khoa Quốc tế Việt Pháp - CN Bắc Ninh|Số nhà 119 đường Huyền Quang, Phường Kinh Bắc, Tỉnh Bắc Ninh"
+    },
+    "f-01dd6f222d62": {
+      "lat": 21.174938,
+      "lng": 106.055337,
+      "by": "address",
+      "key": "Phòng khám Medlatec Bắc Ninh|Số 233 dường Nguyễn Văn Cừ, Phường Võ Cường, Tỉnh Bắc Ninh"
+    },
+    "f-a918c8dc091b": {
+      "lat": 21.324709,
+      "lng": 105.393455,
+      "by": "name",
+      "key": "Bệnh viện Đa Khoa Tỉnh Phú Thọ|Đường Nguyễn Tất Thành, Phường Việt Trì, Tỉnh Phú Thọ"
+    },
+    "f-dc04e2d0d494": {
+      "lat": 21.320601,
+      "lng": 105.593871,
+      "by": "address",
+      "key": "Phòng khám Medlatec Vĩnh Phúc|Đường nguyễn Tất Thành, khu dân cư số 2, Phường Vĩnh Phúc, Tỉnh Phú Thọ"
+    },
+    "f-06dc36fcbf7e": {
+      "lat": 20.851713,
+      "lng": 106.64227,
+      "by": "name",
+      "key": "Bệnh viện Hữu nghị Việt Tiệp|Số 1 Phố Nhà Thương, Phường Lê Chân, Thành phố Hải Phòng"
+    },
+    "f-10ba8663972a": {
+      "lat": 20.854176,
+      "lng": 106.673398,
+      "by": "address",
+      "key": "Bệnh viện quốc tế sản nhi Hải Phòng|124 Nguyễn Đức Cảnh, Phường Lê Chân, Thành phố Hải Phòng"
+    },
+    "f-46e6765aaf25": {
+      "lat": 20.853372,
+      "lng": 106.672731,
+      "by": "name",
+      "key": "Bệnh viện Đa Khoa quốc tế Hải Phòng|124 Nguyễn Đức Cảnh, Phường Lê Chân, Thành phố Hải Phòng"
+    },
+    "f-61195a10278a": {
+      "lat": 20.837162,
+      "lng": 106.696259,
+      "by": "name",
+      "key": "Bệnh viện Đại học Y Hải Phòng|số 225C Lạch Tray, Phường Ngô Quyền, Thành phố Hải Phòng"
+    },
+    "f-84dc07ceb999": {
+      "lat": 21.015121,
+      "lng": 105.801858,
+      "by": "address",
+      "key": "Bệnh viện đa khoa quốc tế Hải Phòng - Vĩnh Bảo|Tổ dân phố Tân Hòa, Phường Vĩnh Bảo, Thành phố Hải Phòng"
+    },
+    "f-70d758570e10": {
+      "lat": 20.830083,
+      "lng": 106.680053,
+      "by": "address",
+      "key": "Bệnh viện đa khoa quốc tế Vinmec Hải Phòng|Tổ 31, Phường An Biên, Thành phố Hải Phòng"
+    },
+    "f-03351dc766cf": {
+      "lat": 20.53537,
+      "lng": 105.956424,
+      "by": "name",
+      "key": "Bệnh viện Bạch Mai - Cơ sở Ninh Bình|Quốc lộ 21B, Phường Liêm Tuyền, Tỉnh Ninh Bình"
+    },
+    "f-a0f87d0f08d4": {
+      "lat": 20.068239,
+      "lng": 105.853203,
+      "by": "name",
+      "key": "Bệnh viện Đa khoa ACA|315B, Quốc lộ 1A (thị xã Bỉm Sơn), Phường Quang Trung, Tỉnh Thanh Hóa"
+    },
+    "f-1c4e434ff861": {
+      "lat": 19.978157,
+      "lng": 105.481611,
+      "by": "province",
+      "key": "Phòng khám đa khoa Medlatec Thanh Hóa|Số nhà 12-14 đường Phạm Ngũ Lão, Phường Hạc Thành, Tỉnh Thanh Hóa"
+    },
+    "f-b872ea2b5a04": {
+      "lat": 20.995972,
+      "lng": 105.866753,
+      "by": "name",
+      "key": "Bệnh viện quốc tế Vinh|Số 99, đường Phạm Đình Toái, Phường Vinh Phú, Tỉnh Nghệ An"
+    },
+    "f-9f595706fb80": {
+      "lat": 16.460727,
+      "lng": 107.58635,
+      "by": "name",
+      "key": "Bệnh viện Quốc tế trung ương Huế|3 Ngô Quyền, Phường Thuận Hóa, Thành phố Huế"
+    },
+    "f-d7f616715aa4": {
+      "lat": 16.059401,
+      "lng": 108.209875,
+      "by": "address",
+      "key": "Bệnh Viện Đa Khoa Hoàn Mỹ Đà Nẵng|Số 291 Nguyễn Văn Linh, Phường Thanh Khê, Thành phố Đà Nẵng"
+    },
+    "f-93f82802fa16": {
+      "lat": 16.066565,
+      "lng": 108.236097,
+      "by": "address",
+      "key": "Bệnh viện 199 Bộ Công AnĐà Nẵng|216 Nguyễn Công Trứ, Phường An Hải, Thành phố Đà Nẵng"
+    },
+    "f-5e6d05f1bc1f": {
+      "lat": 16.069941,
+      "lng": 108.184725,
+      "by": "address",
+      "key": "Bệnh viện Đa Khoa tư nhân Bình Dân|376 Trần Cao Vân, Phường Thanh Khê, Thành phố Đà Nẵng"
+    },
+    "f-e1603ab3ab77": {
+      "lat": 15.57209,
+      "lng": 108.478589,
+      "by": "name",
+      "key": "Bệnh viện Đa Khoa Đà Nẵng|124 đường Hải Phòng, Phường Hải Châu, Thành phố Đà Nẵng"
+    },
+    "f-2e0f08d8cbed": {
+      "lat": 16.053928,
+      "lng": 108.209201,
+      "by": "name",
+      "key": "Bệnh viện Đa khoa Gia Đình Đà Nẵng|73 Nguyễn Hữu Thọ, Phường Hòa Cường, Thành phố Đà Nẵng"
+    },
+    "f-a6009245e519": {
+      "lat": 15.583161,
+      "lng": 108.469566,
+      "by": "name",
+      "key": "Bệnh viện đa khoa Minh Thiện|101 Phan Bội Châu, Phường Bàn Thạch, Thành phố Đà Nẵng"
+    },
+    "f-631553f0c4a0": {
+      "lat": 16.017914,
+      "lng": 108.202787,
+      "by": "address",
+      "key": "Bệnh viện đa khoa Tâm Trí|Số 64 Cách Mạng Tháng 8, Phường Cẩm Lệ, Thành phố Đà Nẵng"
+    },
+    "f-d5c22d37f343": {
+      "lat": 15.909498,
+      "lng": 108.239123,
+      "by": "name",
+      "key": "Bệnh viện đa khoa Vĩnh Đức|Quốc lộ 1A, Phường Điện Bàn Đông, Thành phố Đà Nẵng"
+    },
+    "f-62097d0bf64a": {
+      "lat": 16.038588,
+      "lng": 108.211235,
+      "by": "name",
+      "key": "Bệnh viện đa khoa quốc tế Vinmec Đà Nẵng|Đường 30 tháng 4, Khu dân cư số 4 Nguyễn Tri Phương, Phường Hòa Cường, Thành phố Đà Nẵng"
+    },
+    "f-0973e4e37e6b": {
+      "lat": 16.066343,
+      "lng": 108.210319,
+      "by": "address",
+      "key": "Nha Khoa Happy/ Bác sĩ Vũ Duy Hưng|26 Hàm Nghi, Phường Thanh Khê, Thành phố Đà Nẵng"
+    },
+    "f-b7e6cc462f82": {
+      "lat": 16.065006,
+      "lng": 108.223517,
+      "by": "address",
+      "key": "Nha khoa IDC Danang|203 Trần Phú, Phường Hải Châu, Thành phố Đà Nẵng"
+    },
+    "f-ba04dac8619b": {
+      "lat": 16.041629,
+      "lng": 108.21753,
+      "by": "address",
+      "key": "Nha khoa úc Châu Đà Nẵng|Số 51, đường 2/9, Phường Hòa Cường, Thành phố Đà Nẵng"
+    },
+    "f-8f9c03b6d6aa": {
+      "lat": 16.078383,
+      "lng": 108.217104,
+      "by": "address",
+      "key": "Trung tâm chẩn đoán y khoa kỹ thuật cao Thiện Nhân Đà Nẵng|276-278-280 Đống Đa, Phường Hải Châu, Thành phố Đà Nẵng"
+    },
+    "f-21fcfa3f8238": {
+      "lat": 10.746535,
+      "lng": 106.63457,
+      "by": "name",
+      "key": "Bệnh viện Đa khoa Bình Định|39A Phạm Ngọc Thạch, Phường Quy Nhơn, Tỉnh Gia Lai"
+    },
+    "f-6d873200e80e": {
+      "lat": 12.213557,
+      "lng": 109.194258,
+      "by": "address",
+      "key": "Bệnh viện đa khoa Tâm Trí Nha Trang|57-59 Cao Thắng, Phường Nha Trang, Tỉnh Khánh Hòa"
+    },
+    "f-c8047abbd432": {
+      "lat": 12.207732,
+      "lng": 109.215362,
+      "by": "address",
+      "key": "Bệnh viện đa khoa quốc tế Vinmec Nha Trang|Đường Trần Phú, Tổ dân phố 1 Tây Sơn, Phường Nha Trang, Tỉnh Khánh Hòa"
+    },
+    "f-2f488aeef10e": {
+      "lat": 12.252256,
+      "lng": 109.188314,
+      "by": "address",
+      "key": "Phòng khám đa khoa Tín Đức|69 Trần Quý Cáp, Phường Nha Trang, Tỉnh Khánh Hòa"
+    },
+    "f-930f1c487ce4": {
+      "lat": 13.103109,
+      "lng": 109.311931,
+      "by": "address",
+      "key": "Bệnh viện Việt Mỹ Phú Yên|168 Trần Phú, Phường Tuy Hòa, Tỉnh Đắk Lắk"
+    },
+    "f-18b2eccc1e84": {
+      "lat": 11.661496,
+      "lng": 108.133528,
+      "by": "province",
+      "key": "Bệnh Viện Đa Khoa Hoàn Mỹ Đà Lạt|Đồi Long Thọ, Phường Xuân Hương - Đà Lạt, Tỉnh Lâm Đồng"
+    },
+    "f-3b701e561097": {
+      "lat": 11.483335,
+      "lng": 106.841986,
+      "by": "address",
+      "key": "Bệnh viện Hoàn Mỹ Bình Phước|Khu phố Tiến Hưng 3, Phường Bình Phước, Tỉnh Đồng Nai"
+    },
+    "f-027d365e4a9f": {
+      "lat": 10.952294,
+      "lng": 106.87193,
+      "by": "address",
+      "key": "Bệnh viện Răng Hàm Mặt Việt Anh Đức|3/11 Đồng Khởi, Khu phố 6, Phường Tam Hiệp, Tỉnh Đồng Nai"
+    },
+    "f-f83209c3001b": {
+      "lat": 10.955409,
+      "lng": 106.84254,
+      "by": "address",
+      "key": "Bệnh viện Thuận Mỹ ITO Đồng Nai.|F99 Võ Thị Sáu, Phường Trấn Biên, Tỉnh Đồng Nai"
+    },
+    "f-5ca1953fce59": {
+      "lat": 10.954679,
+      "lng": 106.851992,
+      "by": "address",
+      "key": "Bệnh viện Đa khoa Quốc tế Đồng Nai|1048A Phạm Văn Thuận, Phường Tam Hiệp, Tỉnh Đồng Nai"
+    },
+    "f-8285e25110fa": {
+      "lat": 10.967332,
+      "lng": 106.900394,
+      "by": "name",
+      "key": "Bệnh viện đa khoa Đồng Nai-2|Số 2, Đường Đồng Khởi, Phường Tam Hiệp, Tỉnh Đồng Nai"
+    },
+    "f-4629a61e1c48": {
+      "lat": 10.727108,
+      "lng": 106.705854,
+      "by": "name",
+      "key": "Nha khoa Nam Sài Gòn|141/7 Phạm Văn Thuận, P. Tam Hiệp, Tỉnh Đồng Nai"
+    },
+    "f-3fb9b6834c70": {
+      "lat": 21.079942,
+      "lng": 105.77321,
+      "by": "name",
+      "key": "Nha khoa Vạn Thành|1535 đường Phạm Văn Thuận, KP4, Phường Trấn Biên, Tỉnh Đồng Nai"
+    },
+    "f-6b4b420155e7": {
+      "lat": 11.438813,
+      "lng": 107.11179,
+      "by": "province",
+      "key": "Nha khoa Vạn Thành - CS Cách Mạng Tháng 8|17/11 - CMT8, Phường Quang Vinh, Tỉnh Đồng Nai"
+    },
+    "f-878e80ab0af2": {
+      "lat": 11.035941,
+      "lng": 107.171866,
+      "by": "address",
+      "key": "Nha khoa Vạn Thành - CS: Phúc Nhạc|14/D Phúc Nhạc, Phường Gia Kiệm, Tỉnh Đồng Nai"
+    },
+    "f-0b9afee29b81": {
+      "lat": 11.204471,
+      "lng": 107.361072,
+      "by": "address",
+      "key": "Nha khoa Vạn Thành - CS: Định Quán|Phố 1, Ấp 1, Phường Phú Hòa, Tỉnh Đồng Nai"
+    },
+    "f-3d27210c045e": {
+      "lat": 10.954679,
+      "lng": 106.851992,
+      "by": "address",
+      "key": "Phòng khám âu Mỹ Việt|203A Phạm Văn Thuận, P. Tam Hiệp, Tỉnh Đồng Nai"
+    },
+    "f-e309c3b25938": {
+      "lat": 10.804253,
+      "lng": 106.694172,
+      "by": "name",
+      "key": "Bệnh Viện Nhân Dân Gia Định|Số 1 Nơ Trang Long, Phường Gia Định, Thành phố Hồ Chí Minh"
+    },
+    "f-a7accc05a3b9": {
+      "lat": 10.751595,
+      "lng": 106.696342,
+      "by": "name",
+      "key": "Bệnh Viện Đa khoa Tân Hưng|871 Trần Xuân Soạn, Phường Tân Hưng, Thành phố Hồ Chí Minh"
+    },
+    "f-de9dab02f799": {
+      "lat": 11.142046,
+      "lng": 106.607076,
+      "by": "name",
+      "key": "Bệnh viện  Mỹ Phước|Đường TC3, Phường Bến Cát, Thành phố Hồ Chí Minh"
+    },
+    "f-706428f322fa": {
+      "lat": 10.791369,
+      "lng": 106.67872,
+      "by": "name",
+      "key": "Bệnh viện An Sinh|10 Trần Huy Liệu, Phường Phú Nhuận, Thành phố Hồ Chí Minh"
+    },
+    "f-ef1040432f59": {
+      "lat": 10.803284,
+      "lng": 106.694553,
+      "by": "name",
+      "key": "Bệnh viện Columbia Asia Bình Dương|Khu phố Hòa Lân, Phường Thuận Giao, Thành phố Hồ Chí Minh"
+    },
+    "f-dd446cb71973": {
+      "lat": 10.732434,
+      "lng": 106.717882,
+      "by": "name",
+      "key": "Bệnh viện FV|06 Nguyễn Lương Bằng, Phường Tân Mỹ, Thành phố Hồ Chí Minh"
+    },
+    "f-c7339dcec884": {
+      "lat": 10.740663,
+      "lng": 106.608053,
+      "by": "name",
+      "key": "Bệnh viện Gia An 115|số 05, đường 17A, khu phố 11, Phường An Lạc, Thành phố Hồ Chí Minh"
+    },
+    "f-9e7d8e0abfb6": {
+      "lat": 10.773726,
+      "lng": 106.716601,
+      "by": "province",
+      "key": "Bệnh viện Hoàn Mỹ Vạn Phúc - Công ty cổ phần Bệnh viện Hoàn Mỹ Bình Dương|Số 45 Đường Hồ Văn Cống - Khu Phố 4, Phường Chánh Hiệp, Thành phố Hồ Chí Minh"
+    },
+    "f-35fa81b2e21e": {
+      "lat": 10.756128,
+      "lng": 106.661663,
+      "by": "name",
+      "key": "Bệnh viện Hùng Vương|Số 128 Hồng Bàng, Phường Chợ Lớn, TP. Hồ Chí Minh"
+    },
+    "f-d23453577138": {
+      "lat": 10.782266,
+      "lng": 106.768498,
+      "by": "name",
+      "key": "Bệnh viện Lê Văn Thịnh|130 Lê Văn Thịnh, Phường Bình Trưng, Thành phố Hồ Chí Minh"
+    },
+    "f-c5e1e961b692": {
+      "lat": 10.811979,
+      "lng": 106.709149,
+      "by": "address",
+      "key": "Bệnh viện Ngoại khoa Sante|11A Đinh Bộ Lĩnh, Phường Bình Thạnh, Thành phố Hồ Chí Minh"
+    },
+    "f-5f72863bd499": {
+      "lat": 10.799848,
+      "lng": 106.667523,
+      "by": "name",
+      "key": "Bệnh viện Phụ sản Mekong|243A Hoàng Văn Thụ, Phường Tân Sơn Hòa, Thành phố Hồ Chí Minh"
+    },
+    "f-2b17a68fe8c8": {
+      "lat": 10.870353,
+      "lng": 106.708566,
+      "by": "address",
+      "key": "Bệnh viện Phụ sản-Nhi Quốc tế Hạnh Phúc|18 Đại lộ Bình Dương, Phường Bình Hòa, Thành phố Hồ Chí Minh"
+    },
+    "f-cd44fa43738f": {
+      "lat": 10.881295,
+      "lng": 106.698508,
+      "by": "address",
+      "key": "Bệnh viện Quốc tế Becamex|Đại lộ Bình Dương, Khu Gò Cát, Phường Lái Thiêu, Thành phố Hồ Chí Minh"
+    },
+    "f-577144b5cc2e": {
+      "lat": 10.767319,
+      "lng": 106.6968,
+      "by": "name",
+      "key": "Bệnh viện Tai mũi họng Sài Gòn|1-3 Trịnh Văn Cấn, Phường Bến Thành, Thành phố Hồ Chí Minh"
+    },
+    "f-c4bd204bb0b1": {
+      "lat": 10.983545,
+      "lng": 106.643124,
+      "by": "address",
+      "key": "Bệnh viện Thuận Mỹ TDM|152 Huỳnh Văn Cù, Phường Thủ Dầu Một, Thành phố Hồ Chí Minh"
+    },
+    "f-1b252a2eba03": {
+      "lat": 10.739106,
+      "lng": 106.617187,
+      "by": "name",
+      "key": "Bệnh viện Triều An|165 Kinh Dương Vương, Phường An Lạc, Thành phố Hồ Chí Minh"
+    },
+    "f-343aca900f1d": {
+      "lat": 10.768727,
+      "lng": 106.685898,
+      "by": "name",
+      "key": "Bệnh viện Từ Dũ|284 Cống Quỳnh, Phường Bến Thành, Thành phố Hồ Chí Minh"
+    },
+    "f-71e742098d29": {
+      "lat": 10.392456,
+      "lng": 107.128842,
+      "by": "name",
+      "key": "Bệnh viện Vũng Tàu|Số 27 đường 2/9, Phường Phước Thắng, Thành phố Hồ Chí Minh"
+    },
+    "f-07e4a847ebf5": {
+      "lat": 10.772135,
+      "lng": 106.699567,
+      "by": "name",
+      "key": "Bệnh viện nhân dân Gia Định cơ sở 2|Số 125 Lê Lợi, Phường Bến Thành, Thành phố Hồ Chí Minh"
+    },
+    "f-001d82f49d76": {
+      "lat": 10.787296,
+      "lng": 106.686325,
+      "by": "address",
+      "key": "Bệnh viện quốc tế Bernard 1|201 Nam Kỳ Khởi Nghĩa, Phường Xuân Hòa, Thành phố Hồ Chí Minh"
+    },
+    "f-5790f525616d": {
+      "lat": 10.804223,
+      "lng": 106.664968,
+      "by": "address",
+      "key": "Bệnh viện quốc tế Bernard 2|22 Phan Đình Giót, Phường Tân Sơn Hòa, Thành phố Hồ Chí Minh"
+    },
+    "f-e9ea210452ee": {
+      "lat": 10.741079,
+      "lng": 106.609121,
+      "by": "name",
+      "key": "Bệnh viện quốc tế City|Số 3, Đường 17A, Phường An Lạc, Thành phố Hồ Chí Minh"
+    },
+    "f-79853e505b84": {
+      "lat": 10.752039,
+      "lng": 106.620124,
+      "by": "address",
+      "key": "Bệnh viện tư nhân chuyên khoa Ngoại Minh Anh|Số 36, đường số 1B, Phường An Lạc, Thành phố Hồ Chí Minh"
+    },
+    "f-b0661bf03636": {
+      "lat": 10.756696,
+      "lng": 106.659726,
+      "by": "address",
+      "key": "Bệnh viện ĐH Y dược TP.HCM - Cơ sở 2|201 Nguyễn Chí Thanh, Phường Chợ Lớn, Thành phố Hồ Chí Minh"
+    },
+    "f-e4e48656621b": {
+      "lat": 10.79738,
+      "lng": 106.691858,
+      "by": "address",
+      "key": "Bệnh viện Đa Khoa Hoàn Mỹ Sài Gòn Premier|60-60A Phan Xích Long, Phường Cầu Kiệu, Thành phố Hồ Chí Minh"
+    },
+    "f-badf078764a0": {
+      "lat": 10.734731,
+      "lng": 106.625825,
+      "by": "address",
+      "key": "Bệnh viện Đa Khoa Quốc ánh|104-110 Đường số 54, Khu dân cư Tân Tạo, Thành phố Hồ Chí Minh"
+    },
+    "f-06901327c97b": {
+      "lat": 10.7702,
+      "lng": 106.670475,
+      "by": "address",
+      "key": "Bệnh viện Đa Khoa Tư nhân Vạn Hạnh|700 Sư Vạn Hạnh, Phường Hòa Hưng, Thành phố Hồ Chí Minh"
+    },
+    "f-08e7dafcd6d5": {
+      "lat": 10.848701,
+      "lng": 106.664703,
+      "by": "address",
+      "key": "Bệnh viện Đa Khoa tư nhân Hồng Đức III|32/2 Thong Nhat,  Ward 10, Go Vap Dist, HCMC"
+    },
+    "f-17a032d19ff7": {
+      "lat": 10.802467,
+      "lng": 106.666309,
+      "by": "name",
+      "key": "Bệnh viện Đa khoa Tâm Anh TP.HCM|2B Phổ Quang, Phường Tân Sơn Hòa, Thành phố Hồ Chí Minh"
+    },
+    "f-c9a990d8b144": {
+      "lat": 11.332546,
+      "lng": 106.601729,
+      "by": "address",
+      "key": "Bệnh viện Đa khoa Vạn Phúc 2|Thửa đất số 1903, tờ bản đồ số DC11.2, Khu phố Bình Phước B, Phường An Phú, Thành phố Hồ Chí Minh"
+    },
+    "f-10bc2c8f4b49": {
+      "lat": 10.799854,
+      "lng": 106.671249,
+      "by": "address",
+      "key": "Bệnh viện Đại học Y Dược TP HCM- CS3|221B Hoàng Văn Thụ, Phường Phú Nhuận, Thành phố Hồ Chí Minh"
+    },
+    "f-b9f037e5a5a4": {
+      "lat": 10.755217,
+      "lng": 106.66457,
+      "by": "address",
+      "key": "Bệnh viện Đại học Y dược HCM- CS1|215 Hồng Bàng, Phường Chợ Lớn, Thành phố Hồ Chí Minh"
+    },
+    "f-9f3fff183954": {
+      "lat": 10.794835,
+      "lng": 106.721743,
+      "by": "address",
+      "key": "Bệnh viện đa khoa Quốc tế Vinmec Central Park|720A Điện Biên Phủ, Phường Thạnh Mỹ Tây, Thành phố Hồ Chí Minh"
+    },
+    "f-7745c5e4a3db": {
+      "lat": 11.282112,
+      "lng": 106.363446,
+      "by": "name",
+      "key": "Bệnh viện đa khoa Sài Gòn Bình Dương|39 Hồ Văn Cống, khu 4, Phường Chánh Hiệp, Thành phố Hồ Chí Minh"
+    },
+    "f-802d56434061": {
+      "lat": 10.771353,
+      "lng": 106.670117,
+      "by": "name",
+      "key": "Bệnh viện đa khoa Vạn Hạnh - PK 2|781/B1-B3-B5 Lê Hồng Phong, Phường Hòa Hưng, Thành phố Hồ Chí Minh"
+    },
+    "f-b7269ba347fb": {
+      "lat": 10.928385,
+      "lng": 106.558539,
+      "by": "name",
+      "key": "Bệnh viện đa khoa Xuyên á|Số 42, đường Phan Văn Khải, ấp Chợ, Phường Củ Chi, Thành phố Hồ Chí Minh"
+    },
+    "f-d3f3d69174b6": {
+      "lat": 10.887912,
+      "lng": 106.773772,
+      "by": "name",
+      "key": "Bệnh viện đa khoa quốc tế Hoàn Mỹ Thủ Đức|241 Hoàng Cầm, Phường Linh Xuân, Thành phố Hồ Chí Minh"
+    },
+    "f-14350b70796b": {
+      "lat": 10.844735,
+      "lng": 106.678374,
+      "by": "address",
+      "key": "CHI NHáNH CôNG TY TNHH NHA KHOA SAIDO - CHI NHáNH Gò VấP|39 Đường Số 30, Phường An Nhơn, Thành phố Hồ Chí Minh"
+    },
+    "f-0072e52d317d": {
+      "lat": 10.768231,
+      "lng": 106.684743,
+      "by": "address",
+      "key": "Công Ty Cổ Phần Bệnh Viện Phẫu Thuật Thẩm Mỹ - Răng Hàm Mặt Worldwide|244A Cống Quỳnh, Phường Bến Thành, Thành phố Hồ Chí Minh"
+    },
+    "f-ceafdab10c48": {
+      "lat": 10.779733,
+      "lng": 106.699039,
+      "by": "address",
+      "key": "Công Ty TNHH Phòng Khám Đa Khoa JIO HEALTH|Tầng 1, Tòa nhà MPlaza Saigon, số 39 Lê Duẩn, Phường Sài Gòn, Thành phố Hồ Chí Minh"
+    },
+    "f-636da5686fe2": {
+      "lat": 10.773726,
+      "lng": 106.716601,
+      "by": "province",
+      "key": "Công ty CP Y tế Khang Phúc - Bệnh viện Đa khoa Việt Mỹ|655 - 657 - 659 Lạc Long Quân, Phường Bảy Hiền, Thành phố Hồ Chí Minh"
+    },
+    "f-3a73eecc818e": {
+      "lat": 10.767984,
+      "lng": 106.684333,
+      "by": "address",
+      "key": "DNTN Nha Khoa Minh Khai|199 Nguyễn Thị Minh Khai, Phường Cầu Ông Lãnh, Thành phố Hồ Chí Minh"
+    },
+    "f-7e5b244587b5": {
+      "lat": 10.791059,
+      "lng": 106.700069,
+      "by": "address",
+      "key": "Lá Trà Medical Spa|138 Nguyễn Văn Thủ, Sài Gòn, TP. HCM"
+    },
+    "f-c0c6ad1756e2": {
+      "lat": 10.765528,
+      "lng": 106.663236,
+      "by": "address",
+      "key": "NHA KHOA HELLO|Lô G7, Tòa nhà Rivera Park Saigon, 7/28 Đường Thành Thái, Phường Diên Hồng, Thành phố Hồ Chí Minh"
+    },
+    "f-dc43580bc135": {
+      "lat": 10.747995,
+      "lng": 106.728916,
+      "by": "address",
+      "key": "NHA KHOA HIDENTAL|161 Huỳnh Tấn Phát, Phường Tân Thuận, Thành phố Hồ Chí Minh"
+    },
+    "f-3dba17107ae1": {
+      "lat": 10.801019,
+      "lng": 106.683724,
+      "by": "address",
+      "key": "Nha Khoa Nụ Cười Duyên (Nice Smile)|306 Phan Xích Long, Phường Cầu Kiệu, Thành phố Hồ Chí Minh"
+    },
+    "f-2222017dfa83": {
+      "lat": 10.786106,
+      "lng": 106.681054,
+      "by": "address",
+      "key": "Nha Khoa Saint Paul|474 Lê Văn Sỹ, Phường Nhiêu Lộc, Thành phố Hồ Chí Minh"
+    },
+    "f-cfa201e68d55": {
+      "lat": 10.818049,
+      "lng": 106.698312,
+      "by": "address",
+      "key": "Nha Khoa Đakao (Quách Thị Bích Trâm)|123B Nơ Trang Long, P. Bình Lợi Trung, TP.HCM"
+    },
+    "f-a832ef340fce": {
+      "lat": 10.759144,
+      "lng": 106.668034,
+      "by": "name",
+      "key": "Nha khoa 2000|99 Hồ Hảo Hớn, Phường Cầu Ông Lãnh, Thành phố Hồ Chí Minh"
+    },
+    "f-f805862610aa": {
+      "lat": 10.759144,
+      "lng": 106.668034,
+      "by": "name",
+      "key": "Nha khoa 2000|502 Ngô Gia Tự, Phường An Đông, Thành phố Hồ Chí Minh"
+    },
+    "f-fbae095d271b": {
+      "lat": 10.789489,
+      "lng": 106.689934,
+      "by": "address",
+      "key": "Nha khoa 24seven dental care|261B Hai Bà Trưng, Phường Xuân Hòa, Thành phố Hồ Chí Minh"
+    },
+    "f-05bf5f09fa61": {
+      "lat": 10.744758,
+      "lng": 106.623016,
+      "by": "name",
+      "key": "Nha khoa Bình An|563-565 đường Trần Hưng Đạo, Phường Cầu Ông Lãnh, Thành phố Hồ Chí Minh"
+    },
+    "f-c44a69c1bcca": {
+      "lat": 10.976019,
+      "lng": 106.669208,
+      "by": "name",
+      "key": "Nha khoa Bình Dương|494 – 496 Đại lộ Bình Dương, Phường Hiệp Thành, Thành phố Hồ Chí Minh"
+    },
+    "f-7a77686cf613": {
+      "lat": 10.919538,
+      "lng": 106.712474,
+      "by": "address",
+      "key": "Nha khoa Bình Dương- CN Thuận An|75 Nguyễn Văn Tiết, Phường Lái Thiêu, Thành phố Hồ Chí Minh"
+    },
+    "f-6d14c4e765ac": {
+      "lat": 10.78393,
+      "lng": 106.666406,
+      "by": "address",
+      "key": "Nha khoa Cali|303 Cách Mạng Tháng 8, Phường Hòa Hưng, TP.HCM"
+    },
+    "f-d039fe8a0813": {
+      "lat": 10.839173,
+      "lng": 106.725319,
+      "by": "address",
+      "key": "Nha khoa Dr Vincare|19A, Đường 25, Khu phố 31, Phường Hiệp Bình, Thành phố Hồ Chí Minh"
+    },
+    "f-99124ee44574": {
+      "lat": 10.773726,
+      "lng": 106.716601,
+      "by": "province",
+      "key": "Nha khoa Hoa Sứ|89B Nguyễn Văn Trỗi (54 Cô Giang), Phường Vũng Tàu, Thành phố Hồ Chí Minh"
+    },
+    "f-e3713b757cf5": {
+      "lat": 10.760578,
+      "lng": 106.701656,
+      "by": "address",
+      "key": "Nha khoa Nhật Mỹ 2|Số 9 Vĩnh Hội, Phường Khánh Hội, TP. HCM"
+    },
+    "f-ee583bcb7ce9": {
+      "lat": 10.850924,
+      "lng": 106.754006,
+      "by": "address",
+      "key": "Nha khoa Nhật Tân CN: Lam Sơn|12 Lam Sơn, khu phố 61, Phường Linh Xuân, Thành phố Hồ Chí Minh"
+    },
+    "f-7c7e0ace7af7": {
+      "lat": 10.759835,
+      "lng": 106.69393,
+      "by": "address",
+      "key": "Nha khoa SGI|93 Hồ Hảo Hớn, Phường Cầu Ông Lãnh, Thành phố Hồ Chí Minh"
+    },
+    "f-95787c209d5e": {
+      "lat": 10.791648,
+      "lng": 106.669738,
+      "by": "address",
+      "key": "Nha khoa Saido CN Huỳnh Văn Bánh|258 Huỳnh Văn Bánh, Phường Phú Nhuận, Thành phố Hồ Chí Minh"
+    },
+    "f-df82b1ca942c": {
+      "lat": 10.79707,
+      "lng": 106.710585,
+      "by": "address",
+      "key": "Nha khoa Saint Paul - CN1: Xô Viết Nghệ Tĩnh|33 Xô Viết Nghệ Tĩnh, Phường Gia Định, Thành phố Hồ Chí Minh"
+    },
+    "f-5fb15b037c99": {
+      "lat": 10.792015,
+      "lng": 106.699115,
+      "by": "address",
+      "key": "Nha khoa Saint Paul - Trụ sở chính: Nguyễn Thị Minh Khai|18 Điện Biên Phủ, Phường Tân Định, Thành phố Hồ Chí Minh"
+    },
+    "f-04858e13257e": {
+      "lat": 10.773726,
+      "lng": 106.716601,
+      "by": "province",
+      "key": "Nha khoa Sakura|69 (R4-14) Lê Văn Thiêm, Hưng Phước 3, Phường Tân Hưng, Thành phố Hồ Chí Minh"
+    },
+    "f-7ed1fd21e7fd": {
+      "lat": 10.803233,
+      "lng": 106.687604,
+      "by": "address",
+      "key": "Nha khoa Smile Life|51 Trần Kế Xương, Phường Cầu Kiệu, Thành phố Hồ Chí Minh"
+    },
+    "f-7befca3fd0a9": {
+      "lat": 10.803817,
+      "lng": 106.68505,
+      "by": "address",
+      "key": "Nha khoa Song Phát - CS1: Phan Đăng Lưu|186 Phan Đăng Lưu, Phường Đức Nhuận, Thành phố Hồ Chí Minh"
+    },
+    "f-181aa6e1b25a": {
+      "lat": 10.768745,
+      "lng": 106.675155,
+      "by": "address",
+      "key": "Nha khoa Song Phát - CS2: Điện Biên Phủ|331 Điện Biên Phủ, Phường Bàn Cờ, Thành phố Hồ Chí Minh"
+    },
+    "f-c1f0b9d877f0": {
+      "lat": 10.811723,
+      "lng": 106.714718,
+      "by": "address",
+      "key": "Nha khoa Song Phát - CS3: Xô Viết Nghệ Tĩnh|198 Xô Viết Nghệ Tĩnh, Phường Thạnh Mỹ Tây, Thành phố Hồ Chí Minh"
+    },
+    "f-2fb341416b15": {
+      "lat": 10.828838,
+      "lng": 106.594018,
+      "by": "address",
+      "key": "Nha khoa Thẩm mỹ Tâm Đức|125/2 Nguyễn Ảnh Thủ, Bà Điểm, TP. HCM"
+    },
+    "f-96e5f8c0019b": {
+      "lat": 21.061831,
+      "lng": 105.899403,
+      "by": "name",
+      "key": "Nha khoa Việt Hưng|17 Lê Văn Việt, phường Tăng Nhơn Phú, TP. HCM"
+    },
+    "f-bf8782336d05": {
+      "lat": 16.810974,
+      "lng": 107.114804,
+      "by": "name",
+      "key": "Nha khoa Vạn Phước|314 Ba Tháng Hai, Phường Hòa Hưng, Thành phố Hồ Chí Minh"
+    },
+    "f-a53a84a0dd77": {
+      "lat": 10.491293,
+      "lng": 107.175792,
+      "by": "address",
+      "key": "Nha khoa Vạn Thành - CS: Bạch Đằng|75 Bạch Đằng, Phường Bà Rịa, Thành phố Hồ Chí Minh"
+    },
+    "f-0b0b2a603d9a": {
+      "lat": 10.790573,
+      "lng": 106.697183,
+      "by": "address",
+      "key": "Nha khoa kỹ thuật cao Âu Mỹ|113 - 115 Đinh Tiên Hoàng, Phường Tân Định, Thành phố Hồ Chí Minh"
+    },
+    "f-c1a367c4ed9e": {
+      "lat": 9.922434,
+      "lng": 106.348366,
+      "by": "name",
+      "key": "Nha khoa kỹ thuật số|62 Đặng Dung, Phường Tân Định, Thành phố Hồ Chí Minh"
+    },
+    "f-a9ae4ebfca4c": {
+      "lat": 10.808805,
+      "lng": 106.627123,
+      "by": "address",
+      "key": "Nha khoa thẩm mỹ Saido - CN Tân Kỳ Tân Quý|15 Dương Đức Hiền, Phường Tây Thạnh, Thành phố Hồ Chí Minh"
+    },
+    "f-b3defc00e365": {
+      "lat": 10.767431,
+      "lng": 106.686504,
+      "by": "address",
+      "key": "Nha khoa úc Châu (VP) - CN Cầu ông Lãnh, HCM|A36 đường Cống Quỳnh, Phường Cầu Ông Lãnh, Thành phố Hồ Chí Minh"
+    },
+    "f-feb1995735d1": {
+      "lat": 10.773726,
+      "lng": 106.716601,
+      "by": "address",
+      "key": "PKĐK Apollo;\nPKĐK Phú Khang;|228 – 228A, Trần Hưng Đạo, P. Cầu Ông Lãnh, TP.HCM"
+    },
+    "f-443d972cbf90": {
+      "lat": 10.768622,
+      "lng": 106.6667,
+      "by": "address",
+      "key": "PKĐK Elizabet;\nPKĐK Khang Thái;\nPKĐK Thành Thái;\nPKĐK Hồng Cường;|87-89 Thành Thái, P. Diên Hồng, TP. HCM"
+    },
+    "f-3632dd824d4b": {
+      "lat": 10.764106,
+      "lng": 106.660369,
+      "by": "address",
+      "key": "PKĐK MaYO;\nPKĐK Hà Đô;\nPhòng Khám TTYT Hà Đô|35B-35C Ba Tháng Hai, P. Vườn Lài, TP.HCM"
+    },
+    "f-c5626c3237b1": {
+      "lat": 10.881295,
+      "lng": 106.698508,
+      "by": "address",
+      "key": "PKĐK Nguyễn Trãi - Thủ Dầu Một|303 Đại Lộ Bình Dương, P. Thủ Dầu Một, TP. HCM"
+    },
+    "f-5601a282e8c2": {
+      "lat": 10.79222,
+      "lng": 106.695966,
+      "by": "address",
+      "key": "PKĐK Thái Bình Dương;\nPKĐK Đinh Tiên Hoàng|34-36 Đinh Tiên Hoàng, Sài Gòn, TP. HCM"
+    },
+    "f-2c33579051c7": {
+      "lat": 10.773726,
+      "lng": 106.716601,
+      "by": "province",
+      "key": "PKĐK Đại Việt/ PKĐK Ba Tháng Hai|1503-1505-1507-1509 đường Ba Tháng Hai, phường Minh Phụng, TP.HCM"
+    },
+    "f-0d541ff116dc": {
+      "lat": 10.746804,
+      "lng": 106.630404,
+      "by": "name",
+      "key": "Phòng Khám Chuyên Khoa Tai Mũi Họng|6-8 Trịnh Văn Cấn, Phường Bến Thành, Thành phố Hồ Chí Minh"
+    },
+    "f-24e685756495": {
+      "lat": 10.842449,
+      "lng": 106.82178,
+      "by": "address",
+      "key": "Phòng Khám Đa Khoa Quốc Tế Vinmec Grand Park|Tầng L2, TTTM Vincom Mega Mall, khu đô thị Vinhomes Grand Park, Phường Long Bình, Thành phố Hồ Chí Minh"
+    },
+    "f-4b637c698aa3": {
+      "lat": 10.773726,
+      "lng": 106.716601,
+      "by": "province",
+      "key": "Phòng Khám Đông Y Mộc An|303/16A Trần Bình Trọng, Phường Chợ Quán, TP Hồ Chí Minh, Việt Nam"
+    },
+    "f-89ac2695e86a": {
+      "lat": 10.754831,
+      "lng": 106.675503,
+      "by": "address",
+      "key": "Phòng khám Medlatec Gò Vấp|Số 999-1003 đường Phan Văn Trị, Phường Hạnh Thông, Thành phố Hồ Chí Minh"
+    },
+    "f-e6034c79a465": {
+      "lat": 10.773726,
+      "lng": 106.716601,
+      "by": "province",
+      "key": "Phòng khám Quốc tế Care Plus - CN Quận 7|Lầu 2 tòa nhà Crescent Plaza, 105 Tôn Dật Tiên, Phường Tân Mỹ, Thành phố Hồ Chí Minh"
+    },
+    "f-49015e2f9ee0": {
+      "lat": 10.769665,
+      "lng": 106.701943,
+      "by": "address",
+      "key": "Phòng khám Quốc tế CarePlus- CN Quận 1|66-68 Nam Kỳ Khởi Nghĩa, Phường Sài Gòn, Thành phố Hồ Chí Minh"
+    },
+    "f-f8922b09d83c": {
+      "lat": 10.801502,
+      "lng": 106.639231,
+      "by": "address",
+      "key": "Phòng khám Quốc tế Careplus- CN Tân Bình|107 Tân Hải, Phường Tân Bình, Thành phố Hồ Chí Minh"
+    },
+    "f-ca2349589325": {
+      "lat": 10.773959,
+      "lng": 106.666268,
+      "by": "address",
+      "key": "Phòng khám bệnh viện đại học Y dược I|20-22 Dương Quang Trung, Phường Hòa Hưng, Thành phố Hồ Chí Minh"
+    },
+    "f-965a3c32bc0b": {
+      "lat": 21.012417,
+      "lng": 105.849719,
+      "by": "name",
+      "key": "Phòng khám chuyên khoa Răng Hàm Mặt|363A-364A Nguyễn ảnh Thủ,Tổ 13,KP1,Trung Mỹ Tây, Q12"
+    },
+    "f-bb3bcaf2d979": {
+      "lat": 10.773726,
+      "lng": 106.716601,
+      "by": "address",
+      "key": "Phòng khám Đa Khoa Kiều Tiên|323-325, Lê Quang Định, P. BÌnh Lợi Trung ,TP. HCM"
+    },
+    "f-ab2a8d52148b": {
+      "lat": 21.087042,
+      "lng": 105.605291,
+      "by": "name",
+      "key": "Phòng khám Đa Khoa Liên Tâm|67 Liên Tỉnh 5, Phường Bình Đông, TP. HCM"
+    },
+    "f-1e6537510cb6": {
+      "lat": 10.776583,
+      "lng": 106.691356,
+      "by": "name",
+      "key": "Phòng khám Đa Khoa Quốc Tế Yersin|Số 10 Trương Định, Phường Xuân Hòa, Thành phố Hồ Chí Minh"
+    },
+    "f-883dece9be16": {
+      "lat": 10.773726,
+      "lng": 106.716601,
+      "by": "province",
+      "key": "Phòng khám Đa Khoa Vigor Health|100-102-102A-104 Trương Định, Phường Nhiêu Lộc, Thành phố Hồ Chí Minh"
+    },
+    "f-1de559b4e6ca": {
+      "lat": 10.797194,
+      "lng": 106.65894,
+      "by": "name",
+      "key": "Phòng khám Đa Khoa Việt Gia|166 Nguyễn Văn Thủ, Phường Tân Định, Thành phố Hồ Chí Minh"
+    },
+    "f-792c8bb665ca": {
+      "lat": 10.806036,
+      "lng": 106.690569,
+      "by": "address",
+      "key": "Phòng khám Đa Khoa Việt Mỹ|01 Hoàng Hoa Thám, Phường Gia Định, Thành phố Hồ Chí Minh"
+    },
+    "f-3fbe931317f6": {
+      "lat": 10.773726,
+      "lng": 106.716601,
+      "by": "province",
+      "key": "Phòng khám Đa khoa Quốc tế Hạnh Phúc (Estella)|L5-04,05,06, Tầng 5, Tòa nhà Estella, 88 Song Hành, Phường Bình Trưng, Thành phố Hồ Chí Minh"
+    },
+    "f-7101ebf12c1d": {
+      "lat": 10.740453,
+      "lng": 106.703654,
+      "by": "address",
+      "key": "Phòng khám Đa khoa Quốc tế Sài Gòn - CN Q7|441 Lê Văn Lương, Phường Tân Hưng, Thành phố Hồ Chí Minh"
+    },
+    "f-791beaeab83a": {
+      "lat": 10.74251,
+      "lng": 106.701336,
+      "by": "address",
+      "key": "Phòng khám Đa khoa Tâm Anh Quận 7|Số 25 Nguyễn Hữu Thọ, Phường Tân Hưng, Thành phố Hồ Chí Minh"
+    },
+    "f-577e93c75aea": {
+      "lat": 11.035785,
+      "lng": 106.682413,
+      "by": "name",
+      "key": "Phòng khám Đa khoa Vạn Thành Sài Gòn - Phú Mỹ|Số 306 Độc Lập, KP Quảng Phú, Phường Phú Mỹ, Thành phố Hồ Chí Minh"
+    },
+    "f-5d6ba16be437": {
+      "lat": 10.778142,
+      "lng": 106.665727,
+      "by": "address",
+      "key": "Phòng khám đa khoa Baylor|202 Tô Hiến Thành,  Hòa Hưng, TP. HCM"
+    },
+    "f-1b0903a496e0": {
+      "lat": 10.773726,
+      "lng": 106.716601,
+      "by": "province",
+      "key": "Phòng khám đa khoa Bác ái|CS1: số 601B, đường Cách mạng tháng tám, phường Hòa Hưng, TP. HCM\nCS2: 35 Đường O, Mỹ Giang 2B, Phú Mỹ Hưng, Phường Tân Hưng, HCM"
+    },
+    "f-6b8e638b26ef": {
+      "lat": 10.773726,
+      "lng": 106.716601,
+      "by": "province",
+      "key": "Phòng khám đa khoa DHA Healcare|221 - 221Bis Nguyễn Thị Minh Khai, Phường Cầu Ông Lãnh, Thành phố Hồ Chí Minh"
+    },
+    "f-439b7cc33290": {
+      "lat": 10.752675,
+      "lng": 106.659067,
+      "by": "address",
+      "key": "Phòng khám đa khoa Hoàn Cầu|80-82 Châu Văn Liêm, P. Chợ Lớn, TP.HCM"
+    },
+    "f-f6216807a1d5": {
+      "lat": 10.753515,
+      "lng": 106.64888,
+      "by": "address",
+      "key": "Phòng khám đa khoa Hồng Bàng|877-879 Hồng Bàng, Phường Bình Tây, TP. HCM"
+    },
+    "f-65b12f5944d4": {
+      "lat": 10.761391,
+      "lng": 106.676819,
+      "by": "address",
+      "key": "Phòng khám đa khoa Hồng Phong|160-162 Lê Hồng Phong, phường Chợ Quán, TP.HCM"
+    },
+    "f-62989df1fdf8": {
+      "lat": 21.087042,
+      "lng": 105.605291,
+      "by": "name",
+      "key": "Phòng khám đa khoa Liên Tâm|R4-08 Hưng Phước 2, Tân Hưng, TP. HCM"
+    },
+    "f-dc1002263d4c": {
+      "lat": 20.925303,
+      "lng": 106.688963,
+      "by": "name",
+      "key": "Phòng khám đa khoa Nguyễn Trãi|277 Nguyễn Trãi, P. Cầu Ông Lãnh, TP.HCM."
+    },
+    "f-e3e927b8f337": {
+      "lat": 10.767217,
+      "lng": 106.696631,
+      "by": "name",
+      "key": "Phòng khám đa khoa Quốc tế Sài Gòn|9-11-13-15 Trịnh Văn Cấn, Phường Bến Thành, Thành phố Hồ Chí Minh"
+    },
+    "f-3eea71c039a4": {
+      "lat": 10.764611,
+      "lng": 106.681949,
+      "by": "address",
+      "key": "Phòng khám đa khoa Thái Việt|165 Nguyễn Văn Cừ, phường Chợ Quán, TP.HCM."
+    },
+    "f-f727c5c4dc04": {
+      "lat": 21.016221,
+      "lng": 105.849438,
+      "by": "name",
+      "key": "Phòng khám đa khoa Thăng Long|575 Sư Vạn Hạnh, Hòa Hưng, TP. HCM"
+    },
+    "f-d27ea111adf4": {
+      "lat": 10.751933,
+      "lng": 106.68438,
+      "by": "name",
+      "key": "Phòng khám đa khoa Thế Giới|648 Võ Văn Kiệt, Phường Chợ Quán, TP. HCM"
+    },
+    "f-f083e39ea034": {
+      "lat": 10.359068,
+      "lng": 107.079049,
+      "by": "address",
+      "key": "Phòng khám đa khoa Vũng Tàu|205 - 207 Nguyễn Văn Trỗi, Phường Vũng Tàu, Thành phố Hồ Chí Minh"
+    },
+    "f-257df3f078fb": {
+      "lat": 10.8016,
+      "lng": 106.647411,
+      "by": "address",
+      "key": "Phòng khám đa khoa quốc tế Golden Healthcare|37 Hoàng Hoa Thám, Phường Tân Bình, Thành phố Hồ Chí Minh"
+    },
+    "f-aa0761ce0fdf": {
+      "lat": 10.83917,
+      "lng": 106.68113,
+      "by": "address",
+      "key": "Phòng khám đa khoa Âu á|425 Nguyễn Văn Luông, P. Phú Lâm, TP.HCM"
+    },
+    "f-4ddf838b9fde": {
+      "lat": 10.880036,
+      "lng": 106.698839,
+      "by": "address",
+      "key": "Phòng khám đa khoa Đại Tín|306 Đại lộ Bình Dương, P. Thù Dầu Một, TP.HCM"
+    },
+    "f-b0b5030c68d2": {
+      "lat": 20.986653,
+      "lng": 106.047663,
+      "by": "name",
+      "key": "Phòng khám đa khoa Đại Đông|461 Cộng Hòa, Tân Sơn, TP. HCM"
+    },
+    "f-ab7effd0237e": {
+      "lat": 10.784515,
+      "lng": 106.693862,
+      "by": "address",
+      "key": "Trung Tâm Nha khoa Việt Giao - CS Phạm Ngọc Thạch|71 Phạm Ngọc Thạch, Phường Xuân Hòa, Thành phố Hồ Chí Minh"
+    },
+    "f-9504dff82060": {
+      "lat": 10.801102,
+      "lng": 106.68381,
+      "by": "address",
+      "key": "Trung Tâm Y Khoa Hoàn Mỹ GOLD PXL|245 Phan Xích Long, Phường Cầu Kiệu, Thành phố Hồ Chí Minh"
+    },
+    "f-a93aa8a535c2": {
+      "lat": 10.769752,
+      "lng": 106.671006,
+      "by": "address",
+      "key": "Trung tâm Nha khoa No1|51 Đường 3/2, Phường Vườn Lài, Thành phố Hồ Chí Minh"
+    },
+    "f-1735e519ca9e": {
+      "lat": 11.063955,
+      "lng": 106.309,
+      "by": "address",
+      "key": "Bệnh viện Đa khoa Xuyên á - Tây Ninh|Số 10 Xuyên Á, khu phố Trâm Vàng 3, Phường Gò Dầu, Tỉnh Tây Ninh"
+    },
+    "f-fee8156e7e92": {
+      "lat": 10.526909,
+      "lng": 106.497773,
+      "by": "address",
+      "key": "Bệnh viện Đa khoa Xuyên á - Đức Hòa|Số 459, Đường tỉnh lộ 825, Ô 4, ấp Bàu Trai, Phường Hậu Nghĩa, Tỉnh Tây Ninh"
+    },
+    "f-7000eac1cc24": {
+      "lat": 10.537095,
+      "lng": 106.404827,
+      "by": "address",
+      "key": "Nha khoa An Phước|23 Trà Quý Bình, Phường Long An, Tỉnh Tây Ninh"
+    },
+    "f-9ff700f40821": {
+      "lat": 10.284716,
+      "lng": 105.743741,
+      "by": "address",
+      "key": "Bệnh viện đa khoa quốc tế Phương Châu Sa Đéc|153 Nguyễn Sinh Sắc, Phường Sa Đéc, Tỉnh Đồng Tháp"
+    },
+    "f-c78abe3119e8": {
+      "lat": 10.261515,
+      "lng": 105.940492,
+      "by": "name",
+      "key": "Bệnh viện Đa khoa Xuyên á - Vĩnh Long|Số 68E Phạm Hùng, tổ 69, khóm 9, Phường Long Châu, Tỉnh Vĩnh Long"
+    },
+    "f-eba79bd2726a": {
+      "lat": 10.318867,
+      "lng": 105.043249,
+      "by": "province",
+      "key": "Bệnh viện đa khoa quốc tế Vinmec Phú Quốc|Khu Bãi Dài, Phường Phú Quốc, Tỉnh An Giang"
+    },
+    "f-e4820476594b": {
+      "lat": 9.975436,
+      "lng": 105.103335,
+      "by": "address",
+      "key": "Phòng khám Đa khoa Quốc tế Vinmec Dương Đông|Đường Nguyễn Trung Trực, Khu phố 4, Phường Phú Quốc, Tỉnh An Giang"
+    },
+    "f-a22e5b8f472e": {
+      "lat": 10.036205,
+      "lng": 105.787266,
+      "by": "province",
+      "key": "Bệnh viện Hoàn Mỹ Cửu Long|Lô 20 Võ Nguyên Giáp, Phường Hưng Phú, Thành phố Cần Thơ"
+    },
+    "f-70954243ebf1": {
+      "lat": 10.030355,
+      "lng": 105.75139,
+      "by": "name",
+      "key": "Bệnh viện Phụ sản Quốc tế Phương Châu|300 Nguyễn Văn Cừ (nối dài), Phường Tân An, Thành phố Cần Thơ"
+    },
+    "f-055caef777df": {
+      "lat": 10.036205,
+      "lng": 105.787266,
+      "by": "province",
+      "key": "Bệnh viện chuyên khoa răng hàm mặt Sài Gòn|Số 40 - 42 - 46 Võ Văn Kiệt, Phường Cái Khế, Thành phố Cần Thơ"
+    },
+    "f-11b21bf1580f": {
+      "lat": 9.593189,
+      "lng": 105.961267,
+      "by": "address",
+      "key": "Bệnh viện quốc tế Phương Châu Sóc Trăng|Số 373 Đường Phú Lợi, Thành phố Cần Thơ"
+    },
+    "f-afd6f218156e": {
+      "lat": 10.026081,
+      "lng": 105.769958,
+      "by": "name",
+      "key": "Bệnh viện Đa Khoa Quốc Tế Vinmec Cần Thơ|Số 150A đường 3 tháng 2, Phường Ninh Kiều, Thành phố Cần Thơ"
+    },
+    "f-85a81dbd6c95": {
+      "lat": 10.034228,
+      "lng": 105.775131,
+      "by": "address",
+      "key": "Công Ty TNHH MTV Dịch Vụ Y Tế Thế Kỷ Mới|133A Trần Hưng Đạo, P. Ninh Kiều, TP. Cần Thơ"
+    },
+    "f-0ed144588562": {
+      "lat": 10.024606,
+      "lng": 105.763634,
+      "by": "address",
+      "key": "Công ty TNHH Y khoa Vạn Phước Cửu Long|19 Nguyễn Văn Linh, Phường Tân An, Thành phố Cần Thơ"
+    },
+    "f-9298f194cfdf": {
+      "lat": 10.041619,
+      "lng": 105.766714,
+      "by": "name",
+      "key": "Nha khoa Ninh Kiều|200 Nguyễn Văn Cừ, Phường Cái Khế, Thành phố Cần Thơ"
+    },
+    "f-e9cefc206848": {
+      "lat": 10.027777,
+      "lng": 105.770489,
+      "by": "address",
+      "key": "Nha khoa răng hàm mặt Sài Gòn Cần Thơ 2|140 Đường 3/2, Phường Ninh Kiều, Thành phố Cần Thơ"
+    },
+    "f-97981f9c4677": {
+      "lat": 10.014447,
+      "lng": 105.762006,
+      "by": "address",
+      "key": "Phòng khám Medlatec Cần Thơ|Số 598 đường 30/4, Phường Tân An, Thành phố Cần Thơ"
+    },
+    "f-97aa8a9ebffb": {
+      "lat": 9.174499,
+      "lng": 105.151203,
+      "by": "name",
+      "key": "Bệnh viện Đa Khoa Hoàn Mỹ Minh Hải|Số 09, Lạc Long Quân – Âu Cơ, Khóm 29, Phường Tân Thành, Tỉnh Cà Mau"
+    }
+  }
+}
