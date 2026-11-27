@@ -3,11 +3,14 @@ import { db, now } from '../db/db'
 import { createAccount } from '../data/account-repo'
 import { loadAccount } from '../data/account-state'
 import { requestPersistence } from '../data/backup'
+import { saveImage } from '../data/files-repo'
+import { applyCardFields, type CardFields } from '../domain/card-ocr'
 import { todayIso } from '../lib/dates'
 import { navigate } from '../router'
 import { t } from '../i18n'
 import type { PersonInput } from '../domain/types'
 import { IconButton } from '../ui/IconButton'
+import { CardScan } from '../ui/CardScan'
 import { LegalLinks } from '../ui/LegalLinks'
 import { PersonForm } from '../ui/PersonForm'
 
@@ -70,6 +73,8 @@ export function Onboarding({ today = todayIso() }: { today?: string }) {
   const [showHint, setShowHint] = useState(false)
   const busy = useRef(false)
   const [pending, setPending] = useState(false)
+  /** Card photo picked before the account exists; stored on the holder once it is created. */
+  const [cardImage, setCardImage] = useState<File | null>(null)
   const hintRef = useRef<HTMLDivElement>(null)
 
   // IconButton does not forward refs, so focus the first button (the close control) inside the card.
@@ -96,6 +101,9 @@ export function Onboarding({ today = todayIso() }: { today?: string }) {
       return
     }
     setErrors({})
+    if (cardImage) {
+      await saveImage(db, { type: 'person', id: result.holder.id }, 'card-front', cardImage).catch(() => {})
+    }
 
     const persisted = await requestPersistence()
     await db.settings.put({ key: 'persisted', value: persisted, updatedAt: now() })
@@ -118,6 +126,12 @@ export function Onboarding({ today = todayIso() }: { today?: string }) {
     <section class="mx-auto grid max-w-xl gap-6 p-4">
       <h2 class="text-fluid-xl font-semibold text-ink">{t('onboarding.title')}</h2>
       <p class="text-fluid-base text-ink-muted">{t('onboarding.intro')}</p>
+
+      <CardScan
+        fileId={null}
+        onImage={(file) => setCardImage(file)}
+        onFields={(fields: CardFields) => setHolder((current) => applyCardFields(current, fields))}
+      />
 
       <form noValidate class="grid gap-6" onSubmit={onSubmit}>
         <PersonForm value={holder} errors={errors} onChange={setHolder} mode="holder" />

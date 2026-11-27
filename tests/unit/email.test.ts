@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import marshJson from '../../public/data/administrators/marsh.json'
-import { composeEmail } from '../../src/domain/email'
+import { claimRouting, composeEmail, routingToStore } from '../../src/domain/email'
 import { formFileName, docsFileName } from '../../src/domain/file-names'
 import { parseAdministrator, type AdministratorConfig } from '../../src/domain/requirements-schema'
 import type { Claim, ClaimStatus } from '../../src/domain/claim-types'
@@ -121,10 +121,10 @@ describe('claim-submission.email: recipients', () => {
     expect(email.cc).toContain('vietnamMMBclaims@marsh.com')
   })
 
-  it('claim-submission.email.recipient-account: the account claimEmail overrides the recipient, CC holds Marsh and the account CC once each', () => {
+  it('claim-submission.email.recipient-account: the account claimEmail and CC list replace the administrator defaults', () => {
     const email = compose({ account: accountOf({ claimEmail: 'claims@example.com', claimCc: ['me@example.com'] }) })
     expect(email.to).toBe('claims@example.com')
-    expect(email.cc).toEqual(['vietnamMMBclaims@marsh.com', 'me@example.com'])
+    expect(email.cc).toEqual(['me@example.com'])
   })
 
   it('claim-submission.email.recipient-account: a CC address given twice is listed once', () => {
@@ -225,5 +225,27 @@ describe('claim-submission.email: file names', () => {
     expect([...name].length).toBeLessThanOrEqual(80)
     expect(name.endsWith('.pdf')).toBe(true)
     expect(name.startsWith('Chứng từ xxx')).toBe(true)
+  })
+})
+
+describe('claim-submission.email: stored routing', () => {
+  const admin = { claimEmail: 'nhanhsbt.mn@pti.com.vn', cc: ['vietnamMMBclaims@marsh.com'] }
+
+  it('account.settings.defaults: values equal to the administrator defaults are stored as unset', () => {
+    expect(routingToStore({ to: ' NHANHSBT.mn@pti.com.vn ', cc: ['vietnamMMBclaims@marsh.com', ' '] }, admin)).toEqual({
+      claimEmail: null,
+      claimCc: [],
+    })
+  })
+
+  it('account.settings.claim-email: changed values are stored as typed, each CC once', () => {
+    expect(routingToStore({ to: 'a@b.vn', cc: ['x@y.vn', 'X@y.vn'] }, admin)).toEqual({ claimEmail: 'a@b.vn', claimCc: ['x@y.vn'] })
+  })
+
+  it('claimRouting falls back to the administrator for an unset account', () => {
+    expect(claimRouting({ claimEmail: null, claimCc: [] }, admin)).toEqual({
+      to: 'nhanhsbt.mn@pti.com.vn',
+      cc: ['vietnamMMBclaims@marsh.com'],
+    })
   })
 })

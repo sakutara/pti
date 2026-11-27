@@ -75,3 +75,19 @@ The page SHALL always show the date the facility data was fetched, and the app S
 - **WHEN** the app starts
 - **THEN** a notice reads "Danh sách cơ sở y tế đã cập nhật: thêm 3, bỏ 1, thay đổi 2"
 - **AND** after the user dismisses it, it does not show again for version "2026-11"
+
+### Requirement: Nearest first, on a Google map
+The page SHALL ask the browser for the user's position when it opens (kept in memory only, never stored or sent) and, when granted, SHALL list the facilities matching the filters from nearest to farthest with the distance on each row: facilities with a building-level point first, then those placed only at their province centre (distance marked "≈"), then those without a point. Points come from `public/data/facilities/geo.json`, made at refresh time from OpenStreetMap Nominatim. When a Google Maps API key is built in, the page SHALL show a Google map with one pin per listed facility and a dot for the user, framed on the user and the nearest facilities; tapping a pin opens that facility. Without a key, or when the map cannot load, the list works as before.
+
+#### Scenario: facilities.nearby.sort
+- **GIVEN** the user is in TP.HCM and the list has three facilities in Hà Nội and one in TP.HCM, all with points
+- **WHEN** the page opens and the position is granted
+- **THEN** the TP.HCM facility is listed first with its distance, and the page says it is sorted by the user's position
+
+#### Scenario: facilities.nearby.no-location
+- **WHEN** the position is denied or unavailable
+- **THEN** the list keeps the dataset order and a note offers to try again
+
+#### Scenario: facilities.geo.lookup
+- **WHEN** the refresh script runs
+- **THEN** it keeps existing building-level points, looks up new or changed facilities and province-centre points again (at most one request per second), and drops results outside Viet Nam

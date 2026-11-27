@@ -8,13 +8,15 @@ const megabytes = (bytes: number) => Math.round(bytes / 1_000_000)
 export interface OcrModelBannerProps {
   /** Invoices waiting to be read. The offer shows only when there is something to read. */
   pendingCount: number
+  /** Offer text; defaults to the invoice wording. */
+  offer?: string
 }
 
 /**
  * Asks once for the on-device reading model. Nothing is downloaded until the user taps the button; progress and
  * errors are shown while it runs, and a finished download restarts the reading queue.
  */
-export function OcrModelBanner({ pendingCount }: OcrModelBannerProps) {
+export function OcrModelBanner({ pendingCount, offer }: OcrModelBannerProps) {
   const model = ocrModel.value
   if (model.state === 'ready') return null
   if (model.state === 'absent' && pendingCount === 0) return null
@@ -45,7 +47,7 @@ export function OcrModelBanner({ pendingCount }: OcrModelBannerProps) {
           />
         </>
       ) : (
-        <p class="text-fluid-sm text-ink-muted">{t('ocr.model.offer', { mb: megabytes(OCR_MODEL_BYTES) })}</p>
+        <p class="text-fluid-sm text-ink-muted">{offer ?? t('ocr.model.offer', { mb: megabytes(OCR_MODEL_BYTES) })}</p>
       )}
       <div>
         <IconButton

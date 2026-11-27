@@ -9,7 +9,6 @@ import { saveImage, type Downscale } from '../../src/data/files-repo'
 import { accountState } from '../../src/data/account-state'
 import { route } from '../../src/router'
 import { setOnline } from '../setup'
-import { CardImagePicker } from '../../src/ui/CardImagePicker'
 import { CardWallet } from '../../src/pages/CardWallet'
 
 // fake-indexeddb drops jsdom Blobs on round trip; Node's Blob survives. Same workaround as backup.test.ts.
@@ -88,34 +87,6 @@ beforeEach(async () => {
   setOnline(true)
   accountState.value = { status: 'loading' }
   route.value = { path: '/wallet', params: {} }
-})
-
-describe('account.card.capture', () => {
-  it('account.card.capture: stores a card-front file and links it on the holder', async () => {
-    const created = await createAccount(db, holderInput(), TODAY)
-    if (!created.ok) throw new Error('seed holder invalid')
-    const onSaved = vi.fn()
-    const { container } = render(
-      <CardImagePicker personId={created.holder.id} kind="card-front" fileId={null} downscale={fakeDownscale} onSaved={onSaved} />,
-    )
-
-    const input = container.querySelector('input[capture="environment"]') as HTMLInputElement
-    const photo = new File(['x'], 'front.jpg', { type: 'image/jpeg' })
-    Object.defineProperty(input, 'files', { value: [photo] })
-    fireEvent.change(input)
-
-    await waitFor(() => expect(onSaved).toHaveBeenCalledTimes(1))
-    expect(fakeDownscale).toHaveBeenCalledTimes(1)
-
-    const files = await db.files.where('[ownerType+ownerId]').equals(['person', created.holder.id]).toArray()
-    const front = files.find((f) => f.kind === 'card-front')
-    expect(front).toBeDefined()
-    expect(front!.deleted).toBe(0)
-
-    const holder = await db.persons.get(created.holder.id)
-    expect(holder!.cardFrontFileId).toBe(front!.id)
-    expect(onSaved).toHaveBeenCalledWith(front!.id)
-  })
 })
 
 describe('account.card.view-offline', () => {

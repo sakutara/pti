@@ -46,7 +46,7 @@ const ACCOUNT: Account = {
   displayName: 'Tài khoản mẫu',
   administrator: 'marsh',
   claimEmail: null,
-  claimCc: ['me@example.com'],
+  claimCc: ['vietnamMMBclaims@marsh.com', 'me@example.com'],
   defaultBank: null,
   onboardedAt: 1,
   updatedAt: 1,

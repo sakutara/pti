@@ -95,9 +95,8 @@ test('offline.preview.wallet: offline onboarding, card image and card wallet wor
   await expect(page.getByRole('heading', { name: 'Nguyễn Văn A', exact: true })).toBeVisible()
 
   // Front card image through the gallery (non-capture) input.
-  const cards = page.locator('section[aria-labelledby="person-cards-heading"]')
-  await cards.locator('input[type="file"]:not([capture])').first().setInputFiles(CARD_IMAGE)
-  await expect(page.getByRole('img', { name: 'Ảnh mặt trước thẻ' })).toBeVisible()
+  await page.getByTestId('card-scan-pick').setInputFiles(CARD_IMAGE)
+  await expect(page.getByRole('img', { name: 'Ảnh thẻ bảo hiểm' })).toBeVisible()
 
   await page.evaluate(() => {
     location.hash = '#/wallet'

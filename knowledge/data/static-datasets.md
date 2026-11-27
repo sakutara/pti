@@ -14,6 +14,7 @@ worker precache, nên dùng được khi không có mạng. Quyết định: [00
 | `manifest.json` | `{ datasets: { <name>: { path, updatedAt, version } } }` | mỗi lần đổi dataset |
 | `benefits/<policyYear>.json` | 4 hạng, quyền lợi, loại trừ, `claimDeadlineDays`, `verified` | tay, mỗi năm hợp đồng |
 | `facilities/pti.json` | `{ fetchedAt, source, count, provinces[], facilities[] }` | GitHub Action hàng tháng |
+| `facilities/geo.json` | `{ source, updatedAt, points: { [facilityId]: { lat, lng, by, key } } }` — `by`: name / address / province; `key` = tên\|địa chỉ lúc tra | `scripts/geocode-facilities.mjs` trong cùng workflow ([0014](/decisions/0014-facility-map.md)) |
 | `claim-requirements.json` | yêu cầu chứng từ theo loại claim, điều kiện, hướng dẫn hóa đơn | tay, khi PTI đổi hướng dẫn |
 | `administrators/marsh.json` | email, CC, mẫu tiêu đề/nội dung, mạng lưới CSYT | tay |
 

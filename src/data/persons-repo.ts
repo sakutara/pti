@@ -1,7 +1,7 @@
 import type { AppDB } from '../db/db'
 import { newId, now } from '../db/db'
 import { enqueue } from '../sync/outbox'
-import type { Account, BankAccount, Person, PersonInput } from '../domain/types'
+import type { BankAccount, Person, PersonInput } from '../domain/types'
 import { validatePerson } from '../domain/person-validation'
 
 export type SavePersonResult =
@@ -103,11 +103,6 @@ export async function deletePerson(db: AppDB, id: string): Promise<void> {
 /** Only dependents can be deleted; the UI hides the delete action otherwise. */
 export function canDelete(person: Person): boolean {
   return person.role === 'dependent'
-}
-
-/** Payout bank: the person's own bank, else the account default. */
-export function resolvePayoutBank(person: Person, account: Account): BankAccount | null {
-  return person.bank ?? account.defaultBank
 }
 
 export function formatBank(b: BankAccount): string {

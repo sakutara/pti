@@ -13,6 +13,10 @@
 
 - build: change add-benefit-plans implemented và kiểm tra đủ (348 unit, 34 e2e), sửa thứ tự cột màn hình rộng; chưa commit, chưa archive
 
+## 2026-11-27
+
+- build: ảnh thẻ lên đầu (chỉ mặt trước) + OCR tự điền; cài đặt nhận hồ sơ dùng chung (Marsh cố định, email mặc định điền sẵn); ngân hàng chỉ của nhân viên, chọn từ danh sách NAPAS của chia-tien; bản đồ Google Maps + xếp CSYT theo khoảng cách; decisions 0014, 0015 (chờ duyệt)
+
 ## 2026-11-26
 
 - build: change add-public-pages implemented (trang /about/, /privacy/, email liên hệ do chủ dự án cung cấp); chưa archive, chưa deploy

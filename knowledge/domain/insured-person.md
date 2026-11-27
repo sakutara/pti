@@ -22,7 +22,7 @@ Giấy yêu cầu bồi thường của PTI (mục 1.1)[^pti-guideline] cần:
 - Họ tên, ngày sinh của NĐBH.
 - Mã hợp đồng / số giấy chứng nhận bảo hiểm, tên bên mua bảo hiểm (công ty).
 - Số điện thoại, email liên hệ.
-- Tài khoản nhận tiền của NĐBH hoặc người thụ hưởng hợp pháp: ngân hàng, chủ tài khoản, số tài khoản.
+- Tài khoản nhận tiền (của nhân viên, xem bên dưới): ngân hàng, chủ tài khoản, số tài khoản.
 Hướng dẫn chung còn nêu hai mục dưới đây, nhưng hợp đồng này không cần ký khi nộp ([mẫu](/domain/claim-form.md)):
 
 - Chữ ký, họ tên NĐBH (hoặc người đại diện nếu NĐBH dưới 18 tuổi).
@@ -41,8 +41,13 @@ thân tự nguyện ([quy tắc hợp đồng](/domain/policy-2026.md)).
 
 # Thẻ bảo hiểm
 
-PTI không cấp thẻ điện tử; NĐBH có **ảnh thẻ** (mặt trước, có thể mặt sau). Khi đi khám ở cơ sở bảo
+PTI không cấp thẻ điện tử; NĐBH có **ảnh thẻ** — chỉ mặt trước, thẻ không có mặt sau. Khi đi khám ở cơ sở bảo
 lãnh, NĐBH xuất trình thẻ bảo hiểm và CCCD/hộ chiếu hoặc giấy khai sinh (trẻ em). App giữ ảnh thẻ để
-xem toàn màn hình khi không có mạng.
+xem toàn màn hình khi không có mạng, và đọc ảnh trên máy để tự điền thông tin người được bảo hiểm
+([0015](/decisions/0015-card-first-shared-settings.md)).
+
+# Tài khoản nhận tiền
+
+Chỉ nhân viên (NĐBH chính) khai báo tài khoản nhận tiền; tiền bồi thường của người thân cũng về tài khoản này.
 
 Lưu tại [persons](/data/persons.md) và [files](/data/files.md).

@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from 'preact/hooks'
+import { mapsEnabled } from '../config'
 import { loadDataset, loadManifest } from '../data/datasets'
+import { locateUser, userLocation } from '../data/user-location'
+import { formatDistance, parseFacilityGeo, sortByDistance, type GeoPoint } from '../domain/facility-geo'
 import { parseFacilities, SERVICES, type FacilitiesDataset, type Service } from '../domain/facilities-schema'
 import { searchFacilities } from '../domain/facility-search'
 import type { Result } from '../domain/benefits-schema'
@@ -9,6 +12,7 @@ import { formatDateVi } from '../lib/format-date'
 import { encodeQuery, navigate, replaceQuery, route } from '../router'
 import { FacilityDetail } from '../ui/FacilityDetail'
 import { FacilityFilters, type FacilityFacets } from '../ui/FacilityFilters'
+import { FacilityMap } from '../ui/FacilityMap'
 import { Icon } from '../ui/Icon'
 import { IconButton } from '../ui/IconButton'
 
@@ -47,6 +51,21 @@ export function FacilitiesPage() {
   // The text field shows what was typed; the URL catches up after the debounce.
   const [draft, setDraft] = useState(filters.q)
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const [points, setPoints] = useState<Record<string, GeoPoint>>({})
+  const location = userLocation.value
+  const origin = location.status === 'ready' ? location.position : null
+
+  // Map points are an extra: without them the list still works, unsorted by distance.
+  useEffect(() => {
+    let alive = true
+    void loadDataset('facilities/geo.json', parseFacilityGeo).then((result) => {
+      if (alive && result.ok) setPoints(result.data.points)
+    })
+    locateUser()
+    return () => {
+      alive = false
+    }
+  }, [])
 
   useEffect(() => {
     let alive = true
@@ -99,6 +118,7 @@ export function FacilitiesPage() {
     services: filters.services,
     blacklisted: filters.blacklisted,
   })
+  const nearby = sortByDistance(results, points, origin)
   const selected = selectedId === null ? null : dataset.facilities.find((f) => f.id === selectedId) ?? null
   const facetsActive = filters.province !== null || filters.services.length > 0
   const anyFilterActive = facetsActive || filters.q !== ''
@@ -124,11 +144,11 @@ export function FacilitiesPage() {
   }
 
   return (
-    <section class="grid gap-4 py-4 lg:grid-cols-[16rem_1fr_24rem] lg:grid-rows-[auto_1fr] lg:items-start">
+    <section class="grid gap-4 py-4 xl:grid-cols-[16rem_1fr_24rem] xl:grid-rows-[auto_1fr] xl:items-start">
       <h2 class="sr-only">{t('facilities.title')}</h2>
 
       {/* Narrow: sticky search with the filter sheet button. Wide: search sits above the filters column. */}
-      <div class="sticky top-[3.25rem] z-[5] flex items-center gap-2 bg-surface py-2 lg:static lg:col-start-1 lg:row-start-1 lg:block lg:p-0">
+      <div class="sticky top-[3.25rem] z-[5] flex items-center gap-2 bg-surface py-2 xl:static xl:col-start-1 xl:row-start-1 xl:block xl:p-0">
         <div class="relative min-w-0 flex-1">
           <Icon name="search" class="pointer-events-none absolute left-3 top-1/2 size-5 -translate-y-1/2 text-ink-muted" />
           <input
@@ -140,7 +160,7 @@ export function FacilitiesPage() {
             class="min-h-11 w-full min-w-0 rounded-xl border border-surface-2 bg-surface-2 pl-10 pr-3 text-fluid-base text-ink focus-visible:outline-2 focus-visible:outline-accent"
           />
         </div>
-        <span class="relative shrink-0 lg:hidden">
+        <span class="relative shrink-0 xl:hidden">
           <IconButton
             icon="filter"
             label={t('facilities.filters.open')}
@@ -160,11 +180,11 @@ export function FacilitiesPage() {
         aria-label={t('facilities.filters')}
         class={
           sheetOpen
-            ? 'fixed inset-0 z-30 grid auto-rows-max content-start gap-4 overflow-y-auto bg-surface p-gutter lg:static lg:z-auto lg:col-start-1 lg:row-start-2 lg:grid lg:overflow-visible lg:p-0'
-            : 'hidden lg:col-start-1 lg:row-start-2 lg:grid lg:gap-4'
+            ? 'fixed inset-0 z-30 grid auto-rows-max content-start gap-4 overflow-y-auto bg-surface p-gutter xl:static xl:z-auto xl:col-start-1 xl:row-start-2 xl:grid xl:overflow-visible xl:p-0'
+            : 'hidden xl:col-start-1 xl:row-start-2 xl:grid xl:gap-4'
         }
       >
-        <div class="flex items-center justify-between gap-2 lg:hidden">
+        <div class="flex items-center justify-between gap-2 xl:hidden">
           <h2 class="text-fluid-lg font-semibold text-ink">{t('facilities.filters')}</h2>
           <IconButton icon="close" label={t('facilities.filters.close')} onClick={() => setSheetOpen(false)} />
         </div>
@@ -177,7 +197,7 @@ export function FacilitiesPage() {
 
       <section
         aria-label={t('facilities.title')}
-        class={`grid min-w-0 content-start gap-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 ${selectedId === null ? 'grid' : 'hidden lg:grid'}`}
+        class={`grid min-w-0 content-start gap-4 xl:col-start-2 xl:row-span-2 xl:row-start-1 ${selectedId === null ? 'grid' : 'hidden xl:grid'}`}
       >
         <div class="grid gap-2">
           <div class="flex flex-wrap items-center gap-2">
@@ -199,6 +219,31 @@ export function FacilitiesPage() {
               <span>{t('facilities.blacklist.warning')}</span>
             </p>
           )}
+          <div class="flex flex-wrap items-center gap-2 text-fluid-sm text-ink-muted">
+            <p role="status">
+              {location.status === 'ready'
+                ? t('facilities.location.sorted')
+                : location.status === 'locating'
+                  ? t('facilities.location.locating')
+                  : location.status === 'denied'
+                    ? t('facilities.location.denied')
+                    : location.status === 'unavailable'
+                      ? t('facilities.location.unavailable')
+                      : ''}
+            </p>
+            {(location.status === 'denied' || location.status === 'unavailable' || location.status === 'ready') && (
+              <IconButton icon="map-pin" label={t('facilities.location.retry')} showLabel onClick={() => locateUser(true)} />
+            )}
+          </div>
+          {mapsEnabled() && (
+            <FacilityMap
+              facilities={nearby.map((r) => r.facility)}
+              points={points}
+              origin={origin}
+              selectedId={selectedId}
+              onSelect={(id) => navigate(`/facilities/${id}${qs}`)}
+            />
+          )}
           <div class="grid gap-0.5 text-fluid-sm text-ink-muted">
             <p>{t('facilities.freshness.date', { date: formatDateVi(todayIso(new Date(dataset.fetchedAt))) })}</p>
             <p>{t('facilities.freshness.callFirst')}</p>
@@ -212,15 +257,25 @@ export function FacilitiesPage() {
           </div>
         ) : (
           <ul class="grid gap-2">
-            {results.map((f) => (
+            {nearby.map(({ facility: f, km, approximate }) => (
               <li key={f.id}>
                 <a
                   href={`#/facilities/${f.id}${qs}`}
                   aria-current={f.id === selectedId ? 'true' : undefined}
-                  class="grid min-h-11 gap-0.5 rounded-xl bg-surface-2 p-3 text-ink transition-colors hover:brightness-95 focus-visible:outline-2 focus-visible:outline-accent aria-[current=true]:ring-2 aria-[current=true]:ring-accent"
+                  class="flex min-h-11 items-start justify-between gap-3 rounded-xl bg-surface-2 p-3 text-ink transition-colors hover:brightness-95 focus-visible:outline-2 focus-visible:outline-accent aria-[current=true]:ring-2 aria-[current=true]:ring-accent"
                 >
-                  <span class="text-fluid-base font-semibold">{f.name}</span>
-                  <span class="text-fluid-sm text-ink-muted">{f.address}</span>
+                  <div class="grid min-w-0 gap-0.5">
+                    <span class="text-fluid-base font-semibold">{f.name}</span>
+                    <span class="text-fluid-sm text-ink-muted">{f.address}</span>
+                  </div>
+                  {km !== null && (
+                    <span
+                      class="shrink-0 whitespace-nowrap pt-0.5 text-fluid-sm font-medium tabular-nums text-accent"
+                      title={approximate ? t('facilities.distance.approximate') : undefined}
+                    >
+                      {approximate ? `≈ ${formatDistance(km)}` : formatDistance(km)}
+                    </span>
+                  )}
                 </a>
               </li>
             ))}
@@ -230,14 +285,14 @@ export function FacilitiesPage() {
 
       <section
         aria-label={selected?.name ?? t('facilities.title')}
-        class={`grid min-w-0 content-start gap-4 lg:col-start-3 lg:row-span-2 lg:row-start-1 ${selectedId === null ? 'hidden lg:block' : 'grid'}`}
+        class={`grid min-w-0 content-start gap-4 xl:col-start-3 xl:row-span-2 xl:row-start-1 ${selectedId === null ? 'hidden xl:block' : 'grid'}`}
       >
         {selectedId !== null && (
           <IconButton
             icon="chevron-left"
             label={t('facilities.detail.back')}
             showLabel
-            class="justify-self-start lg:hidden"
+            class="justify-self-start xl:hidden"
             onClick={() => navigate(`/facilities${qs}`)}
           />
         )}

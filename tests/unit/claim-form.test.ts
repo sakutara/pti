@@ -36,11 +36,11 @@ function invoice(id: string, docDate: string | null, amount: number | null, over
   }
 }
 
-function build(overrides: { claim?: Partial<Claim>; patient?: Person; documents?: DocumentRecord[] } = {}) {
+function build(overrides: { claim?: Partial<Claim>; patient?: Person; holder?: Person; documents?: DocumentRecord[] } = {}) {
   return buildClaimFormData({
     claim: { ...claim, ...overrides.claim },
     patient: overrides.patient ?? dependent,
-    holder,
+    holder: overrides.holder ?? holder,
     defaultBank,
     documents: overrides.documents ?? [invoice('i1', '2026-11-18', 300000), invoice('i2', '2026-11-20', 450000)],
   })
@@ -78,6 +78,12 @@ describe('buildClaimFormData', () => {
     expect(build({ claim: { bank: claimBank }, patient: { ...dependent, bank: personBank } }).accountNumber).toBe('999')
     expect(build({ patient: { ...dependent, bank: personBank } }).accountNumber).toBe('888')
     expect(build().accountNumber).toBe('000111222333')
+  })
+
+  it('account.bank.holder-only: the employee account pays out for a dependent before any older per-person account', () => {
+    const holderBank: BankAccount = { bankName: 'Vietcombank - Ngân hàng TMCP Ngoại thương Việt Nam', accountName: 'NV', accountNumber: '777' }
+    const personBank: BankAccount = { bankName: 'Ngân hàng Người', accountName: 'PERSON', accountNumber: '888' }
+    expect(build({ holder: { ...holder, bank: holderBank }, patient: { ...dependent, bank: personBank } }).accountNumber).toBe('777')
   })
 
   it('claim-submission.form.fields: the patient phone falls back to the holder phone when empty', () => {

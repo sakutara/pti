@@ -42,21 +42,58 @@ export type ComposeResult = { ok: true; email: ComposedEmail } | { ok: false; er
 
 type BodyMode = 'full' | 'summary'
 
-function recipientOf(input: ComposeInput): string | null {
-  const address = input.account.claimEmail?.trim() || input.administrator.claimEmail.trim()
-  return address === '' ? null : address
-}
-
-function ccOf(input: ComposeInput): string[] {
+/** Each address once (case-insensitive), trimmed, empties dropped, first spelling kept. */
+function uniqueAddresses(list: readonly string[]): string[] {
   const seen = new Set<string>()
   const out: string[] = []
-  for (const address of [...input.administrator.cc, ...input.account.claimCc]) {
+  for (const address of list) {
     const key = address.trim().toLowerCase()
     if (key === '' || seen.has(key)) continue
     seen.add(key)
     out.push(address.trim())
   }
   return out
+}
+
+/**
+ * The recipient and CC a claim goes to. The account's own values win; an unset recipient (null) or an empty CC list
+ * means "use the administrator's default", so the settings form always shows what will be used.
+ */
+export function claimRouting(
+  account: Pick<Account, 'claimEmail' | 'claimCc'>,
+  administrator: Pick<AdministratorConfig, 'claimEmail' | 'cc'>,
+): { to: string; cc: string[] } {
+  const own = uniqueAddresses(account.claimCc)
+  return {
+    to: account.claimEmail?.trim() || administrator.claimEmail.trim(),
+    cc: own.length > 0 ? own : uniqueAddresses(administrator.cc),
+  }
+}
+
+/**
+ * What to store for the routing the user typed: a value equal to the administrator default is stored as "unset"
+ * (null / []), so a later change of the default reaches the account; anything the user changed is stored as typed.
+ */
+export function routingToStore(
+  typed: { to: string; cc: readonly string[] },
+  administrator: Pick<AdministratorConfig, 'claimEmail' | 'cc'>,
+): { claimEmail: string | null; claimCc: string[] } {
+  const to = typed.to.trim()
+  const cc = uniqueAddresses(typed.cc)
+  const fold = (list: readonly string[]) => uniqueAddresses(list).map((e) => e.toLowerCase()).join(',')
+  return {
+    claimEmail: to.toLowerCase() === administrator.claimEmail.trim().toLowerCase() ? null : to,
+    claimCc: fold(cc) === fold(administrator.cc) ? [] : cc,
+  }
+}
+
+function recipientOf(input: ComposeInput): string | null {
+  const address = claimRouting(input.account, input.administrator).to
+  return address === '' ? null : address
+}
+
+function ccOf(input: ComposeInput): string[] {
+  return claimRouting(input.account, input.administrator).cc
 }
 
 function subjectOf(input: ComposeInput): string {

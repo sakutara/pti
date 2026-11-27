@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'preact/hooks'
 import { accountState } from '../data/account-state'
 import { canDelete, deletePerson, getPerson, listPersons, savePerson } from '../data/persons-repo'
+import { saveImage } from '../data/files-repo'
 import { db } from '../db/db'
+import { applyCardFields, type CardFields } from '../domain/card-ocr'
 import type { Person, PersonInput, Tier } from '../domain/types'
 import { t } from '../i18n'
 import { todayIso } from '../lib/dates'
 import { navigate, route } from '../router'
 import { BankFields, bankToDraft, draftToBank, EMPTY_BANK_DRAFT, type BankDraft } from '../ui/ClaimSettingsForm'
-import { CardImagePicker } from '../ui/CardImagePicker'
+import { CardScan } from '../ui/CardScan'
 import { Icon } from '../ui/Icon'
 import { IconButton } from '../ui/IconButton'
 import { PersonForm } from '../ui/PersonForm'
@@ -58,6 +60,8 @@ export function PersonEdit() {
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [notFound, setNotFound] = useState(false)
   const [pending, setPending] = useState(false)
+  /** Card photo picked for a person not saved yet; stored right after the first save. */
+  const [pendingCard, setPendingCard] = useState<File | null>(null)
 
   useEffect(() => {
     if (!accountId) return
@@ -66,6 +70,7 @@ export function PersonEdit() {
     setForm(undefined)
     setNotFound(false)
     setErrors({})
+    setPendingCard(null)
     void (async () => {
       if (isNew) {
         const holder = (await listPersons(db, accountId)).find((p) => p.role === 'holder')
@@ -95,10 +100,25 @@ export function PersonEdit() {
     if (fresh) setPerson(fresh)
   }
 
+  async function onCardImage(file: File) {
+    if (!person) {
+      setPendingCard(file)
+      return
+    }
+    await saveImage(db, { type: 'person', id: person.id }, 'card-front', file)
+    await refreshPerson()
+  }
+
+  function onCardFields(fields: CardFields) {
+    setForm((current) => (current ? applyCardFields(current, fields) : current))
+  }
+
   async function onSubmit(event: Event) {
     event.preventDefault()
     if (!form || !accountId || pending) return
-    const bankResult = draftToBank(bank)
+    // Only the employee declares a payout account; a dependent keeps whatever was stored before that rule.
+    const isHolder = form.role === 'holder'
+    const bankResult = isHolder ? draftToBank(bank) : { ok: true as const, bank: form.bank }
     if (!bankResult.ok) {
       setErrors(bankResult.errors)
       return
@@ -106,6 +126,10 @@ export function PersonEdit() {
 
     setPending(true)
     const result = await savePerson(db, accountId, { ...form, bank: bankResult.bank }, todayIso())
+    if (result.ok && pendingCard) {
+      // The person is saved either way; a card photo that fails to store can be added again from the edit page.
+      await saveImage(db, { type: 'person', id: result.person.id }, 'card-front', pendingCard).catch(() => {})
+    }
     setPending(false)
     if (!result.ok) {
       setErrors(result.errors)
@@ -143,6 +167,8 @@ export function PersonEdit() {
         <h2 class="text-fluid-xl font-semibold text-ink">{person?.fullName ?? t('account.addDependent')}</h2>
       </div>
 
+      <CardScan fileId={person?.cardFrontFileId ?? null} onImage={onCardImage} onFields={onCardFields} />
+
       <form noValidate class="grid gap-6" onSubmit={onSubmit}>
         <PersonForm
           value={form}
@@ -151,11 +177,13 @@ export function PersonEdit() {
           mode={form.role === 'holder' ? 'holder' : 'dependent'}
         />
 
-        <fieldset class="grid gap-3 rounded-xl border border-surface-2 p-3">
-          <legend class="px-1 text-fluid-base font-medium text-ink">{t('person.bank')}</legend>
-          <p class="text-fluid-sm text-ink-muted">{t('person.bankFallback')}</p>
-          <BankFields idPrefix="bank" value={bank} errors={errors} onChange={setBank} />
-        </fieldset>
+        {form.role === 'holder' && (
+          <fieldset class="grid gap-3 rounded-xl border border-surface-2 p-3">
+            <legend class="px-1 text-fluid-base font-medium text-ink">{t('person.bank')}</legend>
+            <p class="text-fluid-sm text-ink-muted">{t('person.bankFallback')}</p>
+            <BankFields idPrefix="bank" value={bank} errors={errors} onChange={setBank} />
+          </fieldset>
+        )}
 
         {errors.role === undefined ? null : (
           <p role="alert" class="text-fluid-sm text-red-600 dark:text-red-400">
@@ -173,26 +201,6 @@ export function PersonEdit() {
           <Icon name="shield" class="size-6" />
           <span>{t('benefits.title')}</span>
         </a>
-      )}
-
-      {person !== undefined && (
-        <section aria-labelledby="person-cards-heading" class="grid gap-3">
-          <h3 id="person-cards-heading" class="text-fluid-lg font-semibold text-ink">
-            {t('person.cards')}
-          </h3>
-          <CardImagePicker
-            personId={person.id}
-            kind="card-front"
-            fileId={person.cardFrontFileId}
-            onSaved={() => void refreshPerson()}
-          />
-          <CardImagePicker
-            personId={person.id}
-            kind="card-back"
-            fileId={person.cardBackFileId}
-            onSaved={() => void refreshPerson()}
-          />
-        </section>
       )}
 
       {person !== undefined && canDelete(person) && (

@@ -1,9 +1,13 @@
-import { useState } from 'preact/hooks'
+import { useEffect, useState } from 'preact/hooks'
 import { refreshAccount } from '../data/account-state'
 import { updateAccount } from '../data/account-repo'
 import { db } from '../db/db'
-import type { Account, Administrator, BankAccount } from '../domain/types'
+import { loadAdministrator } from '../data/administrators'
+import { claimRouting, routingToStore } from '../domain/email'
+import type { AdministratorConfig } from '../domain/requirements-schema'
+import type { Account, BankAccount } from '../domain/types'
 import { t } from '../i18n'
+import { BankSelect } from './BankSelect'
 import { GmailConnect } from './GmailConnect'
 
 const INPUT_CLASS =
@@ -75,28 +79,41 @@ export interface BankFieldsProps {
   onChange(value: BankDraft): void
 }
 
-/** Bank name, account holder, account number and optional address. */
+/** Bank (picked from the NAPAS list), account holder, account number and optional branch address. */
 export function BankFields({ idPrefix, value, errors, onChange }: BankFieldsProps) {
   return (
     <div class="grid gap-4">
       {BANK_ROWS.map(({ field, label }) => {
         const id = `${idPrefix}-${field}`
         const error = errors[field]
+        const describedBy = error === undefined ? undefined : `${id}-error`
         return (
           <div key={field}>
             <label class={LABEL_CLASS} for={id}>
               {t(label)}
             </label>
-            <input
-              id={id}
-              name={field}
-              type="text"
-              class={INPUT_CLASS}
-              value={value[field]}
-              aria-invalid={error === undefined ? undefined : 'true'}
-              aria-describedby={error === undefined ? undefined : `${id}-error`}
-              onInput={(e) => onChange({ ...value, [field]: e.currentTarget.value })}
-            />
+            {field === 'bankName' ? (
+              <BankSelect
+                id={id}
+                value={value.bankName}
+                invalid={error !== undefined}
+                describedBy={describedBy}
+                onChange={(bankName) => onChange({ ...value, bankName })}
+              />
+            ) : (
+              <input
+                id={id}
+                name={field}
+                type="text"
+                inputMode={field === 'accountNumber' ? 'numeric' : undefined}
+                autoComplete="off"
+                class={INPUT_CLASS}
+                value={value[field]}
+                aria-invalid={error === undefined ? undefined : 'true'}
+                aria-describedby={describedBy}
+                onInput={(e) => onChange({ ...value, [field]: e.currentTarget.value })}
+              />
+            )}
             {error === undefined ? null : (
               <p id={`${id}-error`} class={ERROR_CLASS}>
                 {t(error)}
@@ -109,34 +126,54 @@ export function BankFields({ idPrefix, value, errors, onChange }: BankFieldsProp
   )
 }
 
-const ADMINISTRATORS: { value: Administrator; label: string }[] = [{ value: 'marsh', label: 'account.administrator.marsh' }]
-
-/** Claim routing: administrator, claim email, CC addresses and the default bank account. */
+/** Settings shared by every insured person of the account. */
 export function ClaimSettingsForm({ account }: { account: Account }) {
-  const [administrator, setAdministrator] = useState<Administrator>(account.administrator)
-  const [claimEmail, setClaimEmail] = useState(account.claimEmail ?? '')
-  const [claimCc, setClaimCc] = useState(account.claimCc.join(', '))
-  const [bank, setBank] = useState<BankDraft>(() => bankToDraft(account.defaultBank))
+  const [administrator, setAdministrator] = useState<AdministratorConfig | null>(null)
+  const [loadFailed, setLoadFailed] = useState(false)
+  const [claimEmail, setClaimEmail] = useState('')
+  const [claimCc, setClaimCc] = useState('')
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [saved, setSaved] = useState(false)
   const [pending, setPending] = useState(false)
 
+  // The fields start from what will be used: the account's own values, else the administrator defaults.
+  useEffect(() => {
+    let alive = true
+    void loadAdministrator(account.administrator).then((loaded) => {
+      if (!alive) return
+      if (!loaded) {
+        setLoadFailed(true)
+        setClaimEmail(account.claimEmail ?? '')
+        setClaimCc(account.claimCc.join(', '))
+        return
+      }
+      const routing = claimRouting(account, loaded)
+      setAdministrator(loaded)
+      setClaimEmail(routing.to)
+      setClaimCc(routing.cc.join(', '))
+    })
+    return () => {
+      alive = false
+    }
+  }, [account.id, account.administrator])
+
   async function onSubmit(event: Event) {
     event.preventDefault()
     setSaved(false)
-    const bankResult = draftToBank(bank)
-    if (!bankResult.ok) {
-      setErrors(bankResult.errors)
+    const typed = { to: claimEmail, cc: claimCc.split(',') }
+    const required: Record<string, string> = {}
+    if (typed.to.trim() === '') required.claimEmail = 'error.required'
+    if (typed.cc.every((e) => e.trim() === '')) required.claimCc = 'error.required'
+    if (Object.keys(required).length > 0) {
+      setErrors(required)
       return
     }
 
+    const stored = administrator
+      ? routingToStore(typed, administrator)
+      : { claimEmail: typed.to, claimCc: typed.cc }
     setPending(true)
-    const result = await updateAccount(db, {
-      administrator,
-      claimEmail,
-      claimCc: claimCc.split(','),
-      defaultBank: bankResult.bank,
-    })
+    const result = await updateAccount(db, { administrator: 'marsh', ...stored })
     setPending(false)
     if (!result.ok) {
       setErrors(result.errors)
@@ -152,28 +189,28 @@ export function ClaimSettingsForm({ account }: { account: Account }) {
 
   return (
     <section aria-labelledby="claim-settings-heading" class="grid gap-4 rounded-xl border border-surface-2 p-4">
-      <h2 id="claim-settings-heading" class="text-fluid-lg font-semibold text-ink">
-        {t('account.claimSettings')}
-      </h2>
+      <div class="grid gap-1">
+        <h2 id="claim-settings-heading" class="text-fluid-lg font-semibold text-ink">
+          {t('account.claimSettings')}
+        </h2>
+        <p class="text-fluid-sm text-ink-muted">{t('account.claimSettingsShared')}</p>
+      </div>
 
       <form noValidate class="grid gap-4" onSubmit={onSubmit}>
         <div>
           <label class={LABEL_CLASS} for="claim-administrator">
             {t('account.administrator')}
           </label>
-          <select
+          <input
             id="claim-administrator"
             name="administrator"
-            class={INPUT_CLASS}
-            value={administrator}
-            onChange={(e) => setAdministrator(e.currentTarget.value as Administrator)}
-          >
-            {ADMINISTRATORS.map((a) => (
-              <option key={a.value} value={a.value}>
-                {t(a.label)}
-              </option>
-            ))}
-          </select>
+            type="text"
+            readOnly
+            aria-readonly="true"
+            class={`${INPUT_CLASS} bg-surface-2 text-ink-muted`}
+            value={administrator?.name ?? t('account.administrator.marsh')}
+          />
+          <p class="mt-1 text-fluid-sm text-ink-muted">{t('account.administratorFixed')}</p>
         </div>
 
         <div>
@@ -185,7 +222,8 @@ export function ClaimSettingsForm({ account }: { account: Account }) {
             name="claimEmail"
             type="email"
             inputMode="email"
-            autoComplete="email"
+            autoComplete="off"
+            required
             class={INPUT_CLASS}
             value={claimEmail}
             aria-invalid={emailError === undefined ? undefined : 'true'}
@@ -208,6 +246,8 @@ export function ClaimSettingsForm({ account }: { account: Account }) {
             name="claimCc"
             type="text"
             inputMode="email"
+            autoComplete="off"
+            required
             class={INPUT_CLASS}
             value={claimCc}
             aria-invalid={ccError === undefined ? undefined : 'true'}
@@ -221,10 +261,11 @@ export function ClaimSettingsForm({ account }: { account: Account }) {
           )}
         </div>
 
-        <fieldset class="grid gap-3">
-          <legend class="text-fluid-base font-medium text-ink">{t('account.defaultBank')}</legend>
-          <BankFields idPrefix="defaultBank" value={bank} errors={errors} onChange={setBank} />
-        </fieldset>
+        {loadFailed ? (
+          <p role="alert" class="text-fluid-sm text-red-600 dark:text-red-400">
+            {t('account.administratorLoadFailed')}
+          </p>
+        ) : null}
 
         <button type="submit" disabled={pending} class={SUBMIT_CLASS}>
           {t('common.save')}

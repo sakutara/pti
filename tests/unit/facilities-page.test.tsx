@@ -373,3 +373,37 @@ describe('facilities.freshness.notice', () => {
     expect(screen.queryByRole('alert')).toBeNull()
   })
 })
+
+describe('facilities.nearby', () => {
+  it('facilities.nearby.sort: with the user in Sài Gòn, the nearest facility is listed first with its distance', async () => {
+    const { userLocation } = await import('../../src/data/user-location')
+    const geo = {
+      points: {
+        [BACH_MAI.id]: { lat: 21.0, lng: 105.84, by: 'name' },
+        [XANH_PON.id]: { lat: 21.03, lng: 105.82, by: 'name' },
+        [DONG_DA_DENTAL.id]: { lat: 21.02, lng: 105.83, by: 'address' },
+        [SAIGON_DENTAL.id]: { lat: 10.78, lng: 106.7, by: 'name' },
+      },
+    }
+    const fetchMock = vi.fn(async (input: RequestInfo | URL) => {
+      const url = String(input)
+      const body = url.endsWith('manifest.json') ? MANIFEST : url.endsWith('pti.json') ? DATASET : url.endsWith('geo.json') ? geo : null
+      if (body === null) return new Response('not found', { status: 404 })
+      return new Response(JSON.stringify(body), { status: 200, headers: { 'Content-Type': 'application/json' } })
+    })
+    vi.stubGlobal('fetch', fetchMock)
+    const getCurrentPosition = vi.fn((ok: PositionCallback) =>
+      ok({ coords: { latitude: 10.77, longitude: 106.69 } } as GeolocationPosition),
+    )
+    vi.stubGlobal('navigator', { ...navigator, geolocation: { getCurrentPosition } })
+    userLocation.value = { status: 'idle' }
+
+    render(<FacilitiesPage />)
+
+    await waitFor(() => expect(resultNames()[0]).toBe(SAIGON_DENTAL.name))
+    expect(getCurrentPosition).toHaveBeenCalledTimes(1)
+    expect(screen.getByText('Xếp từ gần đến xa theo vị trí của bạn.')).toBeInTheDocument()
+    expect(screen.getAllByText(/\d km$/).length).toBeGreaterThan(0)
+    userLocation.value = { status: 'idle' }
+  })
+})

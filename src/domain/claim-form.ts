@@ -1,7 +1,7 @@
 /*
  * Dữ liệu điền vào giấy yêu cầu bồi thường (mẫu trong public/forms). Ánh xạ theo knowledge/domain/claim-form.md:
  * NĐBH của claim cho tên, ngày sinh, hạng, chủ hợp đồng, số hợp đồng; điện thoại lấy của nhân viên khi trống;
- * nhân viên (NĐBH chính) cho tên, mã số, chức danh, email; tài khoản nhận tiền: claim.bank > NĐBH.bank > mặc định.
+ * nhân viên (NĐBH chính) cho tên, mã số, chức danh, email; tài khoản nhận tiền: claim.bank > tài khoản của nhân viên > (dữ liệu cũ) NĐBH.bank > mặc định.
  * Chỉ hóa đơn (category 'invoice'), chưa xóa, thuộc claim này được đưa vào bảng kê; hóa đơn chưa xác nhận số tiền
  * không vào tổng mà được đếm riêng để chặn trạng thái sẵn sàng.
  */
@@ -110,7 +110,8 @@ function invoicesOf(claimId: string, documents: ReadonlyArray<DocumentRecord>): 
 
 export function buildClaimFormData(input: BuildClaimFormInput): ClaimFormData {
   const { claim, patient, holder, defaultBank, documents } = input
-  const bank = claim.bank ?? patient.bank ?? defaultBank
+  // Only the employee declares a payout account; the other two are kept for data saved before that rule.
+  const bank = claim.bank ?? holder.bank ?? patient.bank ?? defaultBank
 
   const invoices = invoicesOf(claim.id, documents)
   const confirmed = invoices.filter((d) => d.amountConfirmed && d.amount !== null)

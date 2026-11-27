@@ -6,15 +6,11 @@ import {
   savePerson,
   deletePerson,
   canDelete,
-  resolvePayoutBank,
-  formatBank,
 } from '../../src/data/persons-repo'
 import { setOnline } from '../setup'
 
 const TODAY = '2026-11-26'
 const ACCOUNT_ID = 'acc-1'
-
-const VCB = { bankName: 'VCB', accountName: 'NGUYEN VAN A', accountNumber: '0123' }
 
 function account(overrides: Partial<Account> = {}): Account {
   return {
@@ -112,19 +108,6 @@ describe('persons-repo', () => {
 
     const names = (await listPersons(db, ACCOUNT_ID)).map((p) => p.fullName)
     expect(names).toContain('Nguyễn Thị B')
-  })
-
-  it('account.dependents.bank-fallback: uses the account default bank when the dependent has none', async () => {
-    const holder = holderRecord()
-    await db.persons.add(holder)
-    const dependent = await savePerson(db, ACCOUNT_ID, dependentInput({ bank: null }), TODAY)
-    if (!dependent.ok) throw new Error('setup failed')
-
-    const acc = account({ defaultBank: VCB })
-    const bank = resolvePayoutBank(dependent.person, acc)
-
-    expect(bank).toEqual(VCB)
-    expect(formatBank(bank!)).toBe('VCB / NGUYEN VAN A / 0123')
   })
 
   it('account.dependents.delete: soft-deletes, hides from list and queues person.delete', async () => {

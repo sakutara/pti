@@ -49,16 +49,16 @@ export async function completeProfile(page: Page) {
   await page.getByLabel('Email', { exact: true }).fill('nguyen.a@example.com')
   await page.getByLabel('Mã nhân viên', { exact: true }).fill('NV-001')
   await page.getByLabel('Chức danh', { exact: true }).fill('Kỹ sư')
+  // The payout account lives on the employee page only, picked from the bank list.
+  const bank = page.getByLabel('Ngân hàng', { exact: true })
+  await bank.click()
+  await bank.fill('vietcom')
+  await page.getByRole('option', { name: /Vietcombank \(VCB\)/ }).click()
+  await page.getByLabel('Tên chủ tài khoản', { exact: true }).fill('NGUYEN VAN A')
+  await page.getByLabel('Số tài khoản', { exact: true }).fill('000111222333')
   await page.getByRole('button', { name: 'Lưu', exact: true }).click()
   // Saving returns to the account page; wait for that before going on.
   await expect(page).toHaveURL(/#\/account$/)
-
-  await page.getByRole('link', { name: 'Tài khoản', exact: true }).click()
-  await page.getByLabel('Tên ngân hàng', { exact: true }).fill('Ngân hàng Mẫu')
-  await page.getByLabel('Tên chủ tài khoản', { exact: true }).fill('NGUYEN VAN A')
-  await page.getByLabel('Số tài khoản', { exact: true }).fill('000111222333')
-  await page.getByRole('button', { name: 'Lưu', exact: true }).last().click()
-  await expect(page.getByText('Đã lưu', { exact: true })).toBeVisible()
 }
 
 /**

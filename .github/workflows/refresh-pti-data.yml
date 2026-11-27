@@ -1,6 +1,6 @@
 name: refresh-pti-data
 
-# Refreshes the PTI facility list in public/data. Commits only public/data to main when the data changed.
+# Refreshes the PTI facility list in public/data and looks up map points for new or changed facilities (Nominatim). Commits only public/data to main when the data changed.
 # It does not build, deploy, create branches or open pull requests.
 on:
   schedule: [{ cron: '0 2 1 * *' }]
@@ -17,6 +17,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
       - run: node scripts/refresh-facilities.mjs --out public/data/facilities/pti.json --manifest public/data/manifest.json > summary.md
+      - run: node scripts/geocode-facilities.mjs --facilities public/data/facilities/pti.json --out public/data/facilities/geo.json >> summary.md
       - name: Commit vào main
         run: |
           git add public/data

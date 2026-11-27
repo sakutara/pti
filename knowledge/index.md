@@ -21,6 +21,8 @@ okf_version: "0.2"
 * [0010 Gửi bằng Gmail API](decisions/0010-gmail-api-submission.md) - gmail.send từ trình duyệt, xác minh với Google, mailto dự phòng
 * [0011 Ưu tiên bảng tóm tắt hợp đồng](decisions/0011-policy-summary-precedence.md) - Hạn 365 ngày, tiêu đề, 15 MB, nộp bản gốc
 * [0013 Chỉ dùng main](decisions/0013-main-only.md) - Không branch, không worktree, deploy từ docs/
+* [0014 Bản đồ CSYT](decisions/0014-facility-map.md) - Google Maps, toạ độ Nominatim, vị trí chỉ trong bộ nhớ
+* [0015 Ảnh thẻ lên đầu, cài đặt dùng chung](decisions/0015-card-first-shared-settings.md) - Chỉ mặt trước + OCR, Marsh cố định, ngân hàng chỉ của nhân viên
 * [0012 Phạm vi và các điểm đã chốt](decisions/0012-scope-answers.md) - Không làm tai nạn/tử vong, con đến 25 tuổi, dữ liệu công khai
 
 # Domain

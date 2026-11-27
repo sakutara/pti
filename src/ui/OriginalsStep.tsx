@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'preact/hooks'
 import { accountState } from '../data/account-state'
 import { recordOriginals } from '../data/claims-repo'
-import { loadDataset, loadManifest } from '../data/datasets'
+import { loadAdministrator } from '../data/administrators'
 import { db } from '../db/db'
 import type { Claim, ClaimStatus } from '../domain/claim-types'
-import { parseAdministrator, type AdministratorConfig } from '../domain/requirements-schema'
+import type { AdministratorConfig } from '../domain/requirements-schema'
 import { todayIso } from '../lib/dates'
 import { formatDateVi } from '../lib/format-date'
 import { t } from '../i18n'
@@ -12,16 +12,6 @@ import { IconButton } from './IconButton'
 
 /** Statuses after the claim was sent: the handed-in date can be recorded only then. */
 const SENT: readonly ClaimStatus[] = ['submitted', 'need_info', 'approved', 'partially_approved', 'rejected', 'paid']
-
-/** The administrator file of the account, read through the manifest. Null when it cannot be read. */
-async function loadAdministrator(id: string): Promise<AdministratorConfig | null> {
-  const manifest = await loadManifest()
-  if (!manifest.ok) return null
-  const file = manifest.data.datasets.administrators?.files.find((f) => f.endsWith(`${id}.json`))
-  if (!file) return null
-  const loaded = await loadDataset(file, parseAdministrator)
-  return loaded.ok ? loaded.data : null
-}
 
 /**
  * Originals for claim types the email does not cover (inpatient, maternity; see emailClaimTypes). Says that the email

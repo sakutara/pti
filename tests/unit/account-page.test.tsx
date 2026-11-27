@@ -9,6 +9,10 @@ import { MISSING } from '../../src/i18n'
 import { route } from '../../src/router'
 import { AccountPage } from '../../src/pages/AccountPage'
 import { PersonEdit } from '../../src/pages/PersonEdit'
+import type { AdministratorConfig } from '../../src/domain/requirements-schema'
+
+const MARSH = { id: 'marsh', name: 'Marsh Việt Nam', claimEmail: 'nhanhsbt.mn@pti.com.vn', cc: ['vietnamMMBclaims@marsh.com'] } as unknown as AdministratorConfig
+vi.mock('../../src/data/administrators', () => ({ loadAdministrator: vi.fn(async () => MARSH) }))
 
 const TODAY = '2026-11-26'
 
@@ -78,32 +82,72 @@ function fillDependent(over: { fullName?: string; dateOfBirth?: string; tier?: s
 }
 
 describe('account.settings', () => {
-  it('account.settings.claim-email: saves claim email and CC addresses to the account', async () => {
+  it('account.settings.defaults: shows Marsh as the fixed administrator and fills the default claim email and CC', async () => {
+    await seedAccount()
+    render(<AccountPage />)
+
+    await waitFor(() => expect(screen.getByLabelText('Email nhận hồ sơ')).toHaveValue('nhanhsbt.mn@pti.com.vn'))
+    expect(screen.getByLabelText('Email CC (phân cách bằng dấu phẩy)')).toHaveValue('vietnamMMBclaims@marsh.com')
+    const admin = screen.getByLabelText('Bên quản lý hồ sơ')
+    expect(admin).toHaveValue('Marsh Việt Nam')
+    expect(admin).toHaveAttribute('readonly')
+  })
+
+  it('account.settings.defaults: saving the defaults unchanged stores no override', async () => {
+    await seedAccount()
+    render(<AccountPage />)
+    await waitFor(() => expect(screen.getByLabelText('Email nhận hồ sơ')).toHaveValue('nhanhsbt.mn@pti.com.vn'))
+    fireEvent.click(screen.getByRole('button', { name: 'Lưu' }))
+
+    expect(await screen.findByRole('status')).toHaveTextContent('Đã lưu')
+    const account = (await db.account.toArray())[0]
+    expect(account.claimEmail).toBeNull()
+    expect(account.claimCc).toEqual([])
+  })
+
+  it('account.settings.claim-email: stores the claim email and CC the user changed', async () => {
     await seedAccount()
     const { container } = render(<AccountPage />)
+    const email = screen.getByLabelText('Email nhận hồ sơ')
+    await waitFor(() => expect(email).toHaveValue('nhanhsbt.mn@pti.com.vn'))
 
-    fireEvent.input(await screen.findByLabelText('Email nhận hồ sơ (để trống để dùng mặc định)'), {
-      target: { value: 'claims@example.com' },
-    })
-    fireEvent.input(screen.getByLabelText('CC thêm (phân cách bằng dấu phẩy)'), {
-      target: { value: 'me@example.com' },
+    fireEvent.input(email, { target: { value: 'claims@example.com' } })
+    fireEvent.input(screen.getByLabelText('Email CC (phân cách bằng dấu phẩy)'), {
+      target: { value: 'vietnamMMBclaims@marsh.com, me@example.com' },
     })
     fireEvent.click(screen.getByRole('button', { name: 'Lưu' }))
 
     await waitFor(async () => {
       const account = (await db.account.toArray())[0]
       expect(account.claimEmail).toBe('claims@example.com')
-      expect(account.claimCc).toEqual(['me@example.com'])
+      expect(account.claimCc).toEqual(['vietnamMMBclaims@marsh.com', 'me@example.com'])
     })
     expect(await screen.findByRole('status')).toHaveTextContent('Đã lưu')
     expect(container.textContent ?? '').not.toContain(MISSING)
+  })
+
+  it('account.settings.required: an emptied claim email or CC is not saved', async () => {
+    await seedAccount()
+    render(<AccountPage />)
+    const email = screen.getByLabelText('Email nhận hồ sơ')
+    await waitFor(() => expect(email).toHaveValue('nhanhsbt.mn@pti.com.vn'))
+
+    fireEvent.input(email, { target: { value: '' } })
+    fireEvent.input(screen.getByLabelText('Email CC (phân cách bằng dấu phẩy)'), { target: { value: ' ' } })
+    fireEvent.click(screen.getByRole('button', { name: 'Lưu' }))
+
+    await waitFor(() => expect(email).toHaveAttribute('aria-invalid', 'true'))
+    expect(screen.getByLabelText('Email CC (phân cách bằng dấu phẩy)')).toHaveAttribute('aria-invalid', 'true')
+    const account = (await db.account.toArray())[0]
+    expect(account.claimEmail).toBeNull()
   })
 
   it('account.settings.invalid-email: does not save "abc" and shows an email-format error', async () => {
     await seedAccount()
     render(<AccountPage />)
 
-    const field = await screen.findByLabelText('Email nhận hồ sơ (để trống để dùng mặc định)')
+    const field = screen.getByLabelText('Email nhận hồ sơ')
+    await waitFor(() => expect(field).toHaveValue('nhanhsbt.mn@pti.com.vn'))
     fireEvent.input(field, { target: { value: 'abc' } })
     fireEvent.click(screen.getByRole('button', { name: 'Lưu' }))
 
@@ -111,6 +155,35 @@ describe('account.settings', () => {
     expect(field).toHaveAttribute('aria-invalid', 'true')
     const account = (await db.account.toArray())[0]
     expect(account.claimEmail).toBeNull()
+  })
+
+  it('account.bank.holder-only: the payout account is asked on the employee page only, from the bank list', async () => {
+    const seeded = await seedAccount()
+    setRoute(seeded.holder.id)
+    const { unmount } = render(<PersonEdit />)
+    const bankField = await screen.findByLabelText('Ngân hàng')
+    fireEvent.focus(bankField)
+    fireEvent.input(bankField, { target: { value: 'vietcom' } })
+    fireEvent.mouseDown(await screen.findByRole('option', { name: /Vietcombank \(VCB\)/ }))
+    fireEvent.input(screen.getByLabelText('Tên chủ tài khoản'), { target: { value: 'NGUYEN VAN A' } })
+    fireEvent.input(screen.getByLabelText('Số tài khoản'), { target: { value: '0123' } })
+    fireEvent.click(screen.getByRole('button', { name: 'Lưu' }))
+    await waitFor(async () => {
+      const holder = await db.persons.get(seeded.holder.id)
+      expect(holder?.bank).toEqual({
+        bankName: 'Vietcombank - Ngân hàng TMCP Ngoại thương Việt Nam',
+        accountName: 'NGUYEN VAN A',
+        accountNumber: '0123',
+      })
+    })
+    unmount()
+
+    const dep = await savePerson(db, seeded.account.id, dependentInput(), TODAY)
+    if (!dep.ok) throw new Error('seed failed')
+    setRoute(dep.person.id)
+    render(<PersonEdit />)
+    await screen.findByLabelText('Họ và tên')
+    expect(screen.queryByLabelText('Ngân hàng')).toBeNull()
   })
 })
 
