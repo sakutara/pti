@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { applyCardFields, datesIn, parseCardText } from '../../src/domain/card-ocr'
+import { applyCardFields, datesIn, mergeCardFields, parseCardText } from '../../src/domain/card-ocr'
 import type { PersonInput } from '../../src/domain/types'
 
 const TODAY = '2026-11-27'
@@ -61,6 +61,47 @@ describe('parseCardText', () => {
     const fields = parseCardText(['Chương trình: III', 'Ngày hết hạn: 31/12/2026'], TODAY)
     expect(fields.tier).toBe(3)
     expect(fields.cardValidTo).toBe('2026-12-31')
+  })
+})
+
+// Lines as VietOCR returns them for the PTI/Marsh card layout (made-up person and numbers; the repo is public).
+const PREPARED = [
+  'BẢO HIỂM BƯU ĐIỆN',
+  'Chủ HĐI Policyholder: CTY TNHH VI DU VIET NAM',
+  'NDBH/IINSURED NAME: LEVAN AN',
+  'Mã NĐBH Insured ID: 20240101000001',
+  'Số HĐI Policy No.:  0000001/HD/CN.1.1/000-2/2026/MARO1',
+  'Thời hạn bảo hiểm Period: 01/06/2026-31/05/2027',
+  'Vui lòng xuất trình thẻ này và CCCD/CMND/ Hộ chiếu khi Quý khách đi khám chữa',
+  'Hotline PTI: 1900 545475',
+]
+const AS_TAKEN = [
+  'Chủ HĐI Policyholder CTY TNHH VI DU VIET NAM',
+  'NĐBH Insured name: LE VAN AN',
+  'Mã NĐBH Insured ID: 20240101000001',
+  'Số HĐI Policy Noi  0000001/HD/CN.1.1/000-2/2026/MARO1',
+  'Thời hạn bảo hiểm Period: 01/06/2026-31/05/2027',
+]
+const CARD = {
+  policyholderName: 'CTY TNHH VI DU VIET NAM',
+  cardNumber: '20240101000001',
+  contractCode: '0000001/HD/CN.1.1/000-2/2026/MAR01',
+  cardValidFrom: '2026-06-01',
+  cardValidTo: '2027-05-31',
+}
+
+describe('PTI/Marsh card layout', () => {
+  it('card-scan.ocr.marsh-card: reads every printed field from both readings', () => {
+    expect(parseCardText(PREPARED, TODAY)).toEqual({ ...CARD, fullName: 'Levan An' })
+    expect(parseCardText(AS_TAKEN, TODAY)).toEqual({ ...CARD, fullName: 'Le Van An' })
+  })
+
+  it('card-scan.ocr.merge: keeps the name that did not lose a space', () => {
+    expect(mergeCardFields(parseCardText(PREPARED, TODAY), parseCardText(AS_TAKEN, TODAY))).toEqual({ ...CARD, fullName: 'Le Van An' })
+  })
+
+  it('card-scan.ocr.insured-id: the insured ID line is never taken as the name', () => {
+    expect(parseCardText(['Mã NĐBH Insured ID: 20240101000001'], TODAY)).toEqual({ cardNumber: '20240101000001' })
   })
 })
 

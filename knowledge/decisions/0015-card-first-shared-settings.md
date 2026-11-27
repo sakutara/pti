@@ -11,7 +11,7 @@ generated: { by: claude-opus-5-5, at: 2026-11-27T05:00:00Z }
 - **Ảnh thẻ trước tiên**: trang người được bảo hiểm và màn hình tạo tài khoản bắt đầu bằng ảnh thẻ. Thẻ PTI không có mặt sau, nên
   chỉ chụp mặt trước. Ảnh được đọc trên máy bằng VietOCR (cùng mô hình đọc hóa đơn, [0005](/decisions/0005-vietocr-copied.md))
   và tự điền họ tên, ngày sinh, số thẻ, số hợp đồng, bên mua bảo hiểm, hiệu lực, hạng, CCCD, mã nhân viên; người dùng kiểm tra rồi lưu.
-  Bộ đọc dựa vào nhãn ("Họ tên", "Ngày sinh", "Số thẻ", "Hiệu lực"…), chưa thử trên thẻ thật — cần ảnh thẻ mẫu để chỉnh.
+  Bộ đọc dựa vào nhãn ("Họ tên", "Ngày sinh", "Số thẻ", "Hiệu lực"…), đã thử trên một thẻ PTI/Marsh thật (2026-11-27): đọc ảnh hai lần (bản xử lý tương phản và ảnh gốc) rồi gộp; trong số hợp đồng/số thẻ, chữ O cạnh chữ số được sửa thành 0. Ảnh và dữ liệu thẻ thật không đưa vào repo công khai.
 - **Cài đặt nhận hồ sơ dùng chung** cho mọi người trong tài khoản: bên quản lý cố định là Marsh; email nhận và CC điền sẵn
   mặc định của Marsh (`nhanhsbt.mn@pti.com.vn`, CC `vietnamMMBclaims@marsh.com`), không được để trống. Giá trị bằng mặc định lưu là
   "chưa đặt" (null / []); người dùng sửa thì lưu đúng giá trị đã sửa. Danh sách CC của tài khoản **thay** danh sách mặc định.

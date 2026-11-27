@@ -26,12 +26,12 @@ type TextField = 'fullName' | 'policyholderName' | 'contractCode' | 'cardNumber'
 const LABELS: { field: TextField | 'dateOfBirth' | 'validity' | 'tier'; pattern: RegExp }[] = [
   { field: 'dateOfBirth', pattern: /\b(ngay sinh|ngay thang nam sinh|nam sinh|d\.?o\.?b|date of birth|birth ?date|birthday)\b/ },
   { field: 'validity', pattern: /\b(hieu luc|thoi han|thoi gian bao hiem|valid(ity)?|effective|expir(y|ation|e)|het han|tu ngay|period)\b/ },
-  { field: 'contractCode', pattern: /\b(so hop dong|hop dong so|ma hop dong|so hd|hd so|policy (no|number|code)|contract (no|number))\b/ },
-  { field: 'cardNumber', pattern: /\b(so the|ma the|the so|card (no|number|id)|member (no|id|number)|so gcn|so giay chung nhan|certificate (no|number)|ma so the)\b/ },
+  { field: 'contractCode', pattern: /\b(so hop dong|hop dong so|ma hop dong|so hd[il]?|hd so|policy (no\w?|number|code)|contract (no|number))\b/ },
+  { field: 'cardNumber', pattern: /\b(so the|ma the|the so|card (no|number|id)|member (no|id|number)|so gcn|so giay chung nhan|certificate (no|number)|ma so the|ma ndbh|insured id)\b/ },
   { field: 'idNumber', pattern: /\b(cccd|cmnd|can cuoc|so dinh danh|id (no|number)|passport|ho chieu)\b/ },
   { field: 'employeeCode', pattern: /\b(ma (so )?nhan vien|ma nv|msnv|employee (id|no|code)|staff (id|no))\b/ },
   { field: 'tier', pattern: /\b(hang|chuong trinh|goi|plan|class|level)\b/ },
-  { field: 'policyholderName', pattern: /\b(ben mua bao hiem|nguoi mua bao hiem|chu hop dong|don vi|cong ty|to chuc|policy ?holder|company|employer|corporate)\b/ },
+  { field: 'policyholderName', pattern: /\b(ben mua bao hiem|nguoi mua bao hiem|chu hop dong|chu hd[il]?|don vi|cong ty|to chuc|policy ?holder|company|employer|corporate)\b/ },
   { field: 'fullName', pattern: /\b(ho (va )?ten|ten nguoi duoc bao hiem|nguoi duoc bao hiem|ndbh|full ?name|insured( person| name)?|name|member)\b/ },
 ]
 
@@ -52,6 +52,8 @@ export function datesIn(text: string): string[] {
   return out
 }
 
+const ENGLISH_LABEL = /^[\s/|]*I?\s*(policy ?holder|insured ?name|insured ?id|policy ?no\w?|period)(?![a-z])/i
+
 /** Text after the label on the same line, without the separator; '' when the label ends the line. */
 function afterLabel(line: string, pattern: RegExp): string {
   const folded = foldVi(line)
@@ -60,8 +62,9 @@ function afterLabel(line: string, pattern: RegExp): string {
   // foldVi keeps one character per letter of NFC Vietnamese text, so the folded index points into the original.
   const original = line.normalize('NFC').replace(/\s+/g, ' ').trim()
   let rest = original.slice(m.index + m[0].length)
-  // English label written after the Vietnamese one, e.g. "Họ tên/Full name:".
-  rest = rest.replace(/^\s*\/\s*[A-Za-z .]+(?=[:：])/, '')
+  // English label written after the Vietnamese one, e.g. "Họ tên/Full name:". OCR may read the "/" as "I" or drop the
+  // colon, so the English labels printed on the card are also removed by name.
+  rest = rest.replace(/^\s*\/\s*[A-Za-z .]+(?=[:：])/, '').replace(ENGLISH_LABEL, '')
   return rest.replace(/^[\s:：.\-–/|]+/, '').trim()
 }
 
@@ -86,11 +89,15 @@ function cleanName(raw: string): string | null {
   return words.map((w) => w.charAt(0).toLocaleUpperCase('vi') + w.slice(1).toLocaleLowerCase('vi')).join(' ')
 }
 
-/** Code-like value: letters, digits and - / . ; first token run only, at least 4 characters with a digit. */
+/**
+ * Code-like value: the first run of letters, digits and - / . that has at least 4 characters and a digit. In policy and
+ * card numbers a letter O touching a digit is a misread zero ("MARO1" → "MAR01").
+ */
 function cleanCode(raw: string): string | null {
-  const m = /[\p{L}\p{N}][\p{L}\p{N}\-/.]*[\p{L}\p{N}]/u.exec(raw.replace(/\s+(?=\d)/g, ''))
-  if (!m || m[0].length < 4 || !/\d/.test(m[0])) return null
-  return m[0].toLocaleUpperCase('vi')
+  const runs = raw.replace(/\s+(?=\d)/g, '').match(/[\p{L}\p{N}][\p{L}\p{N}\-/.]*[\p{L}\p{N}]/gu) ?? []
+  const code = runs.find((run) => run.length >= 4 && /\d/.test(run))
+  if (!code) return null
+  return code.toLocaleUpperCase('vi').replace(/O(?=\d)|(?<=\d)O/g, '0')
 }
 
 function cleanText(raw: string): string | null {
@@ -200,6 +207,21 @@ export function parseCardText(lines: readonly string[], today: string): CardFiel
     }
   }
 
+  return out
+}
+
+/**
+ * Combines two readings of the same card. `primary` wins; `secondary` fills what it missed. When both read the same
+ * name but one lost a space between words ("LEVAN AN"), the one with more words is kept.
+ */
+export function mergeCardFields(primary: CardFields, secondary: CardFields): CardFields {
+  const out: CardFields = { ...secondary, ...primary }
+  const a = primary.fullName
+  const b = secondary.fullName
+  if (a && b) {
+    const letters = (name: string) => foldVi(name).replace(/ /g, '')
+    if (letters(a) === letters(b) && b.split(' ').length > a.split(' ').length) out.fullName = b
+  }
   return out
 }
 

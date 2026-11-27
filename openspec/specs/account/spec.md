@@ -110,6 +110,11 @@ When the on-device reading model is present, the card photo SHALL be read with V
 - **WHEN** the user picks a card photo whose text reads "Họ tên/Full name: NGUYỄN VĂN THẾ" and "Hiệu lực/Valid: 01/01/2026 - 31/12/2026"
 - **THEN** full name "Nguyễn Văn Thế", valid from 2026-01-01 and valid to 2026-12-31 are filled in and a status says how many fields were filled
 
+#### Scenario: card-scan.ocr.merge
+- **GIVEN** the prepared copy reads the name "LEVAN AN" and the photo as taken reads "LE VAN AN"
+- **WHEN** both readings are combined
+- **THEN** the name "Le Van An" is filled in
+
 #### Scenario: card-scan.ocr.no-model
 - **GIVEN** the reading model is not downloaded
 - **WHEN** the user picks a card photo
