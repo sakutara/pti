@@ -76,8 +76,8 @@ The page SHALL always show the date the facility data was fetched, and the app S
 - **THEN** a notice reads "Danh sách cơ sở y tế đã cập nhật: thêm 3, bỏ 1, thay đổi 2"
 - **AND** after the user dismisses it, it does not show again for version "2026-11"
 
-### Requirement: Nearest first, on a Google map
-The page SHALL ask the browser for the user's position when it opens (kept in memory only, never stored or sent) and, when granted, SHALL list the facilities matching the filters from nearest to farthest with the distance on each row: facilities with a building-level point first, then those placed only at their province centre (distance marked "≈"), then those without a point. Points come from `public/data/facilities/geo.json`, made at refresh time from OpenStreetMap Nominatim. When a Google Maps API key is built in, the page SHALL show a Google map with one pin per listed facility and a dot for the user, framed on the user and the nearest facilities; tapping a pin opens that facility. Without a key, or when the map cannot load, the list works as before.
+### Requirement: Nearest first
+The page SHALL ask the browser for the user's position when it opens (kept in memory only, never stored or sent) and, when granted, SHALL list the matching facilities nearest first with the distance on each row: building-level points first, then province-centre points (distance marked "≈"), then facilities without a point. Points come from `public/data/facilities/geo.json`, made at refresh time from OpenStreetMap Nominatim.
 
 #### Scenario: facilities.nearby.sort
 - **GIVEN** the user is in TP.HCM and the list has three facilities in Hà Nội and one in TP.HCM, all with points
@@ -91,3 +91,11 @@ The page SHALL ask the browser for the user's position when it opens (kept in me
 #### Scenario: facilities.geo.lookup
 - **WHEN** the refresh script runs
 - **THEN** it keeps existing building-level points, looks up new or changed facilities and province-centre points again (at most one request per second), and drops results outside Viet Nam
+
+### Requirement: Google map of facilities
+When a Google Maps API key is built in, the page SHALL show a Google map with one pin per listed facility and a dot for the user, framed on the user and the nearest facilities; tapping a pin opens that facility. Without a key, or when the map cannot load, the list works as before.
+
+#### Scenario: facilities.map.no-key
+- **GIVEN** the build has no Google Maps API key
+- **WHEN** the page opens
+- **THEN** no map is shown and the list still sorts by distance

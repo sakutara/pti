@@ -29,7 +29,7 @@ On first launch the app SHALL ask for the holder's required details (full name, 
 - **THEN** a one-time hint explains how to add the app to the home screen and that data lives only on this device
 
 ### Requirement: Edit holder and claim settings
-The Tài khoản page SHALL let the user edit every holder field and the claim settings, which are shared by every insured person of the account: administrator (fixed to Marsh, shown read-only in this phase), claim email and CC addresses. The claim email and CC fields SHALL start filled with what will be used (the account's own values, else the administrator defaults), SHALL NOT be saved empty, and a value equal to the administrator default SHALL be stored as unset so later default changes reach the account.
+The Tài khoản page SHALL let the user edit every holder field and the claim settings shared by every insured person of the account: administrator (fixed to Marsh, read-only in this phase), claim email and CC addresses. The email fields SHALL start filled with what will be used (the account's values, else the administrator defaults) and SHALL NOT be saved empty. A value equal to the default SHALL be stored as unset.
 
 #### Scenario: account.settings.defaults
 - **GIVEN** an account with no claim email or CC of its own and the Marsh administrator file
@@ -95,12 +95,15 @@ Only the employee (holder) SHALL declare the bank account that receives claim pa
 - **WHEN** the user views the holder
 - **THEN** no delete action is offered
 
-### Requirement: Card photo first, read on the device
-The person page and onboarding SHALL start with the insurance card photo: the card front only (PTI cards have no back), taken with the camera or picked from files and stored after downscaling. When the on-device reading model is present, the photo SHALL be read with VietOCR and the fields found (full name, date of birth, card number, contract code, policyholder, validity, tier, ID number, employee code) copied onto the form for the user to check before saving; without the model the photo is kept and an offer to download the model is shown, and reading starts once it is ready. A photo picked before the person exists is stored right after the person is saved.
+### Requirement: Card photo first
+The person page and onboarding SHALL start with the insurance card photo: the card front only (PTI cards have no back), taken with the camera or picked from files and stored after downscaling. A photo picked before the person exists is stored right after the person is saved.
 
 #### Scenario: card-scan.front-only
 - **WHEN** the person page renders
 - **THEN** the card section is the first section and offers only the card front
+
+### Requirement: Card fields read on the device
+When the on-device reading model is present, the card photo SHALL be read with VietOCR and the fields found (full name, date of birth, card number, contract code, policyholder, validity, tier, ID number, employee code) copied onto the form for the user to check before saving. Without the model the photo is kept, the model download is offered, and reading starts once it is ready.
 
 #### Scenario: card-scan.ocr.autofill
 - **GIVEN** the reading model is ready
