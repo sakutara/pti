@@ -22,6 +22,7 @@ generated: { by: claude-sonnet-5-5, at: 2026-11-26T06:00:00Z }
 | ocrStatus | 'none' \| 'pending' \| 'done' \| 'failed' | |
 | ocrText | string \| null | |
 | ocrCandidates | { amount, label, confidence: 'high' \| 'low' }[] | |
+| lowResolution | boolean | true khi một ảnh thêm vào có cạnh dài < 1200 px; hiện cảnh báo trong lưới và trình sửa |
 | createdAt, updatedAt | number | index updatedAt |
 | deleted | 0 \| 1 | |
 

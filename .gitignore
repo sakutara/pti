@@ -32,3 +32,4 @@ test-results/
 playwright-report/
 .autobuild/
 .claude/settings.local.json
+dist-gmail-e2e

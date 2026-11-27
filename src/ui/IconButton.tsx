@@ -1,5 +1,5 @@
 import type { ComponentProps } from 'preact'
-import { Icon } from './Icon'
+import { Icon, icons } from './Icon'
 
 type Props = Omit<ComponentProps<'button'>, 'icon' | 'label'> & {
   /** File name in src/icons/ without .svg */
@@ -20,7 +20,9 @@ const VARIANT = {
 }
 
 export function IconButton({ icon, label, showLabel = false, pressed, variant = 'ghost', class: cls = '', ...rest }: Props) {
-  const name = pressed ? `${icon}-filled` : icon
+  // Fall back to the base icon when there is no filled variant file.
+  const filled = `${icon}-filled`
+  const name = pressed && icons[filled] ? filled : icon
   return (
     <button
       type="button"

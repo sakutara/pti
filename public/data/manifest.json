@@ -1,12 +1,38 @@
 {
- "schema": 1,
- "datasets": {
-  "benefits": {
-   "files": [
-    "benefits/2026.json"
-   ],
-   "updatedAt": "2026-11-26",
-   "version": "2026.1"
+  "schema": 1,
+  "datasets": {
+    "benefits": {
+      "files": [
+        "benefits/2026.json"
+      ],
+      "updatedAt": "2026-11-26",
+      "version": "2026.1"
+    },
+    "facilities": {
+      "files": [
+        "facilities/pti.json"
+      ],
+      "updatedAt": "2026-11-27",
+      "version": "2026-11",
+      "changes": {
+        "added": 269,
+        "removed": 0,
+        "changed": 0
+      }
+    },
+    "claimRequirements": {
+      "files": [
+        "claim-requirements.json"
+      ],
+      "updatedAt": "2026-11-27",
+      "version": "2026-11"
+    },
+    "administrators": {
+      "files": [
+        "administrators/marsh.json"
+      ],
+      "updatedAt": "2026-11-27",
+      "version": "2026-11"
+    }
   }
- }
 }

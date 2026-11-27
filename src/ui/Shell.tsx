@@ -3,6 +3,7 @@ import { syncStatus } from '../sync/sync-engine'
 import { route } from '../router'
 import { t, type MessageKey } from '../i18n'
 import { Icon } from './Icon'
+import { DataNotice } from './DataNotice'
 import { LegalLinks } from './LegalLinks'
 
 // One list drives both the side nav (lg+) and the bottom tabs (below lg).
@@ -38,7 +39,7 @@ export function SyncBadge() {
 export function Shell({ children }: { children?: ComponentChildren }) {
   const path = route.value.path
   return (
-    <div class="min-h-dvh lg:grid lg:grid-cols-[16rem_1fr]">
+    <div class="min-h-dvh overflow-x-clip lg:grid lg:grid-cols-[16rem_1fr]">
       <div class="hidden lg:flex lg:flex-col lg:gap-1 lg:border-r lg:border-surface-2 lg:p-gutter">
         <nav aria-label={t('nav.primary')} class="flex flex-col gap-1">
           {NAV.map((n) => (
@@ -61,7 +62,10 @@ export function Shell({ children }: { children?: ComponentChildren }) {
           <SyncBadge />
         </header>
 
-        <main class="mx-auto w-full max-w-3xl flex-1 px-gutter pb-24 lg:max-w-7xl lg:pb-8">{children}</main>
+        <main class="mx-auto w-full max-w-3xl flex-1 px-gutter pb-24 lg:max-w-7xl lg:pb-8">
+          <DataNotice />
+          {children}
+        </main>
 
         <nav aria-label={t('nav.tabs')} class="fixed inset-x-0 bottom-0 z-10 flex border-t border-surface-2 bg-surface pb-[env(safe-area-inset-bottom)] lg:hidden">
           {NAV.map((n) => (

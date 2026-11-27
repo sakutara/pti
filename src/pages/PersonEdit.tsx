@@ -8,8 +8,12 @@ import { todayIso } from '../lib/dates'
 import { navigate, route } from '../router'
 import { BankFields, bankToDraft, draftToBank, EMPTY_BANK_DRAFT, type BankDraft } from '../ui/ClaimSettingsForm'
 import { CardImagePicker } from '../ui/CardImagePicker'
+import { Icon } from '../ui/Icon'
 import { IconButton } from '../ui/IconButton'
 import { PersonForm } from '../ui/PersonForm'
+
+const BENEFITS_LINK =
+  'inline-flex min-h-11 items-center gap-3 justify-self-start rounded-xl bg-surface-2 px-4 text-fluid-base font-medium text-ink transition-colors hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent'
 
 /** Route segment that means "add a new dependent". */
 const NEW_ID = 'new'
@@ -163,6 +167,13 @@ export function PersonEdit() {
           {t('common.save')}
         </button>
       </form>
+
+      {person !== undefined && (
+        <a href={`#/benefits/${person.id}`} class={BENEFITS_LINK}>
+          <Icon name="shield" class="size-6" />
+          <span>{t('benefits.title')}</span>
+        </a>
+      )}
 
       {person !== undefined && (
         <section aria-labelledby="person-cards-heading" class="grid gap-3">

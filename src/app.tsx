@@ -1,6 +1,8 @@
 import { useEffect } from 'preact/hooks'
 import { db } from './db/db'
 import { accountState, loadAccount } from './data/account-state'
+import { initOcrModel } from './data/ocr-model'
+import { startOcrQueue } from './data/ocr-queue'
 import { updateAvailable, applyUpdate } from './pwa'
 import { matchRoute, refreshRoute, route, KNOWN_PATTERNS } from './router'
 import { ROUTES } from './routes'
@@ -18,6 +20,15 @@ function CurrentPage() {
   return <Page />
 }
 
+/**
+ * Starts reading documents at app startup, not only on the documents page: restore the model state, then run the
+ * queue for pending invoices.
+ */
+async function startOcr(): Promise<void> {
+  await initOcrModel()
+  await startOcrQueue()
+}
+
 export function App() {
   useEffect(() => {
     refreshRoute()
@@ -25,6 +36,11 @@ export function App() {
   }, [])
 
   const state = accountState.value
+  const accountReady = state.status === 'ready'
+  useEffect(() => {
+    if (accountReady) startOcr().catch(() => {})
+  }, [accountReady])
+
   const fullScreen = matchRoute(route.value.path, KNOWN_PATTERNS)?.pattern === WALLET_PATTERN
   let content
   if (state.status === 'loading') {

@@ -44,6 +44,13 @@ Indexes: `id, personId, status, treatmentDate, updatedAt`
 `id, claimId, at (epoch ms), status, note, amount (number|null), updatedAt, deleted`
 Indexes: `id, claimId, at, updatedAt`
 
+# settings: gmailSentUnsaved (chỉ trên máy này)
+
+Khóa `gmailSentUnsaved:<claimId>` trong bảng `settings` (`key`, `value`, `updatedAt`). Không vào outbox và không đồng bộ.
+`value` là `{ threadId: string, at: number }`. Ghi khi Gmail đã nhận thư nhưng lưu trạng thái `submitted` thất bại; trong
+lúc khóa còn, bước gửi không cho gửi lại mà chỉ hiện "Đánh dấu đã nộp" (thử lại việc ghi trạng thái). Khóa bị xóa sau khi
+ghi trạng thái thành công.
+
 # Versions
 
 - v4 (add-claim-filing): bảng `claims`, `claimEvents` được tạo

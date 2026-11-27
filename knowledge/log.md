@@ -1,5 +1,18 @@
 # Log
 
+## 2026-11-27
+
+- build: sửa chip lọc hồ sơ, hiện ảnh hóa đơn ở bước Hóa đơn, sửa test e2e chập chờn; thêm e2e nén ảnh vượt 15 MB và Gmail khi offline (client giả)
+
+- archive: cả 6 change đã archive vào openspec/specs; chưa commit, chưa deploy
+- build: change add-claim-filing implemented (lập, gửi, theo dõi hồ sơ); chưa gửi Gmail thật
+
+- build: change add-document-library implemented (OCR thật chạy trong trình duyệt offline; 730 unit, 64 e2e); sửa lỗi cache mô hình (MIME, Vary); chưa commit, chưa archive
+
+- build: change add-facility-directory implemented (dữ liệu PTI thật: 232 bảo lãnh, 37 loại trừ; 517 unit, 52 e2e); chưa commit, chưa archive
+
+- build: change add-benefit-plans implemented và kiểm tra đủ (348 unit, 34 e2e), sửa thứ tự cột màn hình rộng; chưa commit, chưa archive
+
 ## 2026-11-26
 
 - build: change add-public-pages implemented (trang /about/, /privacy/, email liên hệ do chủ dự án cung cấp); chưa archive, chưa deploy

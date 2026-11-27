@@ -1,0 +1,219 @@
+{
+  "source": "Tóm tắt hợp đồng 2026–2027; hướng dẫn PTI 08/2025",
+  "updatedAt": "2026-11",
+  "invoiceGuidance": {
+    "buyer": "patient",
+    "fields": ["fullName", "address", "idNumber"],
+    "requiredFields": ["fullName", "address"],
+    "warnings": [
+      "Người mua trên hóa đơn là người được bảo hiểm, không phải người khác",
+      "Địa chỉ cư trú phải khớp địa chỉ trong hồ sơ y tế; số CCCD được khuyến khích",
+      "Hóa đơn xuất đúng ngày khám, hoặc ngày ra viện với nội trú; xuất muộn thì kèm phiếu thu hoặc phiếu xuất thuốc của ngày thực tế",
+      "Người được bảo hiểm ký ở ô người mua",
+      "Hóa đơn có bảng kê chi tiết và mã tra cứu hoặc đường link của cơ quan thuế"
+    ]
+  },
+  "requirements": [
+    {
+      "id": "common.invoice",
+      "claimTypes": ["outpatient", "dental", "optical", "inpatient", "maternity"],
+      "categories": ["invoice"],
+      "title": "Hóa đơn tài chính (bản gốc hoặc hóa đơn điện tử PDF)",
+      "required": true,
+      "when": null,
+      "note": "Hóa đơn điện tử PDF được chấp nhận; PTI có thể yêu cầu bản gốc.",
+      "checklist": [
+        "Người mua là người được bảo hiểm, họ tên và địa chỉ khớp hồ sơ y tế",
+        "Ngày hóa đơn đúng ngày khám, hoặc ngày ra viện với nội trú",
+        "Có mã tra cứu hoặc đường link của cơ quan thuế",
+        "Người mua đã ký ở ô người mua"
+      ]
+    },
+    {
+      "id": "common.invoice-breakdown",
+      "claimTypes": ["outpatient", "dental"],
+      "categories": ["invoice-breakdown"],
+      "title": "Bảng kê chi tiết",
+      "required": true,
+      "when": { "not": { "all": [{ "flag": "publicFacility" }, { "not": { "totalGte": 1000000 } }] } },
+      "note": "Bệnh viện công có tổng dưới 1.000.000 đ không cần bảng kê.",
+      "checklist": [
+        "Bảng kê theo từng khoản chi phí đi kèm hóa đơn",
+        "Tổng tiền trên bảng kê khớp hóa đơn",
+        "Đơn in có mã bệnh viện thì không cần dấu"
+      ]
+    },
+    {
+      "id": "outpatient.prescription",
+      "claimTypes": ["outpatient"],
+      "categories": ["prescription", "medical-record"],
+      "title": "Đơn thuốc hoặc sổ khám",
+      "required": true,
+      "when": null,
+      "checklist": [
+        "Chẩn đoán, ngày khám và thuốc được kê",
+        "Chữ ký và họ tên bác sĩ, dấu của cơ sở y tế",
+        "Không quá 30 ngày thuốc (bệnh dài ngày tối đa 90)",
+        "Mua thuốc trong 5 ngày kể từ ngày kê đơn"
+      ]
+    },
+    {
+      "id": "outpatient.lab-result",
+      "claimTypes": ["outpatient"],
+      "categories": ["lab-result"],
+      "title": "Kết quả cận lâm sàng (nếu có)",
+      "required": false,
+      "when": null,
+      "checklist": [
+        "Kết quả xét nghiệm hoặc chẩn đoán hình ảnh có tên và ngày",
+        "Không cần phiếu chỉ định nếu phù hợp chẩn đoán, phác đồ và có kết quả điều trị"
+      ]
+    },
+    {
+      "id": "outpatient.multi-day",
+      "claimTypes": ["outpatient"],
+      "categories": ["treatment-plan"],
+      "title": "Chỉ định và phác đồ điều trị",
+      "required": true,
+      "when": { "flag": "multiDayTreatment" },
+      "note": "Điều trị nhiều ngày, ví dụ vật lý trị liệu.",
+      "checklist": [
+        "Chỉ định của bác sĩ",
+        "Phác đồ điều trị"
+      ]
+    },
+    {
+      "id": "optical.exam",
+      "claimTypes": ["optical"],
+      "categories": ["medical-record"],
+      "title": "Sổ khám hoặc phiếu khám có chẩn đoán",
+      "required": true,
+      "when": null,
+      "checklist": [
+        "Khám tại cơ sở y tế",
+        "Có chẩn đoán",
+        "Dấu của cơ sở y tế"
+      ]
+    },
+    {
+      "id": "optical.prescription",
+      "claimTypes": ["optical"],
+      "categories": ["prescription"],
+      "title": "Đơn kính",
+      "required": true,
+      "when": null,
+      "note": "Đơn kính còn hiệu lực 30 ngày.",
+      "checklist": [
+        "Đơn kính còn hiệu lực 30 ngày kể từ ngày khám",
+        "Đơn kính do cơ sở y tế cấp"
+      ]
+    },
+    {
+      "id": "dental.treatment-form",
+      "claimTypes": ["dental"],
+      "categories": ["dental-record"],
+      "title": "Phiếu điều trị răng",
+      "required": true,
+      "when": null,
+      "checklist": [
+        "Nguyên nhân điều trị",
+        "Số răng và vật liệu trám"
+      ]
+    },
+    {
+      "id": "dental.xray",
+      "claimTypes": ["dental"],
+      "categories": ["xray"],
+      "title": "Phim X-quang",
+      "required": true,
+      "when": { "flag": "rootCanalOrExtraction" },
+      "note": "Bắt buộc khi chữa tủy hoặc nhổ răng.",
+      "checklist": [
+        "Phim X-quang của răng được chữa tủy hoặc nhổ"
+      ]
+    },
+    {
+      "id": "dental.prescription",
+      "claimTypes": ["dental"],
+      "categories": ["prescription"],
+      "title": "Đơn thuốc (nếu có)",
+      "required": false,
+      "when": null,
+      "checklist": [
+        "Đơn thuốc khi có mua thuốc",
+        "Không mua thuốc thì không cần hóa đơn thuốc"
+      ]
+    },
+    {
+      "id": "inpatient.invoice-breakdown",
+      "claimTypes": ["inpatient", "maternity"],
+      "categories": ["invoice-breakdown"],
+      "title": "Bảng kê chi tiết viện phí",
+      "required": true,
+      "when": { "not": { "all": [{ "flag": "publicFacility" }, { "not": { "totalGte": 5000000 } }] } },
+      "note": "Bệnh viện công có tổng dưới 5.000.000 đ không cần bảng kê.",
+      "checklist": [
+        "Bảng kê theo từng khoản chi phí",
+        "Tổng tiền trên bảng kê khớp hóa đơn"
+      ]
+    },
+    {
+      "id": "inpatient.discharge",
+      "claimTypes": ["inpatient", "maternity"],
+      "categories": ["discharge"],
+      "title": "Giấy ra viện",
+      "required": true,
+      "when": null,
+      "checklist": [
+        "Ngày vào viện và ngày ra viện",
+        "Chẩn đoán ra viện",
+        "Chữ ký và dấu của cơ sở y tế"
+      ]
+    },
+    {
+      "id": "inpatient.pre-admission",
+      "claimTypes": ["inpatient", "maternity"],
+      "categories": ["pre-admission"],
+      "title": "Chứng từ trước khi nhập viện (nếu có)",
+      "required": false,
+      "when": null,
+      "checklist": [
+        "Giấy hẹn, chỉ định hoặc kết quả khám trước khi nhập viện"
+      ]
+    },
+    {
+      "id": "inpatient.surgery-cert",
+      "claimTypes": ["inpatient", "maternity"],
+      "categories": ["surgery-cert"],
+      "title": "Giấy chứng nhận phẫu thuật",
+      "required": true,
+      "when": { "flag": "surgery" },
+      "checklist": [
+        "Tên phẫu thuật và ngày thực hiện",
+        "Chữ ký và dấu của cơ sở y tế"
+      ]
+    },
+    {
+      "id": "inpatient.transfer",
+      "claimTypes": ["inpatient", "maternity"],
+      "categories": ["transfer"],
+      "title": "Giấy chuyển viện",
+      "required": true,
+      "when": { "flag": "transfer" },
+      "checklist": [
+        "Giấy chuyển viện giữa các cơ sở y tế"
+      ]
+    },
+    {
+      "id": "inpatient.post-discharge",
+      "claimTypes": ["inpatient", "maternity"],
+      "categories": ["post-discharge"],
+      "title": "Chứng từ sau khi ra viện (nếu có)",
+      "required": false,
+      "when": null,
+      "checklist": [
+        "Đơn thuốc, chỉ định tái khám hoặc kết quả điều trị sau khi ra viện"
+      ]
+    }
+  ]
+}

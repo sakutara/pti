@@ -27,10 +27,10 @@ afterEach(async () => {
 })
 
 describe('account.onboarding.create: Dexie v2 schema', () => {
-  it('account.onboarding.create: db.verno is 2 after open', async () => {
+  it('account.onboarding.create: db.verno is the latest after open', async () => {
     const db = freshDb()
     await db.open()
-    expect(db.verno).toBe(2)
+    expect(db.verno).toBe(4)
   })
 
   it('account.onboarding.create: tables account, persons, files exist with the indexes', async () => {
@@ -71,7 +71,7 @@ describe('account.onboarding.create: Dexie v2 schema', () => {
     opened.push(upgraded)
     await upgraded.open()
 
-    expect(upgraded.verno).toBe(2)
+    expect(upgraded.verno).toBe(4)
     const setting = await upgraded.settings.get('k')
     expect(setting).toEqual({ key: 'k', value: 1, updatedAt: 1 })
   })

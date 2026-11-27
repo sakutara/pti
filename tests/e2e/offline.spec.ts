@@ -107,3 +107,39 @@ test('offline.preview.wallet: offline onboarding, card image and card wallet wor
 
   expect(external).toEqual([])
 })
+
+test('benefits.dataset.offline: after one online visit, #/benefits shows the bundled benefits offline', async ({ page, context }) => {
+  await page.clock.setFixedTime(new Date('2026-11-26T10:00:00'))
+  await warmServiceWorker(page)
+  await onboard(page)
+  // Load the page once online so the app has read the benefits dataset.
+  await page.evaluate(() => {
+    location.hash = '#/benefits'
+  })
+  await expect(page.getByText('16.000.000 đ/năm', { exact: true }).first()).toBeVisible()
+
+  await context.setOffline(true)
+  await page.reload()
+  await expect(page.getByRole('heading', { name: 'Nguyễn Văn A', exact: true })).toBeVisible()
+  await expect(page.getByText('Hạng 2', { exact: true })).toBeVisible()
+  await expect(page.getByText('16.000.000 đ/năm', { exact: true }).first()).toBeVisible()
+  await expect(page.getByText('4.000.000 đ/lần khám', { exact: true }).first()).toBeVisible()
+})
+
+test('facilities.search.offline: after one online visit, "bach mai" finds Bệnh viện Bạch Mai offline with no network request', async ({ page, context }) => {
+  await warmServiceWorker(page)
+  await onboard(page)
+  // One online visit reads the facilities dataset, so the app has it before the device goes offline.
+  await page.evaluate(() => {
+    location.hash = '#/facilities'
+  })
+  await expect(page.getByText(/^\d+ cơ sở$/)).toBeVisible()
+  const external = trackExternalRequests(page)
+
+  await context.setOffline(true)
+  await page.reload()
+  await page.getByRole('searchbox', { name: 'Tìm theo tên hoặc địa chỉ' }).pressSequentially('bach mai', { delay: 40 })
+
+  await expect(page.locator('a[href="#/facilities/f-76c24651ba2f"]')).toContainText('Bệnh viện Bạch Mai')
+  expect(external).toEqual([])
+})

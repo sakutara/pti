@@ -1,0 +1,28 @@
+{
+  "id": "marsh",
+  "name": "Marsh Việt Nam",
+  "verified": true,
+  "claimEmail": "nhanhsbt.mn@pti.com.vn",
+  "cc": ["vietnamMMBclaims@marsh.com"],
+  "subjectTemplate": "HS YCBT – {patientName} – {contractCode} – {policyholderName}",
+  "emailClaimTypes": ["outpatient", "dental", "optical"],
+  "maxAttachmentBytes": 15000000,
+  "hotline": "1900 5454 75",
+  "originalsAddresses": [
+    {
+      "region": "Miền Nam",
+      "address": "Tầng 2, Tòa nhà Thủy Lợi 4, 205 Nguyễn Xí, phường Bình Thạnh, TP. Hồ Chí Minh."
+    },
+    {
+      "region": "Miền Bắc",
+      "address": "Zone 2B, Tầng 2, CT1 Tòa nhà Ban Cơ yếu Chính phủ, 43 Lê Văn Lương, phường Thanh Xuân, Hà Nội."
+    }
+  ],
+  "replyWorkingDays": [
+    { "below": 20000000, "days": 7 },
+    { "below": 100000001, "days": 15 },
+    { "days": 20 }
+  ],
+  "network": "pti",
+  "notes": "Theo bảng tóm tắt hợp đồng 2026–2027; địa chỉ nộp bản gốc chép từ knowledge/domain/policy-2026.md."
+}

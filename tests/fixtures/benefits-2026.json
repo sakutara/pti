@@ -1,0 +1,215 @@
+{
+  "policyYear": 2026,
+  "effectiveFrom": "2026-01-01",
+  "effectiveTo": "2026-12-31",
+  "product": "Sản phẩm thử nghiệm",
+  "insurer": "Công ty thử nghiệm",
+  "verified": false,
+  "source": "Dữ liệu giả dùng cho kiểm thử",
+  "claimDeadlineDays": 100,
+  "hotline": "0000 000 000",
+  "memberTypes": {
+    "employee": "Nhân viên",
+    "sponsored": "Người thân được tài trợ",
+    "voluntary": "Người thân tự nguyện"
+  },
+  "tiers": [
+    { "tier": 1, "name": "Hạng 1" },
+    { "tier": 2, "name": "Hạng 2" },
+    { "tier": 3, "name": "Hạng 3" },
+    { "tier": 4, "name": "Hạng 4" }
+  ],
+  "copayPercent": {
+    "inpatient": { "voluntary": 30 },
+    "maternity": { "voluntary": 30 },
+    "outpatient": { "voluntary": 30 },
+    "dental": { "voluntary": 30 }
+  },
+  "benefits": [
+    {
+      "id": "outpatient.annual",
+      "category": "outpatient",
+      "title": "Giới hạn ngoại trú (giới hạn chung)",
+      "unit": "year",
+      "values": {
+        "employee": [12000000, 13000000, 14000000, 15000000],
+        "sponsored": [12000000, 13000000, 14000000, 15000000],
+        "voluntary": [9000000, 10000000, 11000000, 12000000]
+      }
+    },
+    {
+      "id": "outpatient.visit",
+      "category": "outpatient",
+      "title": "Mỗi lần khám ngoại trú",
+      "unit": "visit",
+      "values": {
+        "employee": [3000000, 3200000, 3400000, 3600000],
+        "sponsored": [3000000, 3200000, 3400000, 3600000],
+        "voluntary": [2000000, 2100000, 2200000, 2300000]
+      }
+    },
+    {
+      "id": "dental.annual",
+      "category": "dental",
+      "title": "Chăm sóc răng cơ bản",
+      "unit": "year",
+      "values": {
+        "employee": [2000000, 2100000, 2200000, 2300000],
+        "sponsored": [2000000, 2100000, 2200000, 2300000],
+        "voluntary": [1000000, 1100000, 1200000, 1300000]
+      }
+    },
+    {
+      "id": "optical.annual",
+      "category": "optical",
+      "title": "Kính mắt",
+      "unit": "year",
+      "values": {
+        "employee": [500000, 600000, 700000, 800000],
+        "sponsored": null,
+        "voluntary": null
+      },
+      "notes": "Chỉ dành cho nhân viên."
+    },
+    {
+      "id": "inpatient.annual",
+      "category": "inpatient",
+      "title": "Giới hạn nội trú",
+      "unit": "year",
+      "values": {
+        "employee": [50000000, 60000000, 70000000, 80000000],
+        "sponsored": [50000000, 60000000, 70000000, 80000000],
+        "voluntary": [40000000, 45000000, 50000000, 55000000]
+      }
+    },
+    {
+      "id": "inpatient.hospital",
+      "category": "inpatient",
+      "title": "Viện phí",
+      "unit": "day",
+      "values": {
+        "employee": [1000000, 1100000, 1200000, 1300000],
+        "sponsored": [1000000, 1100000, 1200000, 1300000],
+        "voluntary": [800000, 900000, 1000000, 1100000]
+      },
+      "maxDaysPerYear": 60
+    },
+    {
+      "id": "inpatient.icu",
+      "category": "inpatient",
+      "title": "Chăm sóc đặc biệt",
+      "unit": "actual",
+      "values": {
+        "employee": ["actual", "actual", "actual", "actual"],
+        "sponsored": ["actual", "actual", "actual", "actual"],
+        "voluntary": ["actual", "actual", "actual", "actual"]
+      },
+      "maxDaysPerYear": 30
+    },
+    {
+      "id": "maternity.annual",
+      "category": "maternity",
+      "title": "Thai sản",
+      "unit": "year",
+      "values": {
+        "employee": [10000000, 20000000, 20000000, 20000000],
+        "sponsored": [10000000, 15000000, 15000000, 15000000],
+        "voluntary": null
+      }
+    },
+    {
+      "id": "maternity.hospital",
+      "category": "maternity",
+      "title": "Viện phí thai sản",
+      "unit": "day",
+      "values": {
+        "employee": [null, 1500000, 1500000, 1500000],
+        "sponsored": [null, 1000000, 1000000, 1000000],
+        "voluntary": null
+      },
+      "notes": "Hạng 1 theo giới hạn chung."
+    },
+    {
+      "id": "accident.medical",
+      "category": "accident",
+      "title": "Chi phí y tế do tai nạn",
+      "unit": "year",
+      "values": {
+        "employee": [20000000, 30000000, 40000000, 50000000],
+        "sponsored": [20000000, 25000000, 30000000, 35000000],
+        "voluntary": [20000000, 25000000, 30000000, 35000000]
+      }
+    },
+    {
+      "id": "accident.death",
+      "category": "accident",
+      "title": "Tử vong hoặc thương tật do tai nạn",
+      "unit": "sumInsured",
+      "values": {
+        "employee": ["30 tháng lương", "30 tháng lương", "30 tháng lương", "30 tháng lương"],
+        "sponsored": [100000000, 100000000, 100000000, 100000000],
+        "voluntary": [100000000, 100000000, 100000000, 100000000]
+      }
+    },
+    {
+      "id": "life.death",
+      "category": "life",
+      "title": "Tử vong không do tai nạn",
+      "unit": "sumInsured",
+      "values": {
+        "employee": [100000000, 100000000, 100000000, 100000000],
+        "sponsored": null,
+        "voluntary": null
+      }
+    },
+    {
+      "id": "income.hospital",
+      "category": "income",
+      "title": "Trợ cấp nằm viện",
+      "unit": "day",
+      "values": {
+        "employee": [100000, 200000, 300000, 400000],
+        "sponsored": [100000, 150000, 200000, 250000],
+        "voluntary": [100000, 150000, 200000, 250000]
+      },
+      "maxDaysPerYear": 60
+    }
+  ],
+  "extensions": [
+    {
+      "id": "ligament",
+      "title": "Gân, dây chằng từ năm đầu"
+    },
+    {
+      "id": "vitamin",
+      "title": "Vitamin kê đơn hỗ trợ điều trị",
+      "limitPerYear": 500000,
+      "notes": "Không cao hơn tiền thuốc điều trị."
+    }
+  ],
+  "waitingPeriods": {
+    "employee": ["Các thời gian chờ khác được miễn"],
+    "sponsored": ["Các thời gian chờ khác được miễn"],
+    "voluntary": ["Bệnh đặc biệt và bệnh có sẵn: 6 tháng"]
+  },
+  "exclusions": [
+    {
+      "id": "x01",
+      "text": "Người không đủ điều kiện tham gia",
+      "keywords": [],
+      "extensionIds": []
+    },
+    {
+      "id": "x02",
+      "text": "Tật khúc xạ, cận thị không do bệnh lý",
+      "keywords": ["cận thị"],
+      "extensionIds": ["optical.annual"]
+    },
+    {
+      "id": "x03",
+      "text": "Vitamin, thuốc bổ khi điều trị ngoại trú",
+      "keywords": ["vitamin"],
+      "extensionIds": ["vitamin"]
+    }
+  ]
+}

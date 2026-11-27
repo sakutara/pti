@@ -273,9 +273,10 @@
     0.0
    ],
    "lineYs": [
-    448.42
+    448.42,
+    440.9
    ],
-   "maxWidth": 165
+   "maxWidth": 180
   },
   "facilityName": {
    "page": 1,
@@ -312,7 +313,7 @@
   "rowNo": {
    "page": 2,
    "x": 111.39,
-   "y": 687.42,
+   "y": 680.3,
    "size": 9.0,
    "bold": false,
    "color": [
@@ -321,14 +322,14 @@
     0.0
    ],
    "lineYs": [
-    687.42
+    680.3
    ],
    "maxWidth": 40
   },
   "rowDate": {
    "page": 2,
    "x": 152.85,
-   "y": 687.42,
+   "y": 680.3,
    "size": 9.0,
    "bold": false,
    "color": [
@@ -337,14 +338,14 @@
     0.0
    ],
    "lineYs": [
-    687.42
+    680.3
    ],
    "maxWidth": 100
   },
   "rowAmount": {
    "page": 2,
    "x": 393.65,
-   "y": 687.42,
+   "y": 680.3,
    "size": 9.0,
    "bold": false,
    "color": [
@@ -353,7 +354,7 @@
     0.0
    ],
    "lineYs": [
-    687.42
+    680.3
    ],
    "maxWidth": 140
   },
@@ -388,7 +389,8 @@
     417.72,
     401.42
    ],
-   "maxWidth": 185
+   "maxWidth": 185,
+   "continuationX": 287.0
   },
   "bankAddress": {
    "page": 1,
@@ -442,6 +444,6 @@
  "table": {
   "page": 2,
   "rowsPerPage": 9,
-  "rowPitch": 27.3
+  "rowPitch": 27.1
  }
 }

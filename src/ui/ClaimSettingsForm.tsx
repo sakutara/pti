@@ -4,6 +4,7 @@ import { updateAccount } from '../data/account-repo'
 import { db } from '../db/db'
 import type { Account, Administrator, BankAccount } from '../domain/types'
 import { t } from '../i18n'
+import { GmailConnect } from './GmailConnect'
 
 const INPUT_CLASS =
   'mt-1 block w-full min-h-11 rounded-xl border border-surface-2 bg-surface px-3 text-fluid-base text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent aria-[invalid=true]:border-red-600'
@@ -234,6 +235,8 @@ export function ClaimSettingsForm({ account }: { account: Account }) {
           </p>
         ) : null}
       </form>
+
+      <GmailConnect />
     </section>
   )
 }

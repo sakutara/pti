@@ -1,6 +1,8 @@
 import Dexie, { type EntityTable } from 'dexie'
 import type { OutboxOp } from '../sync/outbox'
 import type { Account, Person, StoredFile } from '../domain/types'
+import type { DocumentRecord } from '../domain/document-types'
+import type { Claim, ClaimEvent } from '../domain/claim-types'
 
 export interface Setting { key: string; value: unknown; updatedAt: number }
 
@@ -13,6 +15,9 @@ export class AppDB extends Dexie {
   account!: EntityTable<Account, 'id'>
   persons!: EntityTable<Person, 'id'>
   files!: EntityTable<StoredFile, 'id'>
+  documents!: EntityTable<DocumentRecord, 'id'>
+  claims!: EntityTable<Claim, 'id'>
+  claimEvents!: EntityTable<ClaimEvent, 'id'>
 
   constructor(name = 'pti') {
     super(name)
@@ -29,10 +34,28 @@ export class AppDB extends Dexie {
       persons: 'id, accountId, updatedAt',
       files: 'id, [ownerType+ownerId], sha256, updatedAt',
     })
+    // v3 adds documents; tables not listed keep their v2 schema. No upgrade step needed.
+    this.version(3).stores({
+      documents: 'id, personId, claimId, category, updatedAt',
+    })
+    // v4 adds claims and claimEvents; no upgrade step needed.
+    this.version(4).stores({
+      claims: 'id, personId, status, treatmentDate, updatedAt',
+      claimEvents: 'id, claimId, at, updatedAt',
+    })
   }
 }
 
 export const db = new AppDB()
 
 export const newId = () => crypto.randomUUID()
-export const now = () => Date.now()
+let lastNow = 0
+/**
+ * Epoch ms for stamps and createdAt. Strictly increasing within this page session: two writes in the same millisecond
+ * get different values, so records written in a burst sort in write order.
+ */
+export const now = (): number => {
+  const t = Date.now()
+  lastNow = t > lastNow ? t : lastNow + 1
+  return lastNow
+}

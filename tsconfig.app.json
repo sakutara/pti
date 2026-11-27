@@ -9,7 +9,10 @@
     "skipLibCheck": true,
     "paths": {
       "react": ["./node_modules/preact/compat/"],
-      "react-dom": ["./node_modules/preact/compat/"]
+      "react-dom": ["./node_modules/preact/compat/"],
+      // onnxruntime-web không khai báo "types" trong exports; trỏ thẳng tới file khai báo của gói (chỉ dùng cho kiểu, không ảnh hưởng bundle).
+      "onnxruntime-web": ["./node_modules/onnxruntime-web/types.d.ts"],
+      "onnxruntime-web/wasm": ["./node_modules/onnxruntime-web/types.d.ts"]
     },
 
     /* Bundler mode */

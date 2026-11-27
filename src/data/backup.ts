@@ -7,7 +7,16 @@ const APP = 'pti'
 const SKIP_TABLES = new Set(['outbox'])
 const SETTINGS_KEY = 'lastBackupAt'
 /** Tables whose replaced rows are pushed to the outbox, mapped to the sync entity name. */
-const ENTITY: Record<string, string> = { account: 'account', persons: 'person', files: 'file' }
+const ENTITY: Record<string, string> = {
+  account: 'account',
+  persons: 'person',
+  files: 'file',
+  documents: 'document',
+  claims: 'claim',
+  claimEvents: 'claimEvent',
+}
+/** Settings that describe this device only (the OCR model install) and never leave it. */
+const DEVICE_ONLY_SETTINGS = new Set(['ocrModelVersion'])
 
 const MESSAGES = {
   foreign: 'This file is not a backup of this app.',
@@ -64,8 +73,9 @@ export async function exportBackup(db: AppDB, at = new Date()): Promise<{ blob: 
   const entries: Zippable = {}
   const counts: Record<string, number> = {}
   for (const name of tableNames) {
-    counts[name] = snapshot[name].length
-    entries[`tables/${name}.json`] = strToU8(JSON.stringify(snapshot[name]))
+    const rows = name === 'settings' ? snapshot[name].filter((r) => !isDeviceOnly(r)) : snapshot[name]
+    counts[name] = rows.length
+    entries[`tables/${name}.json`] = strToU8(JSON.stringify(rows))
   }
   const withoutBlob = files.map(({ blob: _blob, ...meta }) => meta)
   counts.files = files.length
@@ -100,6 +110,9 @@ function parseJson(bytes: Uint8Array, code: BackupError['code']): unknown {
   }
 }
 
+const isDeviceOnly = (value: unknown): boolean =>
+  typeof value === 'object' && value !== null && DEVICE_ONLY_SETTINGS.has((value as { key?: unknown }).key as string)
+
 const isRow = (value: unknown, key: string): value is Row =>
   typeof value === 'object' &&
   value !== null &&
@@ -133,6 +146,7 @@ export async function importBackup(db: AppDB, file: Blob): Promise<{ imported: n
     const items: StagedRow[] = []
     for (const candidate of rows) {
       if (!isRow(candidate, key)) throw new BackupError('corrupt')
+      if (name === 'settings' && isDeviceOnly(candidate)) continue
       if (name === 'files') {
         const bytes = entries[`files/${candidate.id}`]
         if (!bytes || typeof candidate.mime !== 'string') throw new BackupError('corrupt')

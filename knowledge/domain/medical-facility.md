@@ -38,7 +38,8 @@ lời trong khoảng 15 phút (ngoại trú) hoặc 6 giờ (nội trú)[^pti-bl
 (mã `NVCN028.1`, `NVCN032.1`, `NVCN030.1` = có bảo lãnh), `isPtiGuarantee` (`NVCN031.1`),
 `blacklist` (`PLC040.1` = thuộc blacklist). Tham số tìm kiếm: `pageIndex`, `pageSize`, `name`,
 `province`, `ward`, `isPtiGuarantee`, `blacklist`. Danh mục tỉnh: `/dms-gw/pms-api/public/codebook/query?subDomainCode=PLC065`.
-Ngày 2026-11-26 có 319 cơ sở PTI bảo lãnh.
+Ngày 2026-11-27 danh mục có 319 cơ sở: 232 PTI bảo lãnh, 37 loại trừ và 50 ghi rõ không bảo lãnh
+(`NVCN031.0`, không có dịch vụ nào; app không hiển thị).
 
 API không trả header CORS, nên trình duyệt trên GitHub Pages không gọi trực tiếp được; dữ liệu được lấy
 bằng GitHub Action ([0003](/decisions/0003-pti-datasets-in-repo.md)). API không được PTI công bố chính
